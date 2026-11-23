@@ -86,13 +86,16 @@ const teaserImages = galleryImages.slice(0, 3)
 <template>
   <div>
     <!-- HERO --------------------------------------------------------------- -->
-    <section class="relative flex min-h-[min(900px,100svh)] items-center overflow-hidden pb-28 pt-20 sm:pb-32">
-      <MoonGlow />
-      <Lanterns />
-      <Hero3D />
+    <section class="relative isolate flex min-h-[min(900px,100svh)] items-center overflow-hidden pb-28 pt-20 sm:pb-32">
+      <!-- All decorative layers stay below the readability scrim and hero copy. -->
+      <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+        <MoonGlow />
+        <Lanterns />
+        <Hero3D />
+      </div>
       <!-- Readability scrim: keeps hero text well above WCAG AA over the moon glow. -->
-      <div class="hero-scrim pointer-events-none absolute inset-0"></div>
-      <div class="hero-fade pointer-events-none absolute inset-x-0 bottom-0 h-56"></div>
+      <div class="hero-scrim pointer-events-none absolute inset-0 z-[1]"></div>
+      <div class="hero-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-56"></div>
 
       <div class="site-container relative z-10 text-center">
         <p v-reveal class="eyebrow">{{ t('home.eyebrow') }}</p>
