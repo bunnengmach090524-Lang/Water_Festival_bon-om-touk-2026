@@ -1,6 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import CloudImage from '../media/CloudImage.vue'
+import { inferCategory } from '../scenes/inferCategory'
 
 defineProps({
   destination: { type: Object, required: true },
@@ -22,6 +23,7 @@ const { t } = useI18n()
         <CloudImage
           :public-id="destination.imagePublicId"
           :alt="name"
+          :category="inferCategory(destination.imagePublicId, destination.tags)"
           aspect="4 / 3"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           class="rounded-none!"

@@ -39,7 +39,7 @@ onBeforeUnmount(() => {
     aria-valuemax="100"
   >
     <div
-      class="h-full bg-gradient-to-r from-gold via-gold-light to-gold shadow-[0_0_12px_rgba(240,207,122,0.65)]"
+      class="h-full bg-gradient-to-r from-gold via-gold-light to-gold shadow-[0_0_12px_color-mix(in_srgb,var(--color-gold-light)_65%,transparent)]"
       :style="{ width: `${progress}%` }"
     />
   </div>

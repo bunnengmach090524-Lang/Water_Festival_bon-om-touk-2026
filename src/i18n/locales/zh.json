@@ -29,6 +29,20 @@
     "fr": "FR",
     "zh": "中文"
   },
+  "theme": {
+    "label": "配色主题",
+    "toLight": "切换到浅色主题",
+    "toDark": "切换到深色主题"
+  },
+  "music": {
+    "comingSoon": "歌曲即将上线",
+    "play": "播放音乐",
+    "pause": "暂停音乐",
+    "mute": "静音",
+    "unmute": "取消静音",
+    "volume": "音乐音量",
+    "nowPlaying": "正在播放"
+  },
   "common": {
     "explore": "探索地点",
     "schedule": "查看日程",
@@ -588,6 +602,7 @@
     "explore": "探索",
     "information": "信息",
     "mediaNote": "媒体内容归其所有者所有",
+    "musicCredit": "音乐归其所有者所有",
     "officialNote": "这是一份独立指南，并非节日官方网站。",
     "dashboard": "网站统计",
     "rights": "柬埔寨水节游客指南 · 2026"

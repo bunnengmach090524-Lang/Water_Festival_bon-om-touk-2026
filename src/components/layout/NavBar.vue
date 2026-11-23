@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import LangSwitcher from './LangSwitcher.vue'
+import ThemeToggle from './ThemeToggle.vue'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -41,10 +42,10 @@ onBeforeUnmount(() => {
 
 <template>
   <header class="glass sticky top-0 z-50">
-    <div class="site-container flex h-[var(--nav-height)] items-center justify-between gap-4">
+    <div class="site-container flex h-[var(--nav-height)] items-center justify-between gap-2 sm:gap-4">
       <RouterLink
         to="/"
-        class="flex min-h-11 items-center gap-3 rounded-lg text-gold-light transition duration-300 hover:text-ivory"
+        class="flex min-h-11 min-w-0 items-center gap-2 rounded-lg text-gold-light transition duration-300 hover:text-ivory sm:gap-3"
         :aria-label="t('meta.siteName')"
       >
         <svg viewBox="0 0 44 44" class="h-9 w-9 shrink-0" aria-hidden="true">
@@ -56,7 +57,7 @@ onBeforeUnmount(() => {
           <circle cx="10" cy="11" r="1" fill="currentColor" />
           <circle cx="36" cy="13" r="0.8" fill="currentColor" />
         </svg>
-        <span class="font-display text-xl leading-none tracking-wide sm:text-2xl">
+        <span class="truncate font-display text-lg leading-none tracking-wide sm:text-2xl">
           {{ t('meta.siteName') }}
         </span>
       </RouterLink>
@@ -67,8 +68,9 @@ onBeforeUnmount(() => {
         </RouterLink>
       </nav>
 
-      <div class="flex items-center gap-2">
+      <div class="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <LangSwitcher class="hidden sm:flex" />
+        <ThemeToggle />
         <button
           type="button"
           class="flex min-h-11 w-11 items-center justify-center rounded-full border border-gold/35 text-gold-light transition duration-300 hover:bg-gold/15 lg:hidden"
@@ -91,7 +93,7 @@ onBeforeUnmount(() => {
       <nav
         v-if="open"
         id="mobile-nav"
-        class="border-t border-gold/20 bg-midnight/98 px-5 pb-8 pt-4 shadow-2xl lg:hidden"
+        class="border-t border-gold/20 bg-[var(--page-bg)] px-5 pb-8 pt-4 shadow-2xl lg:hidden"
         :aria-label="t('a11y.mainNav')"
       >
         <RouterLink

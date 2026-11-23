@@ -16,7 +16,7 @@ const infoLinks = [
 </script>
 
 <template>
-  <footer class="relative mt-10 border-t border-gold/20 bg-midnight/70">
+  <footer class="relative z-10 mt-10 border-t border-gold/20 bg-[color-mix(in_srgb,var(--color-midnight)_70%,var(--page-bg))] transition-colors duration-300">
     <div class="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <p class="font-display text-2xl text-gold-light">{{ t('meta.siteName') }}</p>
@@ -47,6 +47,7 @@ const infoLinks = [
 
       <div class="text-sm leading-7 text-muted">
         <p>{{ t('footer.mediaNote') }}</p>
+        <p class="mt-2">{{ t('footer.musicCredit') }}</p>
         <p class="mt-2">{{ t('footer.officialNote') }}</p>
         <RouterLink to="/dashboard" class="mt-3 inline-flex min-h-11 items-center text-xs text-muted/80 underline decoration-gold/40 underline-offset-4 transition hover:text-gold-light">
           {{ t('footer.dashboard') }}

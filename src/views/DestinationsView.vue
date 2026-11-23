@@ -24,7 +24,7 @@ const filtered = computed(() => {
 <template>
   <div>
     <header class="relative overflow-hidden border-b border-gold/15 py-20 text-center sm:py-28">
-      <div class="pointer-events-none absolute inset-0 opacity-35" style="background: radial-gradient(circle at 50% 0%, rgba(212, 165, 72, 0.22), transparent 60%)"></div>
+      <div class="page-header-glow pointer-events-none absolute inset-0 opacity-35"></div>
       <div class="site-container relative">
         <p v-reveal class="eyebrow">{{ t('destinations.eyebrow') }}</p>
         <h1 v-reveal="80" class="section-title mx-auto mt-5">{{ t('destinations.title') }}</h1>

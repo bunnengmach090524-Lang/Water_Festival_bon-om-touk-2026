@@ -11,6 +11,7 @@ import CloudImage from '../components/media/CloudImage.vue'
 import { destinations } from '../data/destinations'
 import { traditions } from '../data/traditions'
 import { galleryImages } from '../data/media'
+import { inferCategory } from '../components/scenes/inferCategory'
 
 const { t, tm } = useI18n()
 
@@ -90,11 +91,8 @@ const teaserImages = galleryImages.slice(0, 3)
       <Lanterns />
       <Hero3D />
       <!-- Readability scrim: keeps hero text well above WCAG AA over the moon glow. -->
-      <div
-        class="pointer-events-none absolute inset-0"
-        style="background: radial-gradient(ellipse 65% 55% at 50% 52%, rgba(11, 16, 38, 0.78), rgba(11, 16, 38, 0.25) 65%, transparent 85%)"
-      ></div>
-      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-midnight to-transparent"></div>
+      <div class="hero-scrim pointer-events-none absolute inset-0"></div>
+      <div class="hero-fade pointer-events-none absolute inset-x-0 bottom-0 h-56"></div>
 
       <div class="site-container relative z-10 text-center">
         <p v-reveal class="eyebrow">{{ t('home.eyebrow') }}</p>
@@ -102,7 +100,7 @@ const teaserImages = galleryImages.slice(0, 3)
           <span class="block">{{ t('home.titleLine1') }}</span>
           <span class="mt-2 block text-gold-light sm:mt-4">{{ t('home.titleLine2') }}</span>
         </h1>
-        <p v-reveal="160" class="mt-6 font-display text-base text-gold/90 sm:text-xl">
+        <p v-reveal="160" class="mt-6 font-display text-base text-gold-light sm:text-xl">
           {{ t('meta.fullName') }}
         </p>
         <p v-reveal="220" class="lead mx-auto mt-6 max-w-2xl">
@@ -116,7 +114,7 @@ const teaserImages = galleryImages.slice(0, 3)
 
         <div
           v-reveal="340"
-          class="mx-auto mt-10 inline-flex min-h-12 flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded-full border border-gold/25 bg-night/60 px-5 py-2 text-xs text-ivory/85 backdrop-blur sm:text-sm"
+          class="mx-auto mt-10 inline-flex min-h-12 flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded-full border border-gold/25 bg-[var(--glass-bg)] px-5 py-2 text-xs text-ivory/85 backdrop-blur sm:text-sm"
           aria-live="polite"
         >
           <template v-if="clock.mode === 'before'">
@@ -127,7 +125,7 @@ const teaserImages = galleryImages.slice(0, 3)
             </span>
           </template>
           <template v-else-if="clock.mode === 'now'">
-            <span class="h-2 w-2 animate-pulse rounded-full bg-crimson shadow-[0_0_10px_rgba(179,32,42,0.9)]"></span>
+            <span class="h-2 w-2 animate-pulse rounded-full bg-crimson shadow-[0_0_10px_color-mix(in_srgb,var(--color-crimson)_90%,transparent)]"></span>
             <span class="font-semibold text-gold-light">{{ t('home.countdown.now') }}</span>
             <span>{{ t('home.countdown.night', { n: clock.night }) }}</span>
           </template>
@@ -215,6 +213,7 @@ const teaserImages = galleryImages.slice(0, 3)
               <CloudImage
                 :public-id="item.publicId"
                 :alt="t(item.captionKey)"
+                :category="inferCategory(item.publicId, item.category)"
                 aspect="4 / 3"
                 sizes="(max-width: 640px) 100vw, 33vw"
               />

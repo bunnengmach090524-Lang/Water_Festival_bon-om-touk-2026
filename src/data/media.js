@@ -23,3 +23,12 @@ export const galleryVideos = [
   { id: 'video-01', type: 'video', publicId: 'bon-om-touk/video-01', category: 'river', captionKey: 'gallery.captions.video-01' },
   { id: 'video-02', type: 'video', publicId: 'bon-om-touk/video-02', category: 'night', captionKey: 'gallery.captions.video-02' },
 ]
+
+/**
+ * Festival music — LEFT EMPTY ON PURPOSE.
+ * When you upload a song to Cloudinary, add one entry here:
+ *   { id: 'theme-song', publicId: 'bon-om-touk/audio/your-song-file', titleKey: 'music.track.theme' }
+ * The publicId must NOT include a file extension. Add the matching titleKey
+ * string to all four locale files (km, en, fr, zh). Nothing autoplays.
+ */
+export const music = []

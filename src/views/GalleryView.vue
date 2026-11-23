@@ -6,6 +6,7 @@ import GalleryGrid from '../components/media/GalleryGrid.vue'
 import Lightbox from '../components/media/Lightbox.vue'
 import CloudVideo from '../components/media/CloudVideo.vue'
 import { galleryCategories, galleryImages, galleryVideos } from '../data/media'
+import { inferCategory } from '../components/scenes/inferCategory'
 
 const { t } = useI18n()
 const activeCategory = ref('all')
@@ -25,8 +26,9 @@ watch(activeCategory, () => {
 
 <template>
   <div>
-    <header class="relative overflow-hidden border-b border-gold/15 py-20 text-center sm:py-28">
-      <div class="pointer-events-none absolute inset-0 opacity-35" style="background: radial-gradient(circle at 50% 0%, rgba(212, 165, 72, 0.22), transparent 60%)"></div>
+    <!-- Compact header: title and filters sit directly below the sticky nav. -->
+    <header class="relative overflow-hidden border-b border-gold/15 pb-10 pt-6 text-center sm:pb-14 sm:pt-10">
+      <div class="page-header-glow pointer-events-none absolute inset-0 opacity-35"></div>
       <div class="site-container relative">
         <p v-reveal class="eyebrow">{{ t('gallery.eyebrow') }}</p>
         <h1 v-reveal="80" class="section-title mx-auto mt-5">{{ t('gallery.title') }}</h1>
@@ -35,7 +37,7 @@ watch(activeCategory, () => {
       <WaveDivider class="absolute inset-x-0 bottom-0" />
     </header>
 
-    <section class="section-shell">
+    <section class="section-shell pt-7 sm:pt-9">
       <div class="site-container">
         <div v-reveal class="flex flex-wrap gap-2" role="group" :aria-label="t('gallery.title')">
           <button
@@ -46,7 +48,7 @@ watch(activeCategory, () => {
             :class="
               activeCategory === category.id
                 ? 'border-gold bg-gold/20 text-gold-light'
-                : 'border-gold/25 bg-night/40 text-ivory/75 hover:border-gold/60 hover:text-gold-light'
+                : 'border-gold/25 bg-[var(--glass-bg)] text-ivory/75 hover:border-gold/60 hover:text-gold-light'
             "
             :aria-pressed="activeCategory === category.id"
             @click="activeCategory = category.id"
@@ -73,7 +75,11 @@ watch(activeCategory, () => {
         </div>
         <div class="mt-10 grid gap-6 md:grid-cols-2">
           <div v-for="(video, index) in galleryVideos" :key="video.id" v-reveal="index * 100">
-            <CloudVideo :public-id="video.publicId" :caption="t(video.captionKey)" />
+            <CloudVideo
+              :public-id="video.publicId"
+              :caption="t(video.captionKey)"
+              :category="inferCategory(video.publicId, video.category)"
+            />
             <p class="mt-3 text-sm text-muted">{{ t(video.captionKey) }}</p>
           </div>
         </div>

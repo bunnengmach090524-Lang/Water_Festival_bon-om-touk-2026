@@ -1,10 +1,26 @@
 <!doctype html>
-<html lang="km" class="lang-km">
+<html lang="km" class="lang-km" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0b1026" />
+    <script>
+      /* Set the palette before first paint. Mirrors src/composables/useTheme.js. */
+      (function () {
+        try {
+          var saved = localStorage.getItem('bon-om-touk:theme');
+          var mode = saved === 'light' || saved === 'dark'
+            ? saved
+            : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.dataset.theme = mode;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', mode === 'light' ? '#fbf7ee' : '#0b1026');
+        } catch (error) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
     <meta
       name="description"
       content="Bon Om Touk — Cambodia's Water Festival, 23–25 November 2026. Discover the traditions, places and practical travel information for the festival along the Tonle Sap and Mekong rivers."

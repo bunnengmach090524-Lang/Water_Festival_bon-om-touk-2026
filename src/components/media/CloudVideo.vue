@@ -2,11 +2,14 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { hasCloudinary, videoPosterUrl, videoUrl } from '../../composables/useCloudinary'
+import FallbackArt from '../scenes/FallbackArt.vue'
+import { inferCategory } from '../scenes/inferCategory'
 
 const props = defineProps({
   publicId: { type: String, default: '' },
   caption: { type: String, default: '' },
   aspect: { type: String, default: '16 / 9' },
+  category: { type: String, default: '' },
 })
 
 const { t } = useI18n()
@@ -18,6 +21,7 @@ let observer = null
 const unavailable = computed(() => !hasCloudinary || !props.publicId || failed.value)
 const src = computed(() => videoUrl(props.publicId))
 const poster = computed(() => videoPosterUrl(props.publicId))
+const fallbackCategory = computed(() => inferCategory(props.publicId, props.category))
 
 watch(
   () => props.publicId,
@@ -46,16 +50,10 @@ onBeforeUnmount(() => observer?.disconnect())
 </script>
 
 <template>
-  <div ref="host" class="relative w-full overflow-hidden rounded-2xl bg-night" :style="{ aspectRatio: aspect }">
-    <div
-      v-if="unavailable"
-      class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-night via-midnight to-[#1d2547] px-6 text-center"
-    >
-      <svg viewBox="0 0 48 48" class="h-12 w-12 text-gold/70" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
-        <rect x="7" y="12" width="34" height="24" rx="4" />
-        <path d="m20 18 10 6-10 6V18Z" fill="currentColor" stroke="none" opacity=".8" />
-      </svg>
-      <span class="text-sm text-muted">{{ t('media.videoMissing') }}</span>
+  <div ref="host" class="relative w-full overflow-hidden rounded-2xl bg-[var(--color-night)]" :style="{ aspectRatio: aspect }">
+    <div v-if="unavailable" class="absolute inset-0">
+      <FallbackArt :category="fallbackCategory" />
+      <span class="sr-only">{{ t('media.videoMissing') }}</span>
     </div>
     <template v-else-if="shouldLoad">
       <video

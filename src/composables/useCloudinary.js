@@ -23,3 +23,9 @@ export function videoPosterUrl(publicId) {
   if (!hasCloudinary || !publicId) return ''
   return `https://res.cloudinary.com/${encodeURIComponent(cloudName)}/video/upload/so_0,f_auto,q_auto/${publicId}.jpg`
 }
+
+/** Cloudinary serves audio through /video/upload/ — same delivery domain. */
+export function audioUrl(publicId) {
+  if (!hasCloudinary || !publicId) return ''
+  return `https://res.cloudinary.com/${encodeURIComponent(cloudName)}/video/upload/f_auto,q_auto/${publicId}`
+}

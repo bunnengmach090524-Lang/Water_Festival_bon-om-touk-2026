@@ -5,6 +5,8 @@ import { useI18n } from 'vue-i18n'
 import NavBar from './components/layout/NavBar.vue'
 import Footer from './components/layout/Footer.vue'
 import ScrollProgress from './components/effects/ScrollProgress.vue'
+import BackdropScene from './components/scenes/BackdropScene.vue'
+import MusicPlayer from './components/media/MusicPlayer.vue'
 import { applyLangAttributes } from './i18n'
 
 const route = useRoute()
@@ -30,10 +32,11 @@ function focusMain() {
     {{ t('a11y.skipToContent') }}
   </a>
 
+  <BackdropScene />
   <ScrollProgress />
   <NavBar />
 
-  <main id="main-content" class="min-h-[60vh] outline-none" tabindex="-1">
+  <main id="main-content" class="relative z-10 min-h-[60vh] outline-none" tabindex="-1">
     <RouterView v-slot="{ Component }">
       <Transition name="page" mode="out-in">
         <component :is="Component" :key="route.fullPath" />
@@ -42,4 +45,5 @@ function focusMain() {
   </main>
 
   <Footer />
+  <MusicPlayer />
 </template>

@@ -9,7 +9,7 @@ const { t, tm } = useI18n()
 <template>
   <div>
     <header class="relative overflow-hidden border-b border-gold/15 py-20 text-center sm:py-28">
-      <div class="pointer-events-none absolute inset-0 opacity-35" style="background: radial-gradient(circle at 50% 0%, rgba(212, 165, 72, 0.2), transparent 60%)"></div>
+      <div class="page-header-glow pointer-events-none absolute inset-0 opacity-35"></div>
       <div class="site-container relative">
         <p v-reveal class="eyebrow">{{ t('schedule.eyebrow') }}</p>
         <h1 v-reveal="80" class="section-title mx-auto mt-5">{{ t('schedule.title') }}</h1>
@@ -36,7 +36,7 @@ const { t, tm } = useI18n()
 
         <ol class="relative mt-14 space-y-10 border-l border-gold/25 pl-7 sm:pl-10">
           <li v-for="(night, index) in festivalNights" :key="night.id" v-reveal="index * 100" class="relative">
-            <span class="absolute -left-[2.15rem] top-2 h-3.5 w-3.5 rounded-full border-2 border-gold bg-midnight shadow-[0_0_14px_rgba(212,165,72,0.75)] sm:-left-[3.15rem]"></span>
+            <span class="absolute -left-[2.15rem] top-2 h-3.5 w-3.5 rounded-full border-2 border-gold bg-midnight shadow-[0_0_14px_color-mix(in_srgb,var(--color-gold)_70%,transparent)] sm:-left-[3.15rem]"></span>
             <article class="card-lift rounded-2xl p-6 sm:p-8">
               <div class="flex flex-wrap items-baseline justify-between gap-2">
                 <h2 class="font-display text-3xl text-gold-light sm:text-4xl">{{ t(`${night.key}.label`) }}</h2>
@@ -46,7 +46,7 @@ const { t, tm } = useI18n()
 
               <ul class="mt-6 space-y-4 border-t border-gold/15 pt-5">
                 <li v-for="(event, eventIndex) in tm(`${night.key}.events`)" :key="eventIndex" class="grid gap-1 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-5">
-                  <span class="text-xs font-semibold uppercase tracking-wider text-gold/90">{{ event.time }}</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-gold-light">{{ event.time }}</span>
                   <div>
                     <p class="font-semibold text-ivory">{{ event.title }}</p>
                     <p class="mt-1 text-sm leading-7 text-muted">{{ event.desc }}</p>

@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CloudImage from './CloudImage.vue'
+import { inferCategory } from '../scenes/inferCategory'
 
 const props = defineProps({
   items: { type: Array, default: () => [] },
@@ -60,7 +61,7 @@ onBeforeUnmount(() => {
     <Transition name="lightbox-fade">
       <div
         v-if="isOpen && current"
-        class="fixed inset-0 z-[80] flex flex-col bg-midnight/96 backdrop-blur-md"
+        class="fixed inset-0 z-[80] flex flex-col bg-[color-mix(in_srgb,var(--color-midnight)_96%,transparent)] backdrop-blur-md"
         role="dialog"
         aria-modal="true"
         :aria-label="t('a11y.lightbox')"
@@ -84,7 +85,7 @@ onBeforeUnmount(() => {
         <div class="relative flex flex-1 items-center justify-center px-3 pb-4 sm:px-16">
           <button
             type="button"
-            class="absolute left-2 z-10 flex min-h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-night/70 text-gold-light transition hover:bg-gold/15 sm:left-5"
+            class="absolute left-2 z-10 flex min-h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-[var(--glass-bg)] text-gold-light transition hover:bg-gold/15 sm:left-5"
             :aria-label="t('gallery.lightbox.previous')"
             @click="previous"
           >
@@ -93,11 +94,18 @@ onBeforeUnmount(() => {
             </svg>
           </button>
 
-          <CloudImage :public-id="current.publicId" :alt="t(current.captionKey)" aspect="16 / 9" sizes="90vw" class="max-w-5xl" />
+          <CloudImage
+            :public-id="current.publicId"
+            :alt="t(current.captionKey)"
+            :category="inferCategory(current.publicId, current.category)"
+            aspect="16 / 9"
+            sizes="90vw"
+            class="max-w-5xl"
+          />
 
           <button
             type="button"
-            class="absolute right-2 z-10 flex min-h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-night/70 text-gold-light transition hover:bg-gold/15 sm:right-5"
+            class="absolute right-2 z-10 flex min-h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-[var(--glass-bg)] text-gold-light transition hover:bg-gold/15 sm:right-5"
             :aria-label="t('gallery.lightbox.next')"
             @click="next"
           >

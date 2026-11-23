@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n'
 import CloudImage from '../components/media/CloudImage.vue'
 import WaveDivider from '../components/effects/WaveDivider.vue'
 import { destinations, mapsUrl } from '../data/destinations'
+import { inferCategory } from '../components/scenes/inferCategory'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -35,6 +36,7 @@ const mapLink = computed(() => (place.value ? mapsUrl(place.value) : ''))
           <CloudImage
             :public-id="place.imagePublicId"
             :alt="t(place.nameKey)"
+            :category="inferCategory(place.imagePublicId, place.tags)"
             aspect="21 / 9"
             sizes="100vw"
           />

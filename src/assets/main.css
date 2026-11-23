@@ -2,7 +2,9 @@
 
 /* ---------------------------------------------------------------------------
    Moonlit River, Golden Temple — design tokens
-   Tailwind v4 reads @theme variables and generates matching utilities.
+   Tailwind v4 reads @theme variables and generates matching utilities. The
+   same variables are overridden on <html data-theme="light"> below, so every
+   utility (and every hand-coded SVG) follows the active theme at runtime.
    --------------------------------------------------------------------------- */
 @theme {
   --color-midnight: #0b1026;
@@ -12,6 +14,7 @@
   --color-crimson: #b3202a;
   --color-ivory: #f6efe0;
   --color-muted: #9aa8c3;
+  --color-on-gold: #141b3a;
 
   --font-display: "Cormorant Garamond", Georgia, "Noto Serif", serif;
   --font-body: "Inter", "Noto Sans SC", system-ui, -apple-system, sans-serif;
@@ -23,6 +26,86 @@
   :root {
     color-scheme: dark;
     --nav-height: 4.5rem;
+    --theme-ease: 300ms ease;
+
+    /* Surfaces & lines */
+    --page-bg: #0b1026;
+    --page-bg-image:
+      radial-gradient(ellipse 70% 50% at 50% -10%, color-mix(in srgb, var(--color-gold) 12%, transparent), transparent 70%),
+      radial-gradient(ellipse 90% 60% at 100% 30%, color-mix(in srgb, var(--scene-sky-1) 28%, transparent), transparent 70%),
+      linear-gradient(180deg, var(--color-midnight) 0%, #111833 55%, var(--color-night) 100%);
+    --glass-bg: color-mix(in srgb, var(--color-midnight) 72%, transparent);
+    --glass-border: color-mix(in srgb, var(--color-gold) 18%, transparent);
+    --card-bg: linear-gradient(160deg, color-mix(in srgb, var(--color-night) 90%, transparent), color-mix(in srgb, var(--color-midnight) 90%, transparent));
+    --card-border: color-mix(in srgb, var(--color-gold) 18%, transparent);
+    --card-hover-border: color-mix(in srgb, var(--color-gold-light) 55%, transparent);
+    --card-shadow: 0 22px 50px color-mix(in srgb, var(--color-midnight) 70%, transparent);
+    --header-glow: color-mix(in srgb, var(--color-gold) 22%, transparent);
+    --hero-scrim: radial-gradient(ellipse 65% 55% at 50% 52%, color-mix(in srgb, var(--color-midnight) 78%, transparent), color-mix(in srgb, var(--color-midnight) 25%, transparent) 65%, transparent 85%);
+    --hero-fade: linear-gradient(to top, var(--color-midnight), transparent);
+    --divider-fill: color-mix(in srgb, var(--color-night) 65%, transparent);
+    --divider-stroke: color-mix(in srgb, var(--color-gold) 55%, transparent);
+    --scene-opacity: 0.18;
+    --focus-ring: var(--color-gold-light);
+
+    /* Original SVG scene palette (dark = moonlit river) */
+    --scene-sky-1: #141b3a;
+    --scene-sky-2: #0b1026;
+    --scene-hill: #101733;
+    --scene-water-1: #1b2b55;
+    --scene-water-2: #0d1533;
+    --scene-ink: #090e24;
+    --scene-paper: #f6efe0;
+    --scene-glow: #f0cf7a;
+    --scene-gold: #d4a548;
+    --scene-crimson: #b3202a;
+    --scene-moon: #fff4d6;
+  }
+
+  /* Warm ivory / cream daylight, deeper gold and indigo text for AA contrast. */
+  html[data-theme="light"] {
+    color-scheme: light;
+    --color-midnight: #f6efe0;
+    --color-night: #fbf7ee;
+    --color-gold: #9a6b12;
+    --color-gold-light: #7a5108;
+    --color-crimson: #8e1b23;
+    --color-ivory: #1b2343;
+    --color-muted: #4a4b5c;
+    --color-on-gold: #fbf7ee;
+    --shadow-gold: 0 12px 36px color-mix(in srgb, var(--color-gold) 22%, transparent);
+
+    --page-bg: #fbf7ee;
+    --page-bg-image:
+      radial-gradient(ellipse 70% 50% at 50% -10%, color-mix(in srgb, var(--color-gold) 14%, transparent), transparent 70%),
+      radial-gradient(ellipse 90% 60% at 100% 30%, color-mix(in srgb, var(--scene-water-1) 35%, transparent), transparent 70%),
+      linear-gradient(180deg, #fbf7ee 0%, #f6efe0 55%, #f2e8d4 100%);
+    --glass-bg: color-mix(in srgb, #fbf7ee 88%, transparent);
+    --glass-border: color-mix(in srgb, var(--color-gold) 30%, transparent);
+    --card-bg: linear-gradient(160deg, color-mix(in srgb, #fffdf6 96%, transparent), color-mix(in srgb, #f4e9d3 96%, transparent));
+    --card-border: color-mix(in srgb, var(--color-gold) 32%, transparent);
+    --card-hover-border: color-mix(in srgb, var(--color-gold) 65%, transparent);
+    --card-shadow: 0 20px 44px color-mix(in srgb, var(--color-ivory) 14%, transparent);
+    --header-glow: color-mix(in srgb, var(--color-gold) 15%, transparent);
+    --hero-scrim: radial-gradient(ellipse 65% 55% at 50% 52%, color-mix(in srgb, #fbf7ee 72%, transparent), color-mix(in srgb, #fbf7ee 35%, transparent) 65%, transparent 85%);
+    --hero-fade: linear-gradient(to top, var(--page-bg), transparent);
+    --divider-fill: color-mix(in srgb, #f4e9d3 72%, transparent);
+    --divider-stroke: color-mix(in srgb, var(--color-gold) 65%, transparent);
+    --scene-opacity: 0.14;
+    --focus-ring: var(--color-gold-light);
+
+    /* Sunlit version of the same illustrations */
+    --scene-sky-1: #f7e6bf;
+    --scene-sky-2: #fbf7ee;
+    --scene-hill: #cfbb90;
+    --scene-water-1: #b9cbd1;
+    --scene-water-2: #dce6e2;
+    --scene-ink: #323a60;
+    --scene-paper: #fffaf0;
+    --scene-glow: #d6a43c;
+    --scene-gold: #9a6b12;
+    --scene-crimson: #9b2c33;
+    --scene-moon: #fffdf2;
   }
 
   /* Language-aware font stacks. The <html> class is kept in sync by useLang. */
@@ -47,27 +130,31 @@
     scroll-behavior: smooth;
   }
 
+  html,
+  body {
+    transition:
+      background-color var(--theme-ease),
+      color var(--theme-ease);
+  }
+
   body {
     min-height: 100vh;
     overflow-x: hidden;
     color: var(--color-ivory);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-    background-color: var(--color-midnight);
-    background-image:
-      radial-gradient(ellipse 70% 50% at 50% -10%, rgba(212, 165, 72, 0.12), transparent 70%),
-      radial-gradient(ellipse 90% 60% at 100% 30%, rgba(55, 74, 145, 0.18), transparent 70%),
-      linear-gradient(180deg, #0b1026 0%, #111833 55%, #141b3a 100%);
+    background-color: var(--page-bg);
+    background-image: var(--page-bg-image);
     background-attachment: fixed;
   }
 
   ::selection {
-    background: rgba(212, 165, 72, 0.35);
-    color: #fff8e7;
+    background: color-mix(in srgb, var(--color-gold) 35%, transparent);
+    color: var(--color-ivory);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold-light);
+    outline: 2px solid var(--focus-ring);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -76,6 +163,13 @@
   video,
   svg {
     max-width: 100%;
+  }
+
+  /* Long Khmer / Chinese headings must never create horizontal scroll at 320px. */
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -101,40 +195,55 @@
   }
 
   .glass {
-    background: rgba(11, 16, 38, 0.72);
-    border-bottom: 1px solid rgba(212, 165, 72, 0.18);
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
+    transition:
+      background-color var(--theme-ease),
+      border-color var(--theme-ease);
   }
 
   .gold-rule {
     width: 100%;
     height: 1px;
     border: 0;
-    background: linear-gradient(90deg, transparent, rgba(212, 165, 72, 0.65), transparent);
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-gold) 65%, transparent), transparent);
+  }
+
+  .page-header-glow {
+    background: radial-gradient(circle at 50% 0%, var(--header-glow), transparent 60%);
+  }
+
+  .hero-scrim {
+    background: var(--hero-scrim);
+  }
+
+  .hero-fade {
+    background: var(--hero-fade);
   }
 
   .btn {
     @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-300;
   }
   .btn-primary {
-    color: #141b3a;
-    background: linear-gradient(135deg, #f0cf7a, #d4a548);
-    box-shadow: 0 4px 18px rgba(212, 165, 72, 0.22);
+    color: var(--color-on-gold);
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+    box-shadow: var(--shadow-gold);
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(212, 165, 72, 0.38);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--color-gold) 38%, transparent);
   }
   .btn-ghost {
     color: var(--color-ivory);
-    border: 1px solid rgba(240, 207, 122, 0.45);
-    background: rgba(20, 27, 58, 0.45);
+    border: 1px solid color-mix(in srgb, var(--color-gold-light) 45%, transparent);
+    background: color-mix(in srgb, var(--color-night) 45%, transparent);
   }
   .btn-ghost:hover {
     transform: translateY(-2px);
     border-color: var(--color-gold-light);
-    background: rgba(212, 165, 72, 0.12);
+    background: color-mix(in srgb, var(--color-gold) 12%, transparent);
   }
 
   .nav-link {
@@ -159,18 +268,19 @@
   }
 
   .card-lift {
-    border: 1px solid rgba(212, 165, 72, 0.18);
-    background: linear-gradient(160deg, rgba(20, 27, 58, 0.9), rgba(11, 16, 38, 0.9));
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
     transition:
       transform 0.35s ease,
       box-shadow 0.35s ease,
-      border-color 0.35s ease;
+      border-color 0.35s ease,
+      background-color var(--theme-ease);
   }
   .card-lift:hover,
   .card-lift:focus-within {
     transform: translateY(-6px);
-    border-color: rgba(240, 207, 122, 0.55);
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.38);
+    border-color: var(--card-hover-border);
+    box-shadow: var(--card-shadow);
   }
 
   .image-zoom {
@@ -209,9 +319,9 @@
   .shimmer {
     background: linear-gradient(
       100deg,
-      rgba(20, 27, 58, 0.75) 20%,
-      rgba(212, 165, 72, 0.2) 45%,
-      rgba(20, 27, 58, 0.75) 70%
+      color-mix(in srgb, var(--color-night) 75%, transparent) 20%,
+      color-mix(in srgb, var(--color-gold) 20%, transparent) 45%,
+      color-mix(in srgb, var(--color-night) 75%, transparent) 70%
     );
     background-size: 200% 100%;
     animation: shimmer 1.8s linear infinite;
@@ -265,7 +375,7 @@
     padding: 0.75rem 1.25rem;
     border-radius: 9999px;
     background: var(--color-gold-light);
-    color: #141b3a;
+    color: var(--color-on-gold);
     font-weight: 600;
     transform: translateY(-200%);
     transition: transform 0.2s ease;
@@ -275,56 +385,161 @@
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Illustrated scenes — hand-coded SVG. Every animation below uses transform
+   or opacity only. `.scene-paused` (hidden tab / off-screen) and `.scene-static`
+   (prefers-reduced-motion) stop them without changing layout.
+   --------------------------------------------------------------------------- */
+.scene-root {
+  opacity: var(--scene-opacity);
+  transition: opacity 0.6s ease;
+}
+.scene-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.scene-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+.scene-sky {
+  align-items: flex-start;
+  justify-content: center;
+}
+.scene-mid {
+  align-items: center;
+  justify-content: center;
+}
+.scene-river {
+  align-items: flex-end;
+  justify-content: center;
+}
+.scene-anim {
+  animation-play-state: var(--scene-play, running);
+}
+.scene-paused .scene-anim {
+  animation-play-state: paused !important;
+}
+.scene-static .scene-anim {
+  animation: none !important;
+}
+.scene-wave {
+  animation: scene-wave-drift 11s ease-in-out infinite alternate;
+}
+.scene-wave-back {
+  animation: scene-wave-drift 17s ease-in-out infinite alternate-reverse;
+}
+.scene-boat {
+  animation: scene-boat-glide 26s linear infinite;
+}
+.scene-boat-alt {
+  animation: scene-boat-glide 34s linear infinite -14s;
+}
+.scene-oar {
+  transform-box: fill-box;
+  transform-origin: 50% 8%;
+  animation: scene-oar 1.35s ease-in-out infinite;
+}
+.scene-oar-alt {
+  animation-delay: -0.68s;
+}
+.scene-lantern {
+  animation: scene-lantern-drift 13s ease-in-out infinite;
+}
+.scene-flame {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: scene-flame 2.4s ease-in-out infinite;
+}
+.scene-steam {
+  animation: scene-steam 4.5s ease-in-out infinite;
+}
+.scene-burst {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: scene-burst var(--burst-duration, 5s) linear var(--burst-delay, 0s) infinite;
+}
+.scene-twinkle {
+  animation: scene-twinkle var(--twinkle-duration, 6s) ease-in-out var(--twinkle-delay, 0s) infinite;
+}
+.scene-moon-float {
+  animation: scene-moon-float 22s ease-in-out infinite;
+}
+.scene-ripple {
+  animation: scene-ripple 6s ease-in-out infinite;
+}
+
 @keyframes shimmer {
-  from {
-    background-position: 200% 0;
-  }
-  to {
-    background-position: -200% 0;
-  }
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
 }
-
 @keyframes moon-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(1.75rem, -1rem, 0);
-  }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(1.75rem, -1rem, 0); }
 }
-
 @keyframes lantern-rise {
-  0% {
-    transform: translate3d(0, 18vh, 0) scale(0.85);
-    opacity: 0;
-  }
-  12% {
-    opacity: 0.9;
-  }
-  85% {
-    opacity: 0.75;
-  }
-  100% {
-    transform: translate3d(2.5rem, -85vh, 0) scale(1.1);
-    opacity: 0;
-  }
+  0% { transform: translate3d(0, 18vh, 0) scale(0.85); opacity: 0; }
+  12% { opacity: 0.9; }
+  85% { opacity: 0.75; }
+  100% { transform: translate3d(2.5rem, -85vh, 0) scale(1.1); opacity: 0; }
 }
-
 @keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.9;
-  }
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.9; }
+}
+@keyframes scene-wave-drift {
+  from { transform: translate3d(-5%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes scene-boat-glide {
+  from { transform: translate3d(-12%, 0, 0); }
+  to { transform: translate3d(112%, 0, 0); }
+}
+@keyframes scene-oar {
+  0%, 100% { transform: rotate(-18deg); }
+  50% { transform: rotate(16deg); }
+}
+@keyframes scene-lantern-drift {
+  0% { transform: translate3d(14px, 0, 0); opacity: 0.15; }
+  18% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translate3d(-52px, -30px, 0); opacity: 0; }
+}
+@keyframes scene-flame {
+  0%, 100% { transform: scale(0.88); opacity: 0.72; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+@keyframes scene-steam {
+  0% { transform: translate3d(0, 12px, 0); opacity: 0; }
+  25% { opacity: 0.55; }
+  100% { transform: translate3d(12px, -46px, 0); opacity: 0; }
+}
+@keyframes scene-burst {
+  0% { transform: scale(0.12); opacity: 0; }
+  8% { opacity: 1; }
+  55% { opacity: 0.75; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
+@keyframes scene-twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+@keyframes scene-moon-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+@keyframes scene-ripple {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.7; }
 }
 
 /* Global reduced-motion contract: no drifting, no parallax, instant flips. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    --theme-ease: 0ms;
   }
   *,
   *::before,
@@ -339,10 +554,33 @@
     transform: none;
   }
   .moon-drift,
-  .lantern-float {
+  .lantern-float,
+  .scene-anim {
     animation: none !important;
   }
   .tilt {
     transform: none !important;
   }
+}
+
+
+/* Khmer: no letter-spacing / uppercase (it breaks consonant clusters) */
+html[lang="km"] * {
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+/* Khmer: comfortable line height */
+html[lang="km"] body {
+  line-height: 1.8;
+}
+
+/* Khmer: small headings and eyebrows use the readable body font, not Moul */
+html[lang="km"] .eyebrow,
+html[lang="km"] h4,
+html[lang="km"] h5,
+html[lang="km"] h6,
+html[lang="km"] footer h3 {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
+  font-weight: 600;
 }

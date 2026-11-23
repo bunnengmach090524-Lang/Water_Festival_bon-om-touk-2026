@@ -2,9 +2,11 @@
 /**
  * Lazy-loaded, lightweight three.js lantern scene.
  * three.js is imported only when WebGL is available and motion is allowed,
- * and the whole scene is disposed on unmount.
+ * and the whole scene is disposed on unmount. Colours come from the same CSS
+ * variables as the SVG artwork, so the scene works in dark and light themes.
  */
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { theme } from '../../composables/useTheme'
 
 const host = ref(null)
 let disposed = false
@@ -15,6 +17,71 @@ let clock = null
 let cleanup = () => {}
 let intersectionObserver = null
 let resizeObserver = null
+let THREElib = null
+
+function cssColor(name) {
+  if (typeof document === 'undefined') return '#ffffff'
+  const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim()
+  return /^#[0-9a-f]{3,8}$/i.test(value) ? value : '#ffffff'
+}
+
+function toRgb(hex) {
+  const raw = String(hex).replace('#', '')
+  const full = raw.length === 3 ? raw.split('').map((char) => char + char).join('') : raw.slice(0, 6)
+  const value = parseInt(full, 16)
+  return [(value >> 16) & 255, (value >> 8) & 255, value & 255]
+}
+
+function rgba(hex, alpha) {
+  const [r, g, b] = toRgb(hex)
+  return `rgba(${r},${g},${b},${alpha})`
+}
+
+function intColor(hex) {
+  const [r, g, b] = toRgb(hex)
+  return (r << 16) | (g << 8) | b
+}
+
+let palette = {}
+function refreshPalette() {
+  palette = {
+    glow: cssColor('--scene-glow'),
+    gold: cssColor('--scene-gold'),
+    moon: cssColor('--scene-moon'),
+    water: cssColor('--scene-water-2'),
+  }
+}
+refreshPalette()
+
+function drawGlow(context) {
+  const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 32)
+  gradient.addColorStop(0, rgba(palette.moon, 1))
+  gradient.addColorStop(0.22, rgba(palette.glow, 0.65))
+  gradient.addColorStop(1, rgba(palette.gold, 0))
+  context.clearRect(0, 0, 64, 64)
+  context.fillStyle = gradient
+  context.fillRect(0, 0, 64, 64)
+}
+
+function applyPaletteToScene(state) {
+  if (!state || !THREElib) return
+  const light = theme.value === 'light'
+  state.glowMaterial.color.set(intColor(palette.glow))
+  state.glowMaterial.blending = light ? THREElib.NormalBlending : THREElib.AdditiveBlending
+  state.glowMaterial.needsUpdate = true
+  state.bodyMaterial.color.set(intColor(palette.moon))
+  state.waterMaterial.color.set(intColor(palette.water))
+  state.waterMaterial.opacity = light ? 0.42 : 0.72
+  state.reflectionMaterial.color.set(intColor(palette.gold))
+  state.reflectionMaterial.opacity = light ? 0.28 : 0.16
+  drawGlow(state.context)
+  state.glowTexture.needsUpdate = true
+}
+
+watch(theme, () => {
+  refreshPalette()
+  applyPaletteToScene(sceneState)
+})
 
 function canStart() {
   if (typeof window === 'undefined') return false
@@ -90,6 +157,8 @@ async function start() {
     return // Offline or unsupported: the CSS scene remains.
   }
   if (disposed || !host.value) return
+  THREElib = THREE
+  refreshPalette()
 
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(52, 1, 0.1, 100)
@@ -107,12 +176,7 @@ async function start() {
   textureCanvas.width = 64
   textureCanvas.height = 64
   const context = textureCanvas.getContext('2d')
-  const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 32)
-  gradient.addColorStop(0, 'rgba(255, 235, 175, 1)')
-  gradient.addColorStop(0.22, 'rgba(240, 207, 122, 0.65)')
-  gradient.addColorStop(1, 'rgba(212, 165, 72, 0)')
-  context.fillStyle = gradient
-  context.fillRect(0, 0, 64, 64)
+  drawGlow(context)
   const glowTexture = new THREE.CanvasTexture(textureCanvas)
 
   const COUNT = 32
@@ -133,26 +197,24 @@ async function start() {
   glowGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
   const glowMaterial = new THREE.PointsMaterial({
     map: glowTexture,
-    color: 0xf0cf7a,
     size: 1.15,
     transparent: true,
     opacity: 0.8,
     depthWrite: false,
-    blending: THREE.AdditiveBlending,
     sizeAttenuation: true,
   })
   scene.add(new THREE.Points(glowGeometry, glowMaterial))
 
   const bodyGeometry = new THREE.CylinderGeometry(0.1, 0.13, 0.2, 6)
-  const bodyMaterial = new THREE.MeshBasicMaterial({ color: 0xffe0a0, transparent: true, opacity: 0.9 })
+  const bodyMaterial = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.9 })
   const bodies = new THREE.InstancedMesh(bodyGeometry, bodyMaterial, COUNT)
   bodies.instanceMatrix.setUsage(THREE.DynamicDrawUsage)
   scene.add(bodies)
   const dummy = new THREE.Object3D()
 
-  // Dark water plane and faint gold reflection lines (one extra draw call).
+  // River plane and faint gold reflection lines (one extra draw call).
   const waterGeometry = new THREE.PlaneGeometry(34, 14)
-  const waterMaterial = new THREE.MeshBasicMaterial({ color: 0x0b1026, transparent: true, opacity: 0.72 })
+  const waterMaterial = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.72 })
   const water = new THREE.Mesh(waterGeometry, waterMaterial)
   water.rotation.x = -Math.PI / 2
   water.position.set(0, -3, -2)
@@ -167,7 +229,7 @@ async function start() {
   }
   const reflectionGeometry = new THREE.BufferGeometry()
   reflectionGeometry.setAttribute('position', new THREE.Float32BufferAttribute(reflectionPositions, 3))
-  const reflectionMaterial = new THREE.LineBasicMaterial({ color: 0xd4a548, transparent: true, opacity: 0.16 })
+  const reflectionMaterial = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.16 })
   scene.add(new THREE.LineSegments(reflectionGeometry, reflectionMaterial))
 
   function resize() {
@@ -192,7 +254,11 @@ async function start() {
   intersectionObserver.observe(host.value)
   document.addEventListener('visibilitychange', onVisibilityChange)
 
-  sceneState = { scene, camera, renderer, lanterns, positions, glowGeometry, bodies, dummy }
+  sceneState = {
+    scene, camera, renderer, lanterns, positions, glowGeometry, bodies, dummy,
+    context, glowTexture, glowMaterial, bodyMaterial, waterMaterial, reflectionMaterial,
+  }
+  applyPaletteToScene(sceneState)
   clock = new THREE.Clock()
   updateRunning()
 
