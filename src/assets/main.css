@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Moonlit River, Golden Temple — design tokens
+   Tailwind v4 reads @theme variables and generates matching utilities.
+   --------------------------------------------------------------------------- */
+@theme {
+  --color-midnight: #0b1026;
+  --color-night: #141b3a;
+  --color-gold: #d4a548;
+  --color-gold-light: #f0cf7a;
+  --color-crimson: #b3202a;
+  --color-ivory: #f6efe0;
+  --color-muted: #9aa8c3;
+
+  --font-display: "Cormorant Garamond", Georgia, "Noto Serif", serif;
+  --font-body: "Inter", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+
+  --shadow-gold: 0 12px 40px rgba(212, 165, 72, 0.18);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --nav-height: 4.5rem;
+  }
+
+  /* Language-aware font stacks. The <html> class is kept in sync by useLang. */
+  html.lang-km {
+    --font-display: "Moul", "Noto Sans Khmer", serif;
+    --font-body: "Noto Sans Khmer", "Inter", system-ui, sans-serif;
+  }
+  html.lang-en {
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Inter", system-ui, sans-serif;
+  }
+  html.lang-fr {
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Inter", system-ui, sans-serif;
+  }
+  html.lang-zh {
+    --font-display: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--color-ivory);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-midnight);
+    background-image:
+      radial-gradient(ellipse 70% 50% at 50% -10%, rgba(212, 165, 72, 0.12), transparent 70%),
+      radial-gradient(ellipse 90% 60% at 100% 30%, rgba(55, 74, 145, 0.18), transparent 70%),
+      linear-gradient(180deg, #0b1026 0%, #111833 55%, #141b3a 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(212, 165, 72, 0.35);
+    color: #fff8e7;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-shell {
+    @apply relative py-16 sm:py-24;
+  }
+
+  .eyebrow {
+    @apply text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-gold-light sm:text-xs;
+  }
+
+  .section-title {
+    @apply font-display text-4xl leading-[1.1] text-ivory sm:text-5xl lg:text-6xl;
+  }
+
+  .lead {
+    @apply text-base leading-8 text-muted sm:text-lg;
+  }
+
+  .glass {
+    background: rgba(11, 16, 38, 0.72);
+    border-bottom: 1px solid rgba(212, 165, 72, 0.18);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .gold-rule {
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background: linear-gradient(90deg, transparent, rgba(212, 165, 72, 0.65), transparent);
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-300;
+  }
+  .btn-primary {
+    color: #141b3a;
+    background: linear-gradient(135deg, #f0cf7a, #d4a548);
+    box-shadow: 0 4px 18px rgba(212, 165, 72, 0.22);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(212, 165, 72, 0.38);
+  }
+  .btn-ghost {
+    color: var(--color-ivory);
+    border: 1px solid rgba(240, 207, 122, 0.45);
+    background: rgba(20, 27, 58, 0.45);
+  }
+  .btn-ghost:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-gold-light);
+    background: rgba(212, 165, 72, 0.12);
+  }
+
+  .nav-link {
+    @apply relative inline-flex min-h-11 items-center text-sm font-medium text-ivory/80 transition-colors duration-300 hover:text-gold-light;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    right: 100%;
+    bottom: 0.35rem;
+    left: 0;
+    height: 1px;
+    background: var(--color-gold-light);
+    transition: right 0.3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.router-link-active::after {
+    right: 0;
+  }
+  .nav-link.router-link-active {
+    color: var(--color-gold-light);
+  }
+
+  .card-lift {
+    border: 1px solid rgba(212, 165, 72, 0.18);
+    background: linear-gradient(160deg, rgba(20, 27, 58, 0.9), rgba(11, 16, 38, 0.9));
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+  .card-lift:hover,
+  .card-lift:focus-within {
+    transform: translateY(-6px);
+    border-color: rgba(240, 207, 122, 0.55);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.38);
+  }
+
+  .image-zoom {
+    overflow: hidden;
+  }
+  .image-zoom img,
+  .image-zoom video {
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .image-zoom:hover img,
+  .image-zoom:hover video {
+    transform: scale(1.06);
+  }
+
+  .tilt {
+    transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 0.25s ease-out;
+  }
+
+  /* Scroll reveal — driven by useReveal.js */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.75s ease,
+      transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Shimmer skeleton while Cloudinary media loads */
+  .shimmer {
+    background: linear-gradient(
+      100deg,
+      rgba(20, 27, 58, 0.75) 20%,
+      rgba(212, 165, 72, 0.2) 45%,
+      rgba(20, 27, 58, 0.75) 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+
+  /* 3D flip cards */
+  .flip-card {
+    perspective: 1200px;
+  }
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .flip-card.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Page transition */
+  .page-enter-active,
+  .page-leave-active {
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+  .page-enter-from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  .page-leave-to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    border-radius: 9999px;
+    background: var(--color-gold-light);
+    color: #141b3a;
+    font-weight: 600;
+    transform: translateY(-200%);
+    transition: transform 0.2s ease;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes moon-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(1.75rem, -1rem, 0);
+  }
+}
+
+@keyframes lantern-rise {
+  0% {
+    transform: translate3d(0, 18vh, 0) scale(0.85);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(2.5rem, -85vh, 0) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* Global reduced-motion contract: no drifting, no parallax, instant flips. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .moon-drift,
+  .lantern-float {
+    animation: none !important;
+  }
+  .tilt {
+    transform: none !important;
+  }
+}

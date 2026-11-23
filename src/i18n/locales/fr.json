@@ -1,0 +1,595 @@
+{
+  "meta": {
+    "siteName": "Bon Om Touk",
+    "title": "Bon Om Touk — Fête de l'eau au Cambodge 2026",
+    "fullName": "បុណ្យអុំទូក បណ្តែតប្រទីប និងសំពះព្រះខែ អកអំបុក"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu",
+    "mainNav": "Navigation principale",
+    "openMenu": "Ouvrir le menu de navigation",
+    "closeMenu": "Fermer le menu de navigation",
+    "changeLanguage": "Choisir la langue",
+    "scrollProgress": "Progression du défilement de la page",
+    "flipCard": "Retourner la carte pour en lire davantage",
+    "lightbox": "Visionneuse d'images"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "schedule": "Programme",
+    "destinations": "Lieux",
+    "gallery": "Galerie",
+    "tips": "Conseils de voyage"
+  },
+  "lang": {
+    "label": "Langue",
+    "km": "ខ្មែរ",
+    "en": "EN",
+    "fr": "FR",
+    "zh": "中文"
+  },
+  "common": {
+    "explore": "Explorer les lieux",
+    "schedule": "Voir le programme",
+    "viewAll": "Tout voir",
+    "back": "Retour",
+    "backToPlaces": "Retour à tous les lieux",
+    "close": "Fermer",
+    "all": "Tous",
+    "search": "Rechercher",
+    "learnMore": "En savoir plus",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "openMaps": "Ouvrir dans Google Maps",
+    "highlights": "Points forts",
+    "bestTime": "Meilleur moment pour visiter",
+    "gettingThere": "Comment s'y rendre",
+    "perAnnouncement": "Selon les annonces locales, veuillez confirmer",
+    "verify": "Les informations peuvent changer, vérifiez auprès de sources officielles"
+  },
+  "home": {
+    "eyebrow": "23–25 novembre 2026 · Cambodge",
+    "titleLine1": "Bon Om Touk",
+    "titleLine2": "La Fête de l'eau",
+    "subtitle": "Quand la rivière Tonlé Sap change de sens et que la pleine lune se lève, le Cambodge se rassemble au bord de l'eau pour trois nuits de lumière, de courses de pirogues et de reconnaissance.",
+    "ctaExplore": "Explorer les lieux",
+    "ctaSchedule": "Voir le programme",
+    "countdown": {
+      "before": "Le festival commence dans",
+      "now": "En cours",
+      "night": "Nuit {n} sur 3",
+      "after": "Bon Om Touk 2026 est terminé",
+      "days": "jours",
+      "hours": "heures",
+      "minutes": "min",
+      "seconds": "s"
+    },
+    "intro": {
+      "eyebrow": "La rivière change de sens",
+      "title": "Une célébration de l'eau, de la lune et des récoltes",
+      "body": [
+        "À la fin de la saison des pluies, la rivière Tonlé Sap inverse son cours et rejoint le grand lac. Ce phénomène naturel marque une période d'abondance et est célébré depuis des générations.",
+        "Bon Om Touk porte cette célébration sur les rives : pirogues illuminées, fracas des tambours de course, salutation de la lune et partage de l'ok ambok. C'est à la fois une fête publique et une expression discrète de gratitude."
+      ]
+    },
+    "traditions": {
+      "eyebrow": "Quatre traditions",
+      "title": "Le cœur du festival",
+      "subtitle": "Chaque coutume a sa place dans les trois nuits de Bon Om Touk.",
+      "hint": "Survolez, touchez ou sélectionnez une carte pour en lire davantage"
+    },
+    "destinations": {
+      "eyebrow": "Où aller",
+      "title": "Bords de rivière, temples et points de vue au clair de lune",
+      "subtitle": "Une petite sélection de lieux où l'esprit du festival est facile à ressentir.",
+      "cta": "Tous les lieux"
+    },
+    "gallery": {
+      "eyebrow": "Un aperçu",
+      "title": "Des lumières sur l'eau",
+      "subtitle": "Lanternes, berges animées et lueur de la pleine lune.",
+      "cta": "Ouvrir la galerie"
+    }
+  },
+  "about": {
+    "eyebrow": "À propos du festival",
+    "title": "La rivière qui change de direction",
+    "lead": "Bon Om Touk est la Fête de l'eau du Cambodge, célébrée à la fin de la saison des pluies lorsque la rivière Tonlé Sap s'inverse et reflue vers le lac Tonlé Sap.",
+    "river": {
+      "title": "Un cycle naturel remarquable",
+      "body": [
+        "Pendant la mousson, le Mékong pousse l'eau dans la rivière Tonlé Sap, qui coule vers le nord-ouest jusqu'au lac. Quand les pluies faiblissent, le niveau du Mékong baisse et la rivière s'inverse, vidant le lac vers le sud-est en direction de Phnom Penh.",
+        "Ce renversement apporte le poisson et fertilise les rizières. Le festival célèbre l'eau, la récolte et la pleine lune qui éclaire ces nuits."
+      ]
+    },
+    "history": {
+      "title": "Sens et mémoire",
+      "body": [
+        "Le festival est largement compris comme une reconnaissance envers la générosité de la rivière et une célébration de la nouvelle saison de pêche et de riz.",
+        "Les courses de pirogues rappellent l'importance de la rivière et, dans la tradition khmère, d'anciennes victoires navales. Cette période est aussi un moment de retrouvailles familiales et de mérites accumulés."
+      ]
+    },
+    "traditions": {
+      "title": "Ce que les visiteurs peuvent voir",
+      "body": [
+        "Des pirogues de course aux yeux peints et aux tambours longent la rivière ; de petites barques illuminées et des lanternes sont lâchées après la tombée de la nuit ; on salue la pleine lune ; et l'ok ambok — riz aplati au lait de coco et à la banane — est partagé.",
+        "Les programmes varient d'un lieu à l'autre et d'une année à l'autre. Vérifiez toujours les annonces locales avant de préparer votre voyage."
+      ]
+    },
+    "ctaPlaces": "Trouver un lieu pour regarder",
+    "ctaSchedule": "Voir les trois nuits"
+  },
+  "schedule": {
+    "eyebrow": "Trois nuits",
+    "title": "Programme du festival",
+    "subtitle": "Un guide des trois nuits de Bon Om Touk 2026, du 23 au 25 novembre.",
+    "verifyNote": "Les informations peuvent changer, vérifiez auprès de sources officielles",
+    "phnomPenhNotice": "Les festivités officielles sur les berges de Phnom Penh pourraient être réduites ou modifiées cette année. Veuillez consulter les annonces officielles avant de vous rendre sur place.",
+    "siemReapNote": "Siem Reap a annoncé trois nuits de feux d'artifice ; la nuit 3 est prévue vers 19 h 00. Selon les annonces locales, veuillez confirmer.",
+    "nights": {
+      "n1": {
+        "label": "Nuit 1",
+        "date": "23 novembre 2026",
+        "summary": "Nuit d'ouverture : la rivière commence à se remplir de lumières.",
+        "events": [
+          {
+            "time": "Soirée",
+            "title": "Lanternes et barques illuminées",
+            "desc": "Des lanternes flottantes et des barques éclairées apparaissent le long des berges. Les programmes exacts varient selon les provinces."
+          },
+          {
+            "time": "Soirée",
+            "title": "Rassemblements autour de l'ok ambok",
+            "desc": "Familles et communautés partagent du riz aplati pilé au lait de coco et à la banane."
+          }
+        ]
+      },
+      "n2": {
+        "label": "Nuit 2",
+        "date": "24 novembre 2026 · Pleine lune",
+        "summary": "La nuit de pleine lune, souvent la plus animée.",
+        "events": [
+          {
+            "time": "Après-midi / soirée",
+            "title": "Courses de pirogues dans les provinces hôtes",
+            "desc": "Des courses ont lieu dans certaines provinces. Consultez les annonces locales pour les lieux et horaires exacts."
+          },
+          {
+            "time": "Après la tombée de la nuit",
+            "title": "Salutation de la lune et lumières flottantes",
+            "desc": "On se rassemble au bord de l'eau pour saluer la pleine lune et lâcher des lanternes."
+          }
+        ]
+      },
+      "n3": {
+        "label": "Nuit 3",
+        "date": "25 novembre 2026",
+        "summary": "La dernière nuit et les célébrations de clôture.",
+        "events": [
+          {
+            "time": "Soirée",
+            "title": "Dernière nuit au bord de la rivière",
+            "desc": "Une dernière soirée de lumières, de musique et de nourriture partagée dans de nombreuses communautés."
+          },
+          {
+            "time": "Vers 19 h 00 — Siem Reap",
+            "title": "Feux d'artifice annoncés à Siem Reap",
+            "desc": "Les annonces locales mentionnent des feux d'artifice les trois nuits, avec la nuit 3 vers 19 h 00. Veuillez confirmer sur place."
+          }
+        ]
+      }
+    }
+  },
+  "destinations": {
+    "eyebrow": "Explorer le Cambodge",
+    "title": "Lieux pour Bon Om Touk",
+    "subtitle": "Filtrez par région ou recherchez par nom. Ajoutez votre propre lieu en modifiant le fichier de données.",
+    "searchPlaceholder": "Rechercher des lieux…",
+    "filtersLabel": "Filtrer par région",
+    "count": "{count} lieux",
+    "empty": "Aucun lieu ne correspond à votre recherche. Essayez un autre mot ou une autre région.",
+    "filters": {
+      "all": "Tous",
+      "phnomPenh": "Phnom Penh",
+      "siemReap": "Siem Reap",
+      "kampot": "Kampot",
+      "more": "Autres"
+    },
+    "detail": {
+      "notFoundTitle": "Lieu introuvable",
+      "notFoundBody": "Ce lieu n'est pas encore dans notre guide.",
+      "region": "Région",
+      "mapLink": "Ouvrir dans Google Maps"
+    },
+    "items": {
+      "pp_riverside": {
+        "name": "Quai Sisowath – Berges",
+        "desc": "La longue promenade riveraine au cœur de Phnom Penh, face au Mékong et à la rivière Tonlé Sap. C'est un point de rencontre naturel pour les balades du soir et les lumières du festival.",
+        "highlights": [
+          "Large promenade piétonne le long de l'eau",
+          "Vue sur la rivière et les bateaux qui passent",
+          "Accès facile aux cafés et au vieux centre"
+        ],
+        "bestTime": "En début de soirée, avant que la foule n'arrive.",
+        "gettingThere": "Au centre de Phnom Penh ; accessible en taxi, en tuk-tuk ou à pied depuis les rues voisines."
+      },
+      "pp_royal_palace": {
+        "name": "Palais royal",
+        "desc": "L'enceinte royale au cœur de Phnom Penh, réputée pour son architecture khmère traditionnelle et la Pagode d'Argent toute proche. Elle se trouve à courte distance des berges.",
+        "highlights": [
+          "Architecture royale khmère classique",
+          "Flèches dorées et pavillons ornés",
+          "À proximité de la promenade riveraine"
+        ],
+        "bestTime": "Plus tôt dans la journée, quand la lumière est douce.",
+        "gettingThere": "Au centre de Phnom Penh, à courte distance de marche ou en tuk-tuk depuis le quai Sisowath."
+      },
+      "pp_wat_phnom": {
+        "name": "Wat Phnom",
+        "desc": "Un temple perché sur une colline à Phnom Penh, lié au récit de la fondation de la ville. Le parc environnant offre une pause paisible au-dessus des rues animées.",
+        "highlights": [
+          "Temple sur une petite colline",
+          "Parc ombragé à son pied",
+          "Courte course depuis les berges"
+        ],
+        "bestTime": "Le matin ou en fin d'après-midi.",
+        "gettingThere": "Au centre de Phnom Penh ; le taxi ou le tuk-tuk est l'option la plus facile."
+      },
+      "pp_independence_monument": {
+        "name": "Monument de l'Indépendance",
+        "desc": "Un repère du centre de Phnom Penh commémorant l'indépendance, situé sur un rond-point près de la rivière et des grands boulevards.",
+        "highlights": [
+          "Monument au style khmer distinctif",
+          "Rond-point central",
+          "Près des berges et du boulevard Norodom"
+        ],
+        "bestTime": "Le soir, quand le quartier est illuminé.",
+        "gettingThere": "Courte course en tuk-tuk ou en taxi depuis le quai Sisowath."
+      },
+      "pp_koh_pich": {
+        "name": "Koh Pich (Île du Diamant)",
+        "desc": "Un quartier insulaire au sud du centre de Phnom Penh, avec des immeubles modernes, un large front d'eau et un accès facile à la rivière.",
+        "highlights": [
+          "Skyline riverain moderne",
+          "Espaces de promenade ouverts",
+          "Belle vue sur l'eau"
+        ],
+        "bestTime": "Au coucher du soleil et en début de soirée.",
+        "gettingThere": "Au sud du centre ; empruntez un taxi ou un tuk-tuk en traversant le pont."
+      },
+      "sr_angkor_wat": {
+        "name": "Angkor Vat",
+        "desc": "Le vaste ensemble de temples près de Siem Reap, célèbre pour son architecture khmère et son reflet dans les douves environnantes au lever du soleil.",
+        "highlights": [
+          "Complexe de temples inscrit à l'UNESCO",
+          "Reflet iconique du lever de soleil",
+          "Étendue de galeries sculptées"
+        ],
+        "bestTime": "Très tôt le matin, pour le lever du soleil.",
+        "gettingThere": "Courte distance depuis la ville de Siem Reap, en tuk-tuk ou en voiture."
+      },
+      "sr_pub_street": {
+        "name": "Pub Street",
+        "desc": "La rue animée du centre de Siem Reap, bordée de restaurants, de cafés et de petites boutiques. C'est un endroit convivial pour manger après une soirée au bord de l'eau.",
+        "highlights": [
+          "Restaurants et cuisine de rue",
+          "Emplacement central facile à parcourir à pied",
+          "Ambiance nocturne"
+        ],
+        "bestTime": "Le soir, après la visite des berges.",
+        "gettingThere": "Au centre de Siem Reap, à pied depuis la plupart des hôtels voisins."
+      },
+      "sr_river": {
+        "name": "Rivière de Siem Reap",
+        "desc": "La petite rivière qui traverse Siem Reap, avec des ponts et des promenades près du vieux centre. Les annonces locales du festival mentionnent souvent ce quartier.",
+        "highlights": [
+          "Balades riveraines en ville",
+          "Ponts et lumières du soir",
+          "Près des restaurants et cafés"
+        ],
+        "bestTime": "En début de soirée.",
+        "gettingThere": "Au centre de Siem Reap ; à pied ou en courte course de tuk-tuk."
+      },
+      "sr_floating_villages": {
+        "name": "Villages flottants du Tonlé Sap",
+        "desc": "Des communautés sur le lac Tonlé Sap dont les maisons et la vie quotidienne suivent la variation du niveau de l'eau. Les visites s'organisent généralement en excursions en bateau depuis la région de Siem Reap.",
+        "highlights": [
+          "La vie sur le plus grand lac d'eau douce d'Asie du Sud-Est",
+          "Traversées en bateau sur l'eau",
+          "Vue des maisons sur pilotis et flottantes"
+        ],
+        "bestTime": "En journée, par temps stable.",
+        "gettingThere": "Généralement par la route, puis en bateau avec un opérateur local."
+      },
+      "kp_riverside": {
+        "name": "Promenade riveraine de Kampot",
+        "desc": "Un front d'eau détendu le long de la rivière Kampot, avec des vues sur les collines violettes et de petites barques. La promenade est simple et facile à explorer à pied.",
+        "highlights": [
+          "Vues paisibles sur la rivière",
+          "Petits cafés au bord de l'eau",
+          "Promenade facile à pied"
+        ],
+        "bestTime": "En fin d'après-midi et au coucher du soleil.",
+        "gettingThere": "Au centre de Kampot ; à pied depuis le centre-ville ou en tuk-tuk."
+      },
+      "kp_durian_roundabout": {
+        "name": "Rond-point du Durian",
+        "desc": "Un repère central de Kampot signalé par une grande sculpture de durian. C'est un point de rencontre bien connu et un symbole facétieux du fruit célèbre de la province.",
+        "highlights": [
+          "Repère local facile à reconnaître",
+          "Point de rencontre pratique",
+          "Près des boutiques et restaurants"
+        ],
+        "bestTime": "À toute heure de la journée.",
+        "gettingThere": "Au centre de Kampot, accessible à pied."
+      },
+      "kp_bokor": {
+        "name": "Mont Bokor",
+        "desc": "Une crête montagneuse au-dessus de Kampot, avec un air frais, de la brume et des vues panoramiques. Le site comprend d'anciens bâtiments de station d'altitude et un grand temple sur le plateau.",
+        "highlights": [
+          "Vues d'altitude sur la côte",
+          "Anciennes structures de station climatique",
+          "Air plus frais qu'en ville"
+        ],
+        "bestTime": "Le matin, quand les vues sont souvent plus dégagées.",
+        "gettingThere": "Accessible par la route depuis Kampot ; le transport doit être organisé sur place."
+      },
+      "kp_hand_bridge": {
+        "name": "Passerelle de la Main – point de vue riverain",
+        "desc": "Un point de vue riverain original près de Kampot, en forme de main ouverte. C'est un endroit prisé pour photographier l'eau et les collines au loin.",
+        "highlights": [
+          "Design inhabituel en forme de main",
+          "Vues le long de la rivière Kampot",
+          "Arrivée photo près de la ville"
+        ],
+        "bestTime": "À l'heure dorée, vers le coucher du soleil.",
+        "gettingThere": "Courte course en tuk-tuk ou en taxi depuis le centre de Kampot."
+      },
+      "more_kep": {
+        "name": "Kep",
+        "desc": "Une petite ville côtière près de Kampot, connue pour ses fruits de mer, ses plages tranquilles et sa vue sur l'île de Phu Quoc.",
+        "highlights": [
+          "Restaurants de fruits de mer",
+          "Petites plages et vues côtières",
+          "Rythme détendu"
+        ],
+        "bestTime": "En journée pour la côte, le soir pour dîner.",
+        "gettingThere": "Accessible par la route depuis Kampot ou Phnom Penh."
+      },
+      "more_battambang": {
+        "name": "Battambang",
+        "desc": "Une ville détendue du nord-ouest du Cambodge, connue pour ses bâtiments de l'époque coloniale française, ses pagodes et son atmosphère paisible au bord de la rivière.",
+        "highlights": [
+          "Rues d'époque coloniale",
+          "Balades au bord de la rivière",
+          "Arts et artisanats traditionnels"
+        ],
+        "bestTime": "Le matin et en fin d'après-midi.",
+        "gettingThere": "Accessible par la route ou par vol intérieur depuis Phnom Penh."
+      },
+      "more_kampong_cham": {
+        "name": "Kampong Cham",
+        "desc": "Une ville provinciale sur le Mékong, une étape pratique pour voir le fleuve loin de la capitale et traverser vers l'île voisine.",
+        "highlights": [
+          "Berges du Mékong",
+          "Traversée vers l'île voisine",
+          "Atmosphère provinciale paisible"
+        ],
+        "bestTime": "Tôt le matin ou au coucher du soleil.",
+        "gettingThere": "Accessible par la route depuis Phnom Penh."
+      },
+      "more_kratie": {
+        "name": "Kratié",
+        "desc": "Une ville sur le Mékong dans le nord-est du Cambodge, connue comme lieu d'observation des dauphins de l'Irrawaddy dans le fleuve.",
+        "highlights": [
+          "Zone d'observation des dauphins de l'Irrawaddy",
+          "Couchers de soleil sur le Mékong",
+          "Ville riveraine au rythme lent"
+        ],
+        "bestTime": "Tôt le matin ou en fin d'après-midi pour observer les dauphins.",
+        "gettingThere": "Accessible par la route depuis Phnom Penh ou Kampong Cham."
+      },
+      "more_sihanoukville": {
+        "name": "Sihanoukville",
+        "desc": "Une ville côtière du sud du Cambodge, avec des plages et des ports, un cadre bien différent des festivals fluviaux de l'intérieur.",
+        "highlights": [
+          "Plages côtières",
+          "Vues sur le port",
+          "Porte d'entrée vers les îles voisines"
+        ],
+        "bestTime": "En journée pour la côte.",
+        "gettingThere": "Accessible par la route ou par vol intérieur depuis Phnom Penh."
+      }
+    }
+  },
+  "traditions": {
+    "flipHint": "Survolez, touchez ou sélectionnez pour en lire davantage",
+    "items": {
+      "ok_ambok": {
+        "name": "Ok Ambok",
+        "short": "Riz aplati pilé",
+        "detail": "Le riz aplati est pilé puis mélangé au lait de coco et à la banane. Il est partagé avec la famille et les voisins pendant les nuits du festival."
+      },
+      "boat_racing": {
+        "name": "Courses de pirogues",
+        "short": "Tambours sur la rivière",
+        "detail": "De longues pirogues de course aux yeux peints s'affrontent au son des tambours. Des courses ont lieu dans plusieurs provinces, avec des programmes annoncés localement."
+      },
+      "floating_lanterns": {
+        "name": "Lanternes flottantes",
+        "short": "Lumières sur l'eau",
+        "detail": "De petites barques illuminées et des lanternes sont lâchées après la tombée de la nuit, remplissant la rivière d'une lumière mouvante."
+      },
+      "moon_salutation": {
+        "name": "Salutation de la lune",
+        "short": "Accueillir la pleine lune",
+        "detail": "On se rassemble au bord de l'eau pour saluer la pleine lune, un moment de respect et de reconnaissance au cœur du festival."
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Journal photo",
+    "title": "Galerie",
+    "subtitle": "Une planche d'ambiance visuelle pour le festival. Remplacez les identifiants de médias d'exemple par vos propres ressources Cloudinary.",
+    "categories": {
+      "all": "Tous",
+      "night": "Nuit et lanternes",
+      "river": "Rivière",
+      "temples": "Temples",
+      "city": "Ville"
+    },
+    "empty": "Aucun média dans cette catégorie pour l'instant.",
+    "videoTitle": "Images en mouvement",
+    "videoSubtitle": "Les extraits du festival ne s'affichent que lorsque les identifiants publics des vidéos ont été configurés.",
+    "lightbox": {
+      "close": "Fermer la visionneuse d'images",
+      "previous": "Image précédente",
+      "next": "Image suivante",
+      "swipeHint": "Glissez pour parcourir"
+    },
+    "captions": {
+      "gallery-01": "Lanternes dérivant sur la rivière, la nuit",
+      "gallery-02": "Promenade riveraine en début de soirée",
+      "gallery-03": "Barque illuminée sur l'eau",
+      "gallery-04": "Silhouette de temple sur le ciel crépusculaire",
+      "gallery-05": "Pleine lune au-dessus de la rivière",
+      "gallery-06": "Foule se rassemblant le long des berges",
+      "gallery-07": "Pirogue traditionnelle aux yeux peints",
+      "gallery-08": "Lumière dorée sur le toit d'un temple khmer",
+      "gallery-09": "Lumières flottantes près de la rive",
+      "gallery-10": "Étals du marché nocturne dans la ville du festival",
+      "video-01": "Ambiance du festival sur la rivière",
+      "video-02": "Lanternes et reflets après la tombée de la nuit"
+    }
+  },
+  "media": {
+    "imageMissing": "Aperçu de l'image indisponible",
+    "videoMissing": "Aperçu de la vidéo indisponible",
+    "loading": "Chargement des médias"
+  },
+  "tips": {
+    "eyebrow": "Avant de partir",
+    "title": "Conseils pratiques de voyage",
+    "subtitle": "Des conseils simples et généraux pour profiter du festival en toute sécurité et dans le respect des lieux.",
+    "note": "Les conditions et les recommandations officielles peuvent changer. Vérifiez les informations locales actuelles avant de voyager.",
+    "sections": {
+      "transport": {
+        "title": "Se déplacer",
+        "items": [
+          "Prévoyez du temps supplémentaire : les routes et les ponts près des festivités riveraines peuvent être encombrés.",
+          "Les taxis et les services de VTC sont courants en ville ; convennez du prix avant de partir lorsque c'est nécessaire.",
+          "Conservez l'adresse de votre hébergement en khmer ou sur une carte."
+        ]
+      },
+      "crowds": {
+        "title": "Foules et objets de valeur",
+        "items": [
+          "La nuit de pleine lune est généralement la plus fréquentée ; arrivez tôt pour obtenir une bonne place.",
+          "Gardez téléphones, portefeuilles et sacs près de vous, surtout dans les foules denses.",
+          "Définissez un point de rencontre avec vos compagnons en cas de séparation."
+        ]
+      },
+      "waterSafety": {
+        "title": "Sécurité sur l'eau et les bateaux",
+        "items": [
+          "Portez un gilet de sauvetage sur les bateaux et ne montez jamais sur des plates-formes flottantes instables.",
+          "Choisissez des opérateurs de bateaux agréés et évitez les sorties par vent fort ou forte pluie.",
+          "Ne nagez pas dans les zones de circulation des bateaux du festival ; surveillez attentivement les enfants près de l'eau."
+        ]
+      },
+      "etiquette": {
+        "title": "Étiquette dans les pagodes",
+        "items": [
+          "Habillez-vous modestement : couvrez les épaules et les genoux en entrant dans une pagode ou un temple.",
+          "Retirez vos chaussures avant d'entrer dans les bâtiments du temple et parlez doucement.",
+          "Demandez la permission avant de photographier des moines ou des gens en prière."
+        ]
+      },
+      "food": {
+        "title": "Nourriture et ok ambok",
+        "items": [
+          "L'ok ambok est du riz aplati mélangé au lait de coco et à la banane ; c'est une spécialité appréciée du festival.",
+          "Goûtez aux en-cas locaux dans les étals très fréquentés, où la nourriture tourne rapidement.",
+          "Buvez de l'eau en bouteille ou filtrée si votre estomac est sensible au changement."
+        ]
+      },
+      "weatherSafety": {
+        "title": "Météo et santé",
+        "items": [
+          "Fin novembre, le temps est généralement sec et chaud, mais les soirées au bord de la rivière peuvent être fraîches.",
+          "Emportez une protection solaire le jour et une couche légère pour la nuit.",
+          "Apportez des médicaments de base et vérifiez que votre assurance voyage couvre vos activités."
+        ]
+      },
+      "scams": {
+        "title": "Vigilance face aux arnaques",
+        "items": [
+          "Méfiez-vous des prix gonflés pour les transports, les excursions ou les places de visionnage privilégiées.",
+          "Vérifiez le tarif ou le prix avant d'accepter une course ou de réserver une excursion.",
+          "Conservez des copies de vos documents importants et utilisez les distributeurs dans des lieux bien éclairés et fréquentés."
+        ]
+      }
+    }
+  },
+  "dashboard": {
+    "eyebrow": "Informations aux visiteurs",
+    "title": "Statistiques du site",
+    "subtitle": "Cette page publique explique comment ce guide compte les visites et comment comparer les liens partagés sur différents canaux.",
+    "unlistedNote": "Cette page est volontairement publique et n'est pas affichée dans la navigation principale.",
+    "privacy": {
+      "title": "Ce qui est suivi",
+      "items": [
+        "Les pages vues, y compris chaque route hash que vous ouvrez",
+        "Les référents, comme les liens partagés avec une étiquette ?ref=",
+        "Le pays approximatif et le type d'appareil",
+        "Aucune donnée personnelle, aucune connexion et aucun cookie publicitaire"
+      ]
+    },
+    "publicNote": "La page des statistiques n'est publique que si l'option est activée dans les paramètres GoatCounter (Paramètres → Autoriser la vue publique).",
+    "openStats": "Ouvrir les statistiques publiques",
+    "statsTitle": "Statistiques publiques",
+    "statsIframeTitle": "Statistiques publiques GoatCounter",
+    "embedBlocked": "La page des statistiques n'a pas pu être intégrée ici. Utilisez le bouton ci-dessus pour l'ouvrir dans un nouvel onglet.",
+    "copy": {
+      "title": "Copier les liens de suivi",
+      "subtitle": "Utilisez ces liens pour comparer les clics de chaque canal dans GoatCounter.",
+      "facebook": "Facebook",
+      "telegram": "Telegram",
+      "tiktok": "TikTok",
+      "line": "LINE",
+      "other": "Autre",
+      "button": "Copier le lien",
+      "copied": "Copié",
+      "failed": "Échec de la copie — sélectionnez le lien manuellement"
+    },
+    "setup": {
+      "title": "Guide d'installation",
+      "steps": [
+        "Créez un compte GoatCounter gratuit et choisissez un code (sous-domaine).",
+        "Ajoutez VITE_GOATCOUNTER_CODE aux variables d'environnement de votre hébergement, puis reconstruisez le site.",
+        "Dans les paramètres GoatCounter, activez « Autoriser la vue publique » si vous souhaitez que la page des statistiques s'ouvre.",
+        "Partagez les liens de suivi ci-dessus ; la valeur ?ref= est enregistrée pour la visite et envoyée avec la page vue."
+      ]
+    },
+    "notConfigured": {
+      "title": "Analyse non encore configurée",
+      "body": "Définissez VITE_GOATCOUNTER_CODE dans vos variables d'environnement et reconstruisez le site pour activer les statistiques publiques. Aucune erreur n'est affichée aux visiteurs entre-temps."
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Cette page s'est éloignée",
+    "body": "La page que vous cherchez n'existe pas. Revenons ensemble au bord de la rivière.",
+    "cta": "Aller à l'accueil"
+  },
+  "footer": {
+    "tagline": "Rivière au clair de lune, temple doré. Un guide de visite indépendant pour la Fête de l'eau au Cambodge.",
+    "explore": "Explorer",
+    "information": "Informations",
+    "mediaNote": "Les médias appartiennent à leurs propriétaires",
+    "officialNote": "Ce guide est indépendant et n'est pas le site officiel du festival.",
+    "dashboard": "Statistiques du site",
+    "rights": "Guide de visite Bon Om Touk · 2026"
+  }
+}

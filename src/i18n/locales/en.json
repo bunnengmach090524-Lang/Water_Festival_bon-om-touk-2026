@@ -1,0 +1,595 @@
+{
+  "meta": {
+    "siteName": "Bon Om Touk",
+    "title": "Bon Om Touk — Cambodia Water Festival 2026",
+    "fullName": "បុណ្យអុំទូក បណ្តែតប្រទីប និងសំពះព្រះខែ អកអំបុក"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "changeLanguage": "Select language",
+    "scrollProgress": "Page scroll progress",
+    "flipCard": "Turn card over to read more",
+    "lightbox": "Image viewer"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "schedule": "Schedule",
+    "destinations": "Places",
+    "gallery": "Gallery",
+    "tips": "Travel tips"
+  },
+  "lang": {
+    "label": "Language",
+    "km": "ខ្មែរ",
+    "en": "EN",
+    "fr": "FR",
+    "zh": "中文"
+  },
+  "common": {
+    "explore": "Explore places",
+    "schedule": "See schedule",
+    "viewAll": "View all",
+    "back": "Back",
+    "backToPlaces": "Back to all places",
+    "close": "Close",
+    "all": "All",
+    "search": "Search",
+    "learnMore": "Learn more",
+    "previous": "Previous",
+    "next": "Next",
+    "openMaps": "Open in Google Maps",
+    "highlights": "Highlights",
+    "bestTime": "Best time to visit",
+    "gettingThere": "How to get there",
+    "perAnnouncement": "Per local announcements, please confirm",
+    "verify": "Information may change, verify with official sources"
+  },
+  "home": {
+    "eyebrow": "23–25 November 2026 · Cambodia",
+    "titleLine1": "Bon Om Touk",
+    "titleLine2": "The Water Festival",
+    "subtitle": "When the Tonle Sap turns and the full moon rises, Cambodia gathers by the river for three nights of light, boat races and thanksgiving.",
+    "ctaExplore": "Explore places",
+    "ctaSchedule": "See schedule",
+    "countdown": {
+      "before": "The festival begins in",
+      "now": "Happening now",
+      "night": "Night {n} of 3",
+      "after": "Bon Om Touk 2026 has ended",
+      "days": "days",
+      "hours": "hours",
+      "minutes": "min",
+      "seconds": "sec"
+    },
+    "intro": {
+      "eyebrow": "The river turns",
+      "title": "A celebration of water, moon and harvest",
+      "body": [
+        "At the end of the rainy season the Tonle Sap river reverses its flow, moving back toward the great lake. This natural event marks a time of abundance and has been welcomed for generations.",
+        "Bon Om Touk brings that welcome to the riverbanks: illuminated boats, the sound of racing drums, moon salutation and the sharing of ok ambok. It is both a public celebration and a quiet expression of gratitude."
+      ]
+    },
+    "traditions": {
+      "eyebrow": "Four traditions",
+      "title": "The heart of the festival",
+      "subtitle": "Each custom has its own place in the three nights of Bon Om Touk.",
+      "hint": "Hover, tap or focus a card to read more"
+    },
+    "destinations": {
+      "eyebrow": "Where to go",
+      "title": "Riverfronts, temples and moonlit viewpoints",
+      "subtitle": "A small selection of places where the festival spirit is easy to find.",
+      "cta": "All places"
+    },
+    "gallery": {
+      "eyebrow": "A glimpse",
+      "title": "Lights on the water",
+      "subtitle": "Lanterns, riverfronts and the glow of a full moon.",
+      "cta": "Open the gallery"
+    }
+  },
+  "about": {
+    "eyebrow": "About the festival",
+    "title": "The river that changes direction",
+    "lead": "Bon Om Touk is Cambodia's Water Festival, held at the end of the rainy season when the Tonle Sap river reverses and flows back toward the Tonle Sap lake.",
+    "river": {
+      "title": "A remarkable natural cycle",
+      "body": [
+        "During the monsoon, the Mekong pushes water into the Tonle Sap river, which flows northwest into the lake. When the rains ease, the Mekong level falls and the river reverses, draining the lake southeast toward Phnom Penh.",
+        "This reversal brings fish and replenishes the fields. The festival celebrates the water, the harvest and the full moon that lights the nights."
+      ]
+    },
+    "history": {
+      "title": "Meaning and memory",
+      "body": [
+        "The festival is widely understood as a thanksgiving for the river's bounty and a celebration of the new fishing and rice season.",
+        "Boat races recall the importance of the river and, in Khmer tradition, historic naval victories. The observance is also a time for families to gather and make merit."
+      ]
+    },
+    "traditions": {
+      "title": "What visitors can see",
+      "body": [
+        "Racing boats with painted eyes and drums move along the river; small illuminated boats and lanterns are set afloat after dark; people salute the full moon; and ok ambok — flattened rice with coconut and banana — is shared.",
+        "Programmes differ from place to place and from year to year. Always check current local announcements before making travel plans."
+      ]
+    },
+    "ctaPlaces": "Find a place to watch",
+    "ctaSchedule": "See the three nights"
+  },
+  "schedule": {
+    "eyebrow": "Three nights",
+    "title": "Festival schedule",
+    "subtitle": "A guide to the three nights of Bon Om Touk 2026, 23–25 November.",
+    "verifyNote": "Information may change, verify with official sources",
+    "phnomPenhNotice": "Official Phnom Penh riverfront events may be reduced or changed this year. Please check official announcements before you go.",
+    "siemReapNote": "Siem Reap has announced three nights of fireworks; Night 3 is listed around 7:00 PM. Per local announcements, please confirm.",
+    "nights": {
+      "n1": {
+        "label": "Night 1",
+        "date": "23 November 2026",
+        "summary": "Opening night: the river begins to fill with lights.",
+        "events": [
+          {
+            "time": "Evening",
+            "title": "Lanterns and illuminated boats",
+            "desc": "Floating lanterns and lit boats appear along the riverfront. Exact programmes vary by province."
+          },
+          {
+            "time": "Evening",
+            "title": "Ok ambok gatherings",
+            "desc": "Families and communities share pounded flattened rice with coconut and banana."
+          }
+        ]
+      },
+      "n2": {
+        "label": "Night 2",
+        "date": "24 November 2026 · Full moon",
+        "summary": "The full moon night, often the busiest evening.",
+        "events": [
+          {
+            "time": "Afternoon / evening",
+            "title": "Boat racing in hosting provinces",
+            "desc": "Races are held in some provinces. Check local announcements for exact locations and times."
+          },
+          {
+            "time": "After dark",
+            "title": "Moon salutation and floating lights",
+            "desc": "People gather by the water to salute the full moon and release lanterns."
+          }
+        ]
+      },
+      "n3": {
+        "label": "Night 3",
+        "date": "25 November 2026",
+        "summary": "The final night and closing celebrations.",
+        "events": [
+          {
+            "time": "Evening",
+            "title": "Final night on the river",
+            "desc": "A last evening of lights, music and shared food in many communities."
+          },
+          {
+            "time": "Around 7:00 PM — Siem Reap",
+            "title": "Fireworks announced in Siem Reap",
+            "desc": "Local announcements list fireworks on all three nights, with Night 3 around 7:00 PM. Please confirm locally."
+          }
+        ]
+      }
+    }
+  },
+  "destinations": {
+    "eyebrow": "Explore Cambodia",
+    "title": "Places for Bon Om Touk",
+    "subtitle": "Filter by region or search by name. Add your own place by editing the data file.",
+    "searchPlaceholder": "Search places…",
+    "filtersLabel": "Filter by region",
+    "count": "{count} places",
+    "empty": "No places match your search. Try another word or region.",
+    "filters": {
+      "all": "All",
+      "phnomPenh": "Phnom Penh",
+      "siemReap": "Siem Reap",
+      "kampot": "Kampot",
+      "more": "More"
+    },
+    "detail": {
+      "notFoundTitle": "Place not found",
+      "notFoundBody": "This place is not in our guide yet.",
+      "region": "Region",
+      "mapLink": "Open in Google Maps"
+    },
+    "items": {
+      "pp_riverside": {
+        "name": "Sisowath Quay Riverside",
+        "desc": "The long riverfront promenade in central Phnom Penh, facing the Mekong and the Tonle Sap. It is a natural meeting point for evening strolls and festival lights.",
+        "highlights": [
+          "Wide pedestrian walkway along the water",
+          "Views of the river and passing boats",
+          "Easy access to cafés and the old centre"
+        ],
+        "bestTime": "Early evening, before the crowds grow.",
+        "gettingThere": "Located in central Phnom Penh; reachable by taxi, tuk-tuk or a walk from the nearby streets."
+      },
+      "pp_royal_palace": {
+        "name": "Royal Palace",
+        "desc": "The royal compound in central Phnom Penh, known for its traditional Khmer architecture and the nearby Silver Pagoda. It stands a short distance from the riverfront.",
+        "highlights": [
+          "Classic Khmer royal architecture",
+          "Golden spires and decorated pavilions",
+          "Close to the riverside promenade"
+        ],
+        "bestTime": "Earlier in the day when the light is soft.",
+        "gettingThere": "In central Phnom Penh, a short walk or tuk-tuk ride from Sisowath Quay."
+      },
+      "pp_wat_phnom": {
+        "name": "Wat Phnom",
+        "desc": "A hilltop temple in Phnom Penh, associated with the city's founding story. The surrounding park offers a calm pause above the busy streets.",
+        "highlights": [
+          "Temple on a small hill",
+          "Shaded park at the base",
+          "A short ride from the riverfront"
+        ],
+        "bestTime": "Morning or late afternoon.",
+        "gettingThere": "In the centre of Phnom Penh; taxi or tuk-tuk is the easiest option."
+      },
+      "pp_independence_monument": {
+        "name": "Independence Monument",
+        "desc": "A landmark in central Phnom Penh commemorating independence, set at a roundabout near the river and the main boulevards.",
+        "highlights": [
+          "Distinctive Khmer-style monument",
+          "Central roundabout location",
+          "Near the riverfront and Norodom Boulevard"
+        ],
+        "bestTime": "Evening, when the area is lit up.",
+        "gettingThere": "A short tuk-tuk or taxi ride from Sisowath Quay."
+      },
+      "pp_koh_pich": {
+        "name": "Koh Pich (Diamond Island)",
+        "desc": "A river island district south of central Phnom Penh with modern buildings, a broad waterfront and easy access to the river.",
+        "highlights": [
+          "Modern riverside skyline",
+          "Open promenade areas",
+          "Good views across the water"
+        ],
+        "bestTime": "Sunset and early evening.",
+        "gettingThere": "South of the centre; take a taxi or tuk-tuk across the bridge."
+      },
+      "sr_angkor_wat": {
+        "name": "Angkor Wat",
+        "desc": "The great temple complex near Siem Reap, famous for its Khmer architecture and its reflection in the surrounding moat at sunrise.",
+        "highlights": [
+          "UNESCO-listed temple complex",
+          "Iconic sunrise reflection",
+          "Extensive carved galleries"
+        ],
+        "bestTime": "Very early morning for sunrise.",
+        "gettingThere": "A short drive from Siem Reap town by tuk-tuk or car."
+      },
+      "sr_pub_street": {
+        "name": "Pub Street",
+        "desc": "The busy central street in Siem Reap, lined with restaurants, cafés and small shops. It is a lively place to eat after an evening by the river.",
+        "highlights": [
+          "Restaurants and street food",
+          "Walkable central location",
+          "Night-time energy"
+        ],
+        "bestTime": "Evening, after visiting the river.",
+        "gettingThere": "In the centre of Siem Reap, walkable from most nearby hotels."
+      },
+      "sr_river": {
+        "name": "Siem Reap River",
+        "desc": "The small river running through Siem Reap, with bridges and promenades close to the old centre. Local festival announcements often mention this area.",
+        "highlights": [
+          "Riverside walks in town",
+          "Bridges and evening lights",
+          "Close to restaurants and cafés"
+        ],
+        "bestTime": "Early evening.",
+        "gettingThere": "In central Siem Reap; walk or take a short tuk-tuk ride."
+      },
+      "sr_floating_villages": {
+        "name": "Tonle Sap Floating Villages",
+        "desc": "Communities on the Tonle Sap lake whose homes and daily life follow the changing water level. Visits are usually arranged as boat trips from the Siem Reap area.",
+        "highlights": [
+          "Life on Southeast Asia's largest freshwater lake",
+          "Boat journeys across the water",
+          "Views of stilted and floating homes"
+        ],
+        "bestTime": "Daytime, with stable weather.",
+        "gettingThere": "Usually reached by road and then boat through a local operator."
+      },
+      "kp_riverside": {
+        "name": "Kampot Riverside Promenade",
+        "desc": "A relaxed waterfront along the Kampot River, with views of the violet hills and small boats. The promenade is simple and easy to explore on foot.",
+        "highlights": [
+          "Calm river views",
+          "Small riverside cafés",
+          "Walkable promenade"
+        ],
+        "bestTime": "Late afternoon and sunset.",
+        "gettingThere": "In central Kampot; walk from the town centre or take a tuk-tuk."
+      },
+      "kp_durian_roundabout": {
+        "name": "Durian Roundabout",
+        "desc": "A central Kampot landmark marked by a large durian sculpture. It is a well-known meeting point and a playful symbol of the province's famous fruit.",
+        "highlights": [
+          "Recognisable local landmark",
+          "Easy meeting point",
+          "Close to shops and restaurants"
+        ],
+        "bestTime": "Any time of day.",
+        "gettingThere": "In the centre of Kampot town, reachable on foot."
+      },
+      "kp_bokor": {
+        "name": "Bokor Mountain",
+        "desc": "A mountain ridge above Kampot with cool air, mist and panoramic views. The area includes old hill-station buildings and a large temple on the plateau.",
+        "highlights": [
+          "Highland views over the coast",
+          "Old hill-station structures",
+          "Cooler air than the town below"
+        ],
+        "bestTime": "Morning, when views are often clearer.",
+        "gettingThere": "Reached by road from Kampot; transport should be arranged locally."
+      },
+      "kp_hand_bridge": {
+        "name": "Riverside Hand Viewing Bridge",
+        "desc": "A distinctive riverside viewpoint near Kampot, shaped like an open hand. It is a popular spot for photos over the water and the hills beyond.",
+        "highlights": [
+          "Unusual hand-shaped design",
+          "Views along the Kampot River",
+          "Photo stop close to town"
+        ],
+        "bestTime": "Golden hour near sunset.",
+        "gettingThere": "A short tuk-tuk or taxi ride from central Kampot."
+      },
+      "more_kep": {
+        "name": "Kep",
+        "desc": "A small coastal town near Kampot known for its seafood, quiet beaches and views across to Phu Quoc island.",
+        "highlights": [
+          "Seafood restaurants",
+          "Small beaches and coastal views",
+          "Relaxed pace"
+        ],
+        "bestTime": "Daytime for the coast, evening for dinner.",
+        "gettingThere": "Reached by road from Kampot or Phnom Penh."
+      },
+      "more_battambang": {
+        "name": "Battambang",
+        "desc": "A laid-back city in northwest Cambodia, known for old French-era buildings, pagodas and a slow riverside atmosphere.",
+        "highlights": [
+          "Colonial-era streetscape",
+          "River walks",
+          "Traditional arts and crafts"
+        ],
+        "bestTime": "Morning and late afternoon.",
+        "gettingThere": "Reached by road or domestic flight from Phnom Penh."
+      },
+      "more_kampong_cham": {
+        "name": "Kampong Cham",
+        "desc": "A provincial town on the Mekong, a convenient stop for seeing the river away from the capital and crossing to the nearby island.",
+        "highlights": [
+          "Mekong riverfront",
+          "Nearby island crossing",
+          "Calm provincial atmosphere"
+        ],
+        "bestTime": "Early morning or sunset.",
+        "gettingThere": "Reached by road from Phnom Penh."
+      },
+      "more_kratie": {
+        "name": "Kratie",
+        "desc": "A town on the Mekong in northeastern Cambodia, known as a place to see Irrawaddy dolphins in the river.",
+        "highlights": [
+          "Irrawaddy dolphin viewing area",
+          "Mekong sunsets",
+          "Slow riverside town"
+        ],
+        "bestTime": "Early morning or late afternoon for dolphin watching.",
+        "gettingThere": "Reached by road from Phnom Penh or Kampong Cham."
+      },
+      "more_sihanoukville": {
+        "name": "Sihanoukville",
+        "desc": "A coastal city in southern Cambodia with beaches and harbours, a different setting from the river festivals inland.",
+        "highlights": [
+          "Coastal beaches",
+          "Harbour views",
+          "Gateway to nearby islands"
+        ],
+        "bestTime": "Daytime for the coast.",
+        "gettingThere": "Reached by road or domestic flight from Phnom Penh."
+      }
+    }
+  },
+  "traditions": {
+    "flipHint": "Hover, tap or focus to read more",
+    "items": {
+      "ok_ambok": {
+        "name": "Ok Ambok",
+        "short": "Pounded flattened rice",
+        "detail": "Flattened rice is pounded and mixed with coconut and banana. It is shared with family and neighbours during the festival nights."
+      },
+      "boat_racing": {
+        "name": "Boat Racing",
+        "short": "Drums on the river",
+        "detail": "Long racing boats with painted eyes compete to the sound of drums. Races are held in several provinces, with programmes announced locally."
+      },
+      "floating_lanterns": {
+        "name": "Floating Lanterns",
+        "short": "Lights on the water",
+        "detail": "Small illuminated boats and lanterns are set afloat after dark, filling the river with moving light."
+      },
+      "moon_salutation": {
+        "name": "Moon Salutation",
+        "short": "Welcoming the full moon",
+        "detail": "People gather by the water to salute the full moon, a moment of respect and thanksgiving at the heart of the festival."
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Photo journal",
+    "title": "Gallery",
+    "subtitle": "A visual mood board for the festival. Replace the sample media IDs with your own Cloudinary assets.",
+    "categories": {
+      "all": "All",
+      "night": "Night & lanterns",
+      "river": "River",
+      "temples": "Temples",
+      "city": "City"
+    },
+    "empty": "No media in this category yet.",
+    "videoTitle": "Moving pictures",
+    "videoSubtitle": "Festival clips are shown only when video public IDs have been configured.",
+    "lightbox": {
+      "close": "Close image viewer",
+      "previous": "Previous image",
+      "next": "Next image",
+      "swipeHint": "Swipe to browse"
+    },
+    "captions": {
+      "gallery-01": "Lanterns drifting on the river at night",
+      "gallery-02": "Riverside promenade in the early evening",
+      "gallery-03": "Illuminated boat on the water",
+      "gallery-04": "Temple silhouette against the twilight sky",
+      "gallery-05": "Full moon above the river",
+      "gallery-06": "Crowds gathering along the waterfront",
+      "gallery-07": "Traditional boat with painted eyes",
+      "gallery-08": "Golden light on a Khmer temple roof",
+      "gallery-09": "Floating lights near the riverbank",
+      "gallery-10": "Night market stalls in the festival city",
+      "video-01": "Festival atmosphere on the river",
+      "video-02": "Lanterns and reflections after dark"
+    }
+  },
+  "media": {
+    "imageMissing": "Image preview unavailable",
+    "videoMissing": "Video preview unavailable",
+    "loading": "Loading media"
+  },
+  "tips": {
+    "eyebrow": "Before you go",
+    "title": "Practical travel tips",
+    "subtitle": "Simple, general advice to help you enjoy the festival safely and respectfully.",
+    "note": "Conditions and official guidance can change. Check current local information before you travel.",
+    "sections": {
+      "transport": {
+        "title": "Getting around",
+        "items": [
+          "Plan extra time: roads and bridges near river events can be busy.",
+          "Taxis and ride-hailing are common in cities; agree the price before setting off where needed.",
+          "Keep your accommodation address saved in Khmer or on a map."
+        ]
+      },
+      "crowds": {
+        "title": "Crowds and valuables",
+        "items": [
+          "The full moon night is usually the busiest; arrive early for a good viewing spot.",
+          "Keep phones, wallets and bags close, especially in dense crowds.",
+          "Agree a meeting point with companions in case you are separated."
+        ]
+      },
+      "waterSafety": {
+        "title": "Boat and water safety",
+        "items": [
+          "Wear a life jacket on boats and never step onto unstable floating platforms.",
+          "Choose licensed boat operators and avoid trips in strong wind or heavy rain.",
+          "Do not swim in festival traffic areas; keep a close watch on children near the water."
+        ]
+      },
+      "etiquette": {
+        "title": "Pagoda etiquette",
+        "items": [
+          "Dress modestly: cover shoulders and knees when entering a pagoda or temple.",
+          "Remove shoes before entering temple buildings and speak softly.",
+          "Ask before photographing monks or people at prayer."
+        ]
+      },
+      "food": {
+        "title": "Food and ok ambok",
+        "items": [
+          "Ok ambok is flattened rice mixed with coconut and banana; it is a festival favourite.",
+          "Try local snacks from busy stalls where food turns over quickly.",
+          "Drink bottled or filtered water if your stomach is sensitive to changes."
+        ]
+      },
+      "weatherSafety": {
+        "title": "Weather and health",
+        "items": [
+          "Late November is generally dry and warm, but evenings by the river can be cool.",
+          "Carry sun protection in the day and a light layer for the night.",
+          "Bring basic medicine and check that your travel insurance covers your plans."
+        ]
+      },
+      "scams": {
+        "title": "Scam awareness",
+        "items": [
+          "Be cautious of inflated prices for transport, tours or priority viewing spots.",
+          "Check the fare or price before accepting a ride or booking a trip.",
+          "Keep copies of important documents and use ATMs in well-lit, busy places."
+        ]
+      }
+    }
+  },
+  "dashboard": {
+    "eyebrow": "Visitor information",
+    "title": "Site statistics",
+    "subtitle": "This public page explains how this guide counts visits and how to compare links shared on different channels.",
+    "unlistedNote": "This page is public by design and is intentionally not shown in the main navigation.",
+    "privacy": {
+      "title": "What is tracked",
+      "items": [
+        "Page views, including each hash route you open",
+        "Referrers, such as links shared with a ?ref= label",
+        "Approximate country and device type",
+        "No personal data, no login and no advertising cookies"
+      ]
+    },
+    "publicNote": "The stats page is public only if enabled in GoatCounter settings (Settings → Allow public view).",
+    "openStats": "Open public statistics",
+    "statsTitle": "Public statistics",
+    "statsIframeTitle": "GoatCounter public statistics",
+    "embedBlocked": "The statistics page could not be embedded here. Use the button above to open it in a new tab.",
+    "copy": {
+      "title": "Copy tracking links",
+      "subtitle": "Use these links to compare clicks from each channel in GoatCounter.",
+      "facebook": "Facebook",
+      "telegram": "Telegram",
+      "tiktok": "TikTok",
+      "line": "LINE",
+      "other": "Other",
+      "button": "Copy link",
+      "copied": "Copied",
+      "failed": "Copy failed — select the link manually"
+    },
+    "setup": {
+      "title": "Setup guide",
+      "steps": [
+        "Create a free GoatCounter account and choose a code (subdomain).",
+        "Add VITE_GOATCOUNTER_CODE to your hosting environment variables, then rebuild.",
+        "In GoatCounter settings, enable “Allow public view” if you want the stats page to open.",
+        "Share the tracking links above; the ?ref= value is stored for the visit and sent with the page view."
+      ]
+    },
+    "notConfigured": {
+      "title": "Analytics not configured yet",
+      "body": "Set VITE_GOATCOUNTER_CODE in your environment variables and rebuild the site to enable public statistics. No errors are shown to visitors in the meantime."
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "This page drifted away",
+    "body": "The page you are looking for does not exist. Let's get you back to the river.",
+    "cta": "Go to the homepage"
+  },
+  "footer": {
+    "tagline": "Moonlit river, golden temple. An independent visitor guide to Cambodia's Water Festival.",
+    "explore": "Explore",
+    "information": "Information",
+    "mediaNote": "Media belongs to its owners",
+    "officialNote": "This is an independent guide, not an official festival website.",
+    "dashboard": "Site statistics",
+    "rights": "Bon Om Touk visitor guide · 2026"
+  }
+}
