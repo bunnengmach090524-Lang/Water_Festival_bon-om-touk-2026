@@ -88,7 +88,7 @@ const teaserImages = galleryImages.slice(0, 3)
     <!-- HERO --------------------------------------------------------------- -->
     <section class="relative isolate flex min-h-[min(900px,100svh)] items-center overflow-hidden pb-28 pt-20 sm:pb-32">
       <!-- All decorative layers stay below the readability scrim and hero copy. -->
-      <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+      <div class="hero-effects pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <MoonGlow />
         <Lanterns />
         <Hero3D />
@@ -99,14 +99,14 @@ const teaserImages = galleryImages.slice(0, 3)
 
       <div class="site-container relative z-10 text-center">
         <p v-reveal class="eyebrow">{{ t('home.eyebrow') }}</p>
-        <h1 v-reveal="80" class="mt-5 font-display text-5xl leading-[0.95] text-ivory sm:text-7xl lg:text-8xl">
+        <h1 v-reveal="80" class="hero-title mt-5 font-display text-5xl leading-[0.95] text-ivory sm:text-7xl lg:text-8xl">
           <span class="block">{{ t('home.titleLine1') }}</span>
           <span class="mt-2 block text-gold-light sm:mt-4">{{ t('home.titleLine2') }}</span>
         </h1>
-        <p v-reveal="160" class="mt-6 font-display text-base text-gold-light sm:text-xl">
+        <p v-reveal="160" class="hero-date mt-6 font-display text-base text-gold-light sm:text-xl">
           {{ t('meta.fullName') }}
         </p>
-        <p v-reveal="220" class="lead mx-auto mt-6 max-w-2xl">
+        <p v-reveal="220" class="hero-subtitle lead mx-auto mt-6 max-w-2xl">
           {{ t('home.subtitle') }}
         </p>
 
@@ -138,7 +138,7 @@ const teaserImages = galleryImages.slice(0, 3)
         </div>
       </div>
 
-      <WaveDivider class="absolute inset-x-0 bottom-0" />
+      <WaveDivider class="hero-wave absolute inset-x-0 bottom-0 z-[1]" />
     </section>
 
     <!-- INTRO -------------------------------------------------------------- -->

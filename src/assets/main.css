@@ -584,3 +584,106 @@ html[lang="km"] footer h3 {
   font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
   font-weight: 600;
 }
+
+/* Khmer display headings need extra room for tall vowels and subscripts.
+   These rules are scoped to `lang="km"` so en/fr and zh keep their sizes. */
+html[lang="km"] h1,
+html[lang="km"] h2,
+html[lang="km"] h3 {
+  line-height: 1.55 !important;
+}
+
+html[lang="km"] .hero-title {
+  margin-top: 1.75rem !important;
+  margin-bottom: 1.25rem !important;
+  font-size: 2.25rem !important;
+  line-height: 1.6 !important;
+}
+
+html[lang="km"] .hero-title span + span {
+  margin-top: 0.75rem !important;
+}
+
+html[lang="km"] .hero-subtitle {
+  margin-top: 1.75rem !important;
+}
+
+@media (min-width: 640px) {
+  html[lang="km"] .hero-title {
+    font-size: 3rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  html[lang="km"] .hero-title {
+    font-size: 3.75rem !important;
+  }
+}
+
+/* Home hero: remove the hard-edged wave/water block and soften its ends. */
+.hero-wave,
+.hero-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+}
+
+.hero-wave svg path:first-child {
+  fill: transparent !important;
+}
+
+/* Hero lanterns: only the soft radial glow remains — no borders or blocks. */
+.hero-effects .hero-canvas-host {
+  mix-blend-mode: screen;
+}
+
+.hero-effects .hero-lanterns .lantern-body,
+.hero-effects .hero-lanterns .lantern-flame {
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 50% 50%,
+    var(--scene-moon) 0%,
+    color-mix(in srgb, var(--scene-glow) 62%, transparent) 38%,
+    color-mix(in srgb, var(--scene-gold) 12%, transparent) 70%,
+    transparent 100%) !important;
+  box-shadow: 0 0 16px 5px color-mix(in srgb, var(--scene-glow) 38%, transparent) !important;
+  mix-blend-mode: screen;
+}
+
+.hero-effects .hero-lanterns .lantern-body {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.hero-effects .hero-lanterns .lantern-flame {
+  width: 6px !important;
+  height: 6px !important;
+  margin: -3px 0 0 -3px !important;
+}
+
+.hero-effects .hero-lanterns .lantern-body::before {
+  display: none !important;
+}
+
+.hero-effects .hero-lanterns .lantern-glow {
+  width: 44px !important;
+  height: 44px !important;
+  margin: -22px 0 0 -22px !important;
+  filter: blur(5px) !important;
+}
+
+html[data-theme="dark"] .hero-effects .hero-lanterns .lantern-body,
+html[data-theme="dark"] .hero-effects .hero-lanterns .lantern-flame,
+html[data-theme="dark"] .hero-effects .hero-canvas-host {
+  mix-blend-mode: plus-lighter;
+}
+
+html[data-theme="dark"] .hero-effects .hero-canvas-host {
+  opacity: 0.72;
+}
+
+html[data-theme="light"] .hero-effects .hero-lanterns .lantern-body,
+html[data-theme="light"] .hero-effects .hero-lanterns .lantern-flame,
+html[data-theme="light"] .hero-effects .hero-canvas-host {
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
