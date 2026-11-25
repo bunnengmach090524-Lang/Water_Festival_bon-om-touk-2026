@@ -2,7 +2,19 @@
   "meta": {
     "siteName": "Bon Om Touk",
     "title": "Bon Om Touk — Fête de l'eau au Cambodge 2026",
-    "fullName": "បុណ្យអុំទូក បណ្តែតប្រទីប និងសំពះព្រះខែ អកអំបុក"
+    "fullName": "ព្រះរាជពិធីបុណ្យអុំទូក បណ្តែតប្រទីប អកអំបុក និងសំពះព្រះខែ"
+  },
+  "photoViewer": {
+    "title": "Galerie photo",
+    "previous": "Photo précédente",
+    "next": "Photo suivante",
+    "open": "Ouvrir la photo {n} sur {total}",
+    "photoOf": "Photo {n} sur {total}",
+    "counter": "{n} / {total}",
+    "comingSoon": "Photo à venir",
+    "video": "Vidéo",
+    "play": "Lire la vidéo",
+    "videoSlot": "Vidéo"
   },
   "a11y": {
     "skipToContent": "Aller au contenu",
@@ -60,7 +72,11 @@
     "bestTime": "Meilleur moment pour visiter",
     "gettingThere": "Comment s'y rendre",
     "perAnnouncement": "Selon les annonces locales, veuillez confirmer",
-    "verify": "Les informations peuvent changer, vérifiez auprès de sources officielles"
+    "verify": "Les informations peuvent changer, vérifiez auprès de sources officielles",
+    "reportedVerify": "Selon des informations rapportées, veuillez vérifier les annonces officielles",
+    "share": "Partager",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié"
   },
   "home": {
     "eyebrow": "23–25 novembre 2026 · Cambodge",
@@ -132,15 +148,49 @@
       ]
     },
     "ctaPlaces": "Trouver un lieu pour regarder",
-    "ctaSchedule": "Voir les trois nuits"
+    "ctaSchedule": "Voir les trois nuits",
+    "calendar": {
+      "title": "Les jours du festival et la pleine lune",
+      "body": [
+        "Selon la tradition, le festival royal couvre les 14e et 15e jours croissants et le 1er jour décroissant de Kadeuk, soit trois jours.",
+        "La salutation de la lune et l’ok ambok ont lieu lors de la nuit de pleine lune, le 15e jour croissant de Kadeuk (ថ្ងៃពេញបូណ៌មី). En 2026, cela correspond au 24 novembre."
+      ]
+    },
+    "origins": {
+      "title": "Origines traditionnellement expliquées",
+      "body": [
+        "Deux récits expliquent traditionnellement la course : elle est liée au règne du roi Jayavarman VII à la fin du XIIe siècle et à la victoire de la marine khmère sur les forces chames sur le Tonlé Sap.",
+        "Les bas-reliefs de bataille navale du Bayon et de Banteay Chhmar sont souvent cités comme indices de ce récit.",
+        "La fête est aussi traditionnellement expliquée comme une action de grâce à la fin de la saison des pluies, lorsque la rivière Tonlé Sap change de sens."
+      ],
+      "linkBayon": "Bas-reliefs du Bayon",
+      "linkBanteayChhmar": "Bas-reliefs de Banteay Chhmar"
+    },
+    "modern": {
+      "title": "À l’époque moderne",
+      "body": [
+        "Le festival a été suspendu pendant la période de guerre civile, puis rétabli."
+      ]
+    },
+    "sources": {
+      "title": "Sources",
+      "items": [
+        "RFA Khmer",
+        "AKP",
+        "Kampuchea Thmey",
+        "Wikipedia \"Bon Om Touk\"",
+        "Phnom Penh Post",
+        "The Star (ASEAN+)",
+        "Xinhua/Cambodianess"
+      ]
+    }
   },
   "schedule": {
     "eyebrow": "Trois nuits",
     "title": "Programme du festival",
     "subtitle": "Un guide des trois nuits de Bon Om Touk 2026, du 23 au 25 novembre.",
     "verifyNote": "Les informations peuvent changer, vérifiez auprès de sources officielles",
-    "phnomPenhNotice": "Les festivités officielles sur les berges de Phnom Penh pourraient être réduites ou modifiées cette année. Veuillez consulter les annonces officielles avant de vous rendre sur place.",
-    "siemReapNote": "Siem Reap a annoncé trois nuits de feux d'artifice ; la nuit 3 est prévue vers 19 h 00. Selon les annonces locales, veuillez confirmer.",
+    "phnomPenhNotice": "Pour 2026, il a été rapporté que le programme officiel des berges de Phnom Penh était annulé, alors que le congé public de trois jours était maintenu. Veuillez vérifier les annonces officielles.",
     "nights": {
       "n1": {
         "label": "Nuit 1",
@@ -193,12 +243,54 @@
           }
         ]
       }
+    },
+    "royalSpan": "Selon la tradition, le festival royal couvre les 14e et 15e jours croissants et le 1er jour décroissant de Kadeuk, soit trois jours.",
+    "fullMoonNote": "La salutation de la lune et l’ok ambok ont lieu lors de la nuit de pleine lune, le 15e jour croissant de Kadeuk (ថ្ងៃពេញបូណ៌មី). En 2026, cela correspond au 24 novembre.",
+    "holidayNote": "Le congé public national va du 23 au 25 novembre 2026, mais les provinces peuvent organiser leurs propres courses de pirogues et festivités à d’autres dates. Veuillez confirmer sur place.",
+    "n2": {
+      "date": "24 novembre 2026 · Pleine lune",
+      "summary": "Nuit de pleine lune : salutation de la lune et ok ambok sont au cœur des célébrations.",
+      "events": [
+        {
+          "time": "Après-midi / soirée",
+          "title": "Courses de pirogues dans les provinces hôtes",
+          "desc": "Des courses ont lieu dans certaines provinces. Consultez les annonces locales pour les lieux et horaires exacts."
+        },
+        {
+          "time": "Après la tombée de la nuit",
+          "title": "Salutation de la lune lors de la nuit de pleine lune",
+          "desc": "On se rassemble au bord de l’eau pour saluer la pleine lune."
+        },
+        {
+          "time": "Nuit de pleine lune",
+          "title": "Ok ambok",
+          "desc": "Le riz de la nouvelle récolte est torréfié, pilé, puis mélangé à la noix de coco et à la banane et offert à la lune en remerciement."
+        }
+      ]
+    },
+    "n1": {
+      "events": [
+        {
+          "time": "Soirée",
+          "title": "Lanternes et barques illuminées",
+          "desc": "Des lanternes flottantes et des barques éclairées apparaissent le long des berges. Les programmes exacts varient selon les provinces."
+        }
+      ]
+    },
+    "n3": {
+      "events": [
+        {
+          "time": "Soirée",
+          "title": "Dernière nuit au bord de la rivière",
+          "desc": "Une dernière soirée de lumières, de musique et de nourriture partagée dans de nombreuses communautés."
+        }
+      ]
     }
   },
   "destinations": {
     "eyebrow": "Explorer le Cambodge",
     "title": "Lieux pour Bon Om Touk",
-    "subtitle": "Filtrez par région ou recherchez par nom. Ajoutez votre propre lieu en modifiant le fichier de données.",
+    "subtitle": "Filtrez par province ou par région, ou recherchez par nom.",
     "searchPlaceholder": "Rechercher des lieux…",
     "filtersLabel": "Filtrer par région",
     "count": "{count} lieux",
@@ -213,8 +305,17 @@
     "detail": {
       "notFoundTitle": "Lieu introuvable",
       "notFoundBody": "Ce lieu n'est pas encore dans notre guide.",
-      "region": "Région",
-      "mapLink": "Ouvrir dans Google Maps"
+      "region": "Province",
+      "mapLink": "Ouvrir dans Google Maps",
+      "reportedTitle": "Rapport 2026",
+      "galleryTitle": "Galerie du lieu",
+      "galleryCaption": "{name} — photo {n}",
+      "galleryFallback": "Aperçu illustré thématique",
+      "videoTitle": "Vidéo",
+      "videoCredit": "Vidéo de la collection multimédia du projet",
+      "openYouTube": "Ouvrir sur YouTube",
+      "playYouTube": "Lire la vidéo sur YouTube",
+      "moreInProvince": "Autres lieux dans {province}"
     },
     "items": {
       "pp_riverside": {
@@ -414,7 +515,157 @@
         ],
         "bestTime": "En journée pour la côte.",
         "gettingThere": "Accessible par la route ou par vol intérieur depuis Phnom Penh."
+      },
+      "sr_bayon": {
+        "name": "Bayon",
+        "desc": "Un temple d’Angkor Thom près de Siem Reap, connu pour ses visages sculptés et ses bas-reliefs de bataille navale."
+      },
+      "bm_banteay_chhmar": {
+        "name": "Banteay Chhmar",
+        "desc": "Un complexe templier de Banteay Meanchey dont les bas-reliefs sont souvent comparés à ceux du Bayon."
+      },
+      "bm_sreisophoan": {
+        "name": "Ruisseau Sreisophoan",
+        "desc": "Un cours d’eau à Sisophon servant de lieu de rassemblement au bord de l’eau."
+      },
+      "kc_wat_nokor": {
+        "name": "Wat Nokor",
+        "desc": "Une ancienne pagode près de Kampong Cham mêlant des structures de différentes époques au bord du Mékong."
+      },
+      "kch_floating_villages": {
+        "name": "Villages flottants de Kampong Chhnang",
+        "desc": "Des villages sur le Tonlé Sap près de Kampong Chhnang, où les maisons suivent le niveau de l’eau et où persistent des artisanats locaux."
+      },
+      "ksp_kirirom": {
+        "name": "Parc national de Kirirom",
+        "desc": "Un parc de hautes terres à Kampong Speu, avec des pins, des pentes boisées et un air plus frais que dans la plaine."
+      },
+      "kt_sambor_prei_kuk": {
+        "name": "Sambor Prei Kuk",
+        "desc": "Un ancien complexe templier khmer à Kampong Thom, avec des sanctuaires répartis entre forêt et rizières."
+      },
+      "kandal_oudong": {
+        "name": "Oudong",
+        "desc": "Une ancienne capitale royale sur les collines de Kandal, avec des pagodes et des vues vers le Mékong."
+      },
+      "kk_cardamom": {
+        "name": "Montagnes des Cardamomes",
+        "desc": "Une chaîne de montagnes boisée à Koh Kong, avec de fortes pentes et des cours d’eau éloignés des villes."
+      },
+      "mondulkiri_highlands": {
+        "name": "Hautes terres de Mondulkiri",
+        "desc": "Des hautes terres autour de Sen Monorom, avec un air frais, des forêts et des points de vue naturels."
+      },
+      "om_samraong": {
+        "name": "Samraong",
+        "desc": "Le chef-lieu d’Oddar Meanchey, une étape utile dans l’extrême nord-ouest du Cambodge."
+      },
+      "pailin_gem_town": {
+        "name": "Ville de Pailin",
+        "desc": "Une petite ville frontalière connue pour son commerce de pierres précieuses et ses vues sur les collines."
+      },
+      "pv_preah_vihear": {
+        "name": "Temple de Preah Vihear",
+        "desc": "Un temple perché près de la frontière, accessible depuis les plaines de la province de Preah Vihear."
+      },
+      "pvv_ba_phnom": {
+        "name": "Ba Phnom",
+        "desc": "Un site collinaire ancien dans la province de Prey Veng, lié aux débuts de l’histoire khmère."
+      },
+      "pursat_floating_villages": {
+        "name": "Villages flottants de Pursat",
+        "desc": "Des villages sur le Tonlé Sap autour de Pursat, où la vie quotidienne suit la variation du niveau de l’eau."
+      },
+      "rk_yeak_laom": {
+        "name": "Lac Yeak Laom",
+        "desc": "Un lac clair de cratère près de Banlung, entouré de forêt."
+      },
+      "st_stung_treng": {
+        "name": "Berges de Stung Treng",
+        "desc": "Les berges du Mékong à Stung Treng, où le fleuve traverse la ville en direction de la frontière laotienne."
+      },
+      "svay_svay_rieng": {
+        "name": "Ville de Svay Rieng",
+        "desc": "Le chef-lieu de Svay Rieng, avec une promenade au bord de l’eau et des marchés locaux."
+      },
+      "tk_takeo_lake": {
+        "name": "Lac de Takeo",
+        "desc": "Un lac près de Doun Kaev, où la province a organisé une célébration Bon Om Touk en novembre 2026. l’AKP a également rapporté un projet de route de contournement de 18 km autour du lac.",
+        "report": "Selon un rapport du département provincial du tourisme : début novembre 2026, la province a organisé une célébration Bon Om Touk de deux jours au parc du lac de Doun Kaev, avec une course de 10 km, des concerts et des expositions. Le département a rapporté environ 1,17 million de visiteurs nationaux sur deux jours (325 207 le premier jour et 846 718 le second) et quelques centaines de visiteurs étrangers ; Xinhua a rapporté le retour d’une régate à Takeo. Veuillez vérifier les annonces officielles."
+      },
+      "tb_suong": {
+        "name": "Suong",
+        "desc": "Le chef-lieu de Tboung Khmum dans les plaines de l’Est, près du Mékong."
       }
+    },
+    "provinceLabel": "Choisir une province",
+    "provinceAll": "Toutes les provinces et Phnom Penh",
+    "provinces": {
+      "phnomPenh": "Phnom Penh",
+      "banteayMeanchey": "Banteay Meanchey",
+      "battambang": "Battambang",
+      "kampongCham": "Kampong Cham",
+      "kampongChhnang": "Kampong Chhnang",
+      "kampongSpeu": "Kampong Speu",
+      "kampongThom": "Kampong Thom",
+      "kampot": "Kampot",
+      "kandal": "Kandal",
+      "kep": "Kep",
+      "kohKong": "Koh Kong",
+      "kratie": "Kratié",
+      "mondulkiri": "Mondulkiri",
+      "oddarMeanchey": "Oddar Meanchey",
+      "pailin": "Pailin",
+      "preahSihanouk": "Preah Sihanouk",
+      "preahVihear": "Preah Vihear",
+      "preyVeng": "Prey Veng",
+      "pursat": "Pursat",
+      "ratanakKiri": "Ratanak Kiri",
+      "siemReap": "Siem Reap",
+      "stungTreng": "Stung Treng",
+      "svayRieng": "Svay Rieng",
+      "takeo": "Takeo",
+      "tboungKhmum": "Tboung Khmum"
+    },
+    "highlights": {
+      "riverViews": "Vues sur la rivière",
+      "boats": "Bateaux et activités sur l’eau",
+      "waterfrontWalk": "Une berge facile à parcourir à pied",
+      "localMarkets": "Marchés et étals locaux",
+      "localLife": "La vie quotidienne des habitants",
+      "eveningLight": "Lumières du soir",
+      "khmerArchitecture": "Architecture khmère",
+      "carvedDetails": "Détails sculptés dans la pierre",
+      "historicSetting": "Un cadre historique",
+      "wideViews": "De vastes points de vue",
+      "natureTrails": "Sentiers naturels",
+      "highlandAir": "L’air frais des hautes terres",
+      "coastalViews": "Paysages côtiers",
+      "seafood": "Fruits de mer locaux",
+      "islandViews": "Vues vers les îles voisines"
+    },
+    "times": {
+      "morningLate": "Le matin ou en fin d’après-midi, quand la lumière est plus douce.",
+      "sunrise": "Très tôt le matin, pour le lever du soleil.",
+      "daylight": "En journée, par temps dégagé.",
+      "evening": "En début de soirée, avant l’arrivée de la foule.",
+      "sunset": "En fin d’après-midi et au coucher du soleil.",
+      "anyDay": "À toute heure de la journée.",
+      "coolMorning": "Le matin, quand l’air est plus frais."
+    },
+    "gettingThere": {
+      "road": "Accessible par la route ; organisez le transport local sur place.",
+      "roadLocal": "Accessible par la route, puis par un transport local depuis le centre-ville.",
+      "central": "Au centre-ville ; à pied ou en taxi local.",
+      "roadFlight": "Accessible par la route ou par un vol intérieur depuis Phnom Penh.",
+      "roadBoat": "Accessible par la route, puis en bateau avec un opérateur local.",
+      "bridge": "Au sud du centre ; traversez le pont en taxi ou en tuk-tuk.",
+      "shortTuk": "Courte course en tuk-tuk ou en taxi depuis le centre."
+    },
+    "festivalEvents": {
+      "title": "Événements du festival",
+      "default": "Les activités du festival varient chaque année. Veuillez confirmer auprès des annonces locales.",
+      "banteayMeanchey": "Selon un rapport de l’AKP du 15 octobre 2026, Banteay Meanchey a suspendu sa course de pirogues 2026 en raison de la situation frontalière et des inondations, tandis que le lâcher de lanternes, la salutation de la lune et l’ok ambok ont continué le long du ruisseau Sreisophoan. Veuillez vérifier les annonces officielles."
     }
   },
   "traditions": {
@@ -423,7 +674,7 @@
       "ok_ambok": {
         "name": "Ok Ambok",
         "short": "Riz aplati pilé",
-        "detail": "Le riz aplati est pilé puis mélangé au lait de coco et à la banane. Il est partagé avec la famille et les voisins pendant les nuits du festival."
+        "detail": "Le riz de la nouvelle récolte est torréfié puis pilé, mélangé à la noix de coco et à la banane, et offert à la pleine lune en remerciement des pluies et de la récolte."
       },
       "boat_racing": {
         "name": "Courses de pirogues",
@@ -437,15 +688,15 @@
       },
       "moon_salutation": {
         "name": "Salutation de la lune",
-        "short": "Accueillir la pleine lune",
-        "detail": "On se rassemble au bord de l'eau pour saluer la pleine lune, un moment de respect et de reconnaissance au cœur du festival."
+        "short": "Honorer la lune",
+        "detail": "On se rassemble au bord de l’eau lors de la nuit de pleine lune pour saluer la lune et exprimer sa gratitude."
       }
     }
   },
   "gallery": {
     "eyebrow": "Journal photo",
     "title": "Galerie",
-    "subtitle": "Une planche d'ambiance visuelle pour le festival. Remplacez les identifiants de médias d'exemple par vos propres ressources Cloudinary.",
+    "subtitle": "Des photos et des vidéos seront ajoutées prochainement.",
     "categories": {
       "all": "Tous",
       "night": "Nuit et lanternes",
@@ -455,7 +706,7 @@
     },
     "empty": "Aucun média dans cette catégorie pour l'instant.",
     "videoTitle": "Images en mouvement",
-    "videoSubtitle": "Les extraits du festival ne s'affichent que lorsque les identifiants publics des vidéos ont été configurés.",
+    "videoSubtitle": "Des photos et des vidéos seront ajoutées prochainement.",
     "lightbox": {
       "close": "Fermer la visionneuse d'images",
       "previous": "Image précédente",

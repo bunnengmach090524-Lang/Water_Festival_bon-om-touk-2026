@@ -9,7 +9,8 @@ const props = defineProps({
   publicId: { type: String, default: '' },
   caption: { type: String, default: '' },
   aspect: { type: String, default: '16 / 9' },
-  category: { type: String, default: '' },
+  category: { type: [String, Array], default: '' },
+  variant: { type: Number, default: 0 },
 })
 
 const { t } = useI18n()
@@ -52,7 +53,7 @@ onBeforeUnmount(() => observer?.disconnect())
 <template>
   <div ref="host" class="relative w-full overflow-hidden rounded-2xl bg-[var(--color-night)]" :style="{ aspectRatio: aspect }">
     <div v-if="unavailable" class="absolute inset-0">
-      <FallbackArt :category="fallbackCategory" />
+      <FallbackArt :category="fallbackCategory" :variant="variant" />
       <span class="sr-only">{{ t('media.videoMissing') }}</span>
     </div>
     <template v-else-if="shouldLoad">

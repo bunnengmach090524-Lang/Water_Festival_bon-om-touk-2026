@@ -110,8 +110,8 @@
 
   /* Language-aware font stacks. The <html> class is kept in sync by useLang. */
   html.lang-km {
-    --font-display: "Moul", "Noto Sans Khmer", serif;
-    --font-body: "Noto Sans Khmer", "Inter", system-ui, sans-serif;
+    --font-display: "Noto Sans Khmer", system-ui, sans-serif;
+    --font-body: "Noto Sans Khmer", system-ui, sans-serif;
   }
   html.lang-en {
     --font-display: "Cormorant Garamond", Georgia, serif;
@@ -293,6 +293,54 @@
   .image-zoom:hover img,
   .image-zoom:hover video {
     transform: scale(1.06);
+  }
+
+  .photo-viewer {
+    outline: none;
+  }
+  .photo-viewer:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+    border-radius: 1rem;
+  }
+  .photo-viewer-strip {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .photo-viewer-strip::-webkit-scrollbar {
+    display: none;
+  }
+  .photo-main-image img {
+    transition:
+      transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+      opacity 0.7s ease;
+  }
+  .photo-stage:hover .photo-main-image img {
+    transform: scale(1.04);
+  }
+  .photo-next-enter-active,
+  .photo-next-leave-active,
+  .photo-prev-enter-active,
+  .photo-prev-leave-active {
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease;
+  }
+  .photo-next-enter-from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  .photo-next-leave-to {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  .photo-prev-enter-from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  .photo-prev-leave-to {
+    opacity: 0;
+    transform: translateX(16px);
   }
 
   .tilt {
@@ -561,63 +609,126 @@
   .tilt {
     transform: none !important;
   }
+  .photo-stage:hover .photo-main-image img {
+    transform: none !important;
+  }
+  .photo-next-enter-active,
+  .photo-next-leave-active,
+  .photo-prev-enter-active,
+  .photo-prev-leave-active,
+  .lightbox-fade-enter-active,
+  .lightbox-fade-leave-active {
+    transition: none !important;
+  }
 }
 
 
-/* Khmer: no letter-spacing / uppercase (it breaks consonant clusters) */
-html[lang="km"] * {
+/* Khmer readability contract: Moul is ONLY for the hero title and large
+   section titles (min ~2.5rem). Everything smaller uses Noto Sans Khmer at a
+   real 400-700 weight so the browser never fakes bold. Scoped to km only. */
+:is(html[lang="km"], html.lang-km) *,
+:is(html[lang="km"], html.lang-km) *::before,
+:is(html[lang="km"], html.lang-km) *::after {
   letter-spacing: normal !important;
   text-transform: none !important;
+  text-shadow: none !important;
 }
 
-/* Khmer: comfortable line height */
-html[lang="km"] body {
+:is(html[lang="km"], html.lang-km) body {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif;
+  font-size: 1.125rem;
   line-height: 1.8;
 }
 
-/* Khmer: small headings and eyebrows use the readable body font, not Moul */
-html[lang="km"] .eyebrow,
-html[lang="km"] h4,
-html[lang="km"] h5,
-html[lang="km"] h6,
-html[lang="km"] footer h3 {
-  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
-  font-weight: 600;
+:is(html[lang="km"], html.lang-km)[data-theme="dark"] {
+  --color-muted: #b9c6de;
 }
 
-/* Khmer display headings need extra room for tall vowels and subscripts.
-   These rules are scoped to `lang="km"` so en/fr and zh keep their sizes. */
-html[lang="km"] h1,
-html[lang="km"] h2,
-html[lang="km"] h3 {
-  line-height: 1.55 !important;
+:is(html[lang="km"], html.lang-km) .hero-title,
+:is(html[lang="km"], html.lang-km) .section-title {
+  font-family: "Moul", "Noto Sans Khmer", serif !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
 }
 
-html[lang="km"] .hero-title {
+:is(html[lang="km"], html.lang-km) .section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+  line-height: 1.35 !important;
+}
+
+:is(html[lang="km"], html.lang-km) .hero-title {
   margin-top: 1.75rem !important;
   margin-bottom: 1.25rem !important;
-  font-size: 2.25rem !important;
-  line-height: 1.6 !important;
+  font-size: clamp(2.5rem, 7vw, 4.75rem) !important;
+  line-height: 1.35 !important;
 }
 
-html[lang="km"] .hero-title span + span {
+:is(html[lang="km"], html.lang-km) .hero-title span + span {
   margin-top: 0.75rem !important;
 }
 
-html[lang="km"] .hero-subtitle {
+:is(html[lang="km"], html.lang-km) .hero-date {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.7 !important;
+  text-wrap: balance;
+}
+
+:is(html[lang="km"], html.lang-km) .hero-date-tail {
+  white-space: nowrap;
+}
+
+:is(html[lang="km"], html.lang-km) .hero-subtitle {
   margin-top: 1.75rem !important;
 }
 
-@media (min-width: 640px) {
-  html[lang="km"] .hero-title {
-    font-size: 3rem !important;
-  }
+:is(html[lang="km"], html.lang-km) .hero-subtitle,
+:is(html[lang="km"], html.lang-km) .lead,
+:is(html[lang="km"], html.lang-km) p:not(.font-display):not(.hero-date):not(.eyebrow) {
+  font-size: 1.125rem !important;
+  line-height: 1.8 !important;
 }
 
-@media (min-width: 1024px) {
-  html[lang="km"] .hero-title {
-    font-size: 3.75rem !important;
-  }
+:is(html[lang="km"], html.lang-km) .eyebrow {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.7 !important;
+}
+
+:is(html[lang="km"], html.lang-km) .nav-link,
+:is(html[lang="km"], html.lang-km) #mobile-nav a,
+:is(html[lang="km"], html.lang-km) footer a {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.7 !important;
+}
+
+:is(html[lang="km"], html.lang-km) .btn,
+:is(html[lang="km"], html.lang-km) .lang-option,
+:is(html[lang="km"], html.lang-km) .hero-status {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+}
+
+:is(html[lang="km"], html.lang-km) h2:not(.section-title),
+:is(html[lang="km"], html.lang-km) h3,
+:is(html[lang="km"], html.lang-km) h4,
+:is(html[lang="km"], html.lang-km) h5,
+:is(html[lang="km"], html.lang-km) h6,
+:is(html[lang="km"], html.lang-km) footer h2 {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  line-height: 1.6 !important;
+}
+
+:is(html[lang="km"], html.lang-km) .font-display:not(.hero-title):not(.section-title) {
+  font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
+  font-weight: 600 !important;
 }
 
 /* Home hero: remove the hard-edged wave/water block and soften its ends. */

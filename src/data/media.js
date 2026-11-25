@@ -1,9 +1,3 @@
-/**
- * Cloudinary media library (no files are stored in this repo).
- * Replace each publicId below with the public ID of your uploaded asset,
- * e.g. 'bon-om-touk/gallery-01'. Keep captionKey pointing to a locale string.
- */
-
 export const galleryCategories = ['all', 'night', 'river', 'temples', 'city']
 
 export const galleryImages = [

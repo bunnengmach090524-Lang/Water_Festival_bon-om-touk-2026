@@ -22,15 +22,22 @@ const { t, tm } = useI18n()
       <div class="site-container mx-auto max-w-4xl">
         <div v-reveal class="rounded-2xl border border-gold/35 bg-gold/10 px-5 py-4 text-sm leading-7 text-ivory/90 sm:px-7">
           <strong class="font-semibold text-gold-light">{{ t('common.verify') }}</strong>
+          <span class="mt-1 block text-muted">{{ t('common.reportedVerify') }}</span>
         </div>
 
         <div v-reveal="80" class="mt-5 grid gap-4 sm:grid-cols-2">
           <div class="rounded-2xl border border-gold/20 bg-night/60 p-5">
             <p class="text-sm leading-7 text-ivory/85">{{ t('schedule.phnomPenhNotice') }}</p>
+            <p class="mt-3 text-xs font-semibold text-gold-light">{{ t('common.reportedVerify') }}</p>
           </div>
           <div class="rounded-2xl border border-gold/20 bg-night/60 p-5">
-            <p class="text-sm leading-7 text-ivory/85">{{ t('schedule.siemReapNote') }}</p>
-            <p class="mt-3 text-xs font-semibold text-gold-light">{{ t('common.perAnnouncement') }}</p>
+            <p class="text-sm leading-7 text-ivory/85">{{ t('schedule.fullMoonNote') }}</p>
+          </div>
+          <div class="rounded-2xl border border-gold/20 bg-night/60 p-5">
+            <p class="text-sm leading-7 text-ivory/85">{{ t('schedule.royalSpan') }}</p>
+          </div>
+          <div class="rounded-2xl border border-gold/20 bg-night/60 p-5">
+            <p class="text-sm leading-7 text-ivory/85">{{ t('schedule.holidayNote') }}</p>
           </div>
         </div>
 

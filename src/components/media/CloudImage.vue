@@ -12,8 +12,13 @@ const props = defineProps({
   aspect: { type: String, default: '16 / 9' },
   sizes: { type: String, default: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw' },
   category: { type: [String, Array], default: '' },
+  variant: { type: Number, default: 0 },
+  showMissingLabel: { type: Boolean, default: false },
+  fill: { type: Boolean, default: false },
+  eager: { type: Boolean, default: false },
 })
 
+const emit = defineEmits(['load', 'error'])
 const { t } = useI18n()
 const loaded = ref(false)
 const failed = ref(false)
@@ -30,16 +35,32 @@ watch(
     failed.value = false
   },
 )
+
+function onLoad() {
+  loaded.value = true
+  emit('load', props.publicId)
+}
+
+function onError() {
+  failed.value = true
+  emit('error', props.publicId)
+}
 </script>
 
 <template>
   <div
-    class="relative w-full overflow-hidden rounded-2xl bg-[var(--color-night)]"
-    :style="{ aspectRatio: aspect }"
+    class="w-full overflow-hidden bg-[var(--color-night)]"
+    :class="fill ? 'absolute inset-0 h-full rounded-none!' : 'relative rounded-2xl'"
+    :style="fill ? undefined : { aspectRatio: aspect }"
   >
-    <!-- Original illustrated fallback: also the final state with no media. -->
     <div v-if="unavailable" class="absolute inset-0">
-      <FallbackArt :category="fallbackCategory" />
+      <FallbackArt :category="fallbackCategory" :variant="variant" />
+      <span
+        v-if="showMissingLabel"
+        class="absolute bottom-1 left-1 rounded bg-[var(--glass-bg)] px-1.5 py-0.5 text-[10px] font-medium text-ivory/90 backdrop-blur"
+      >
+        {{ t('photoViewer.comingSoon') }}
+      </span>
       <span class="sr-only">{{ t('media.imageMissing') }}</span>
     </div>
 
@@ -52,12 +73,12 @@ watch(
         :srcset="srcset"
         :sizes="sizes"
         :alt="alt"
-        loading="lazy"
+        :loading="eager ? 'eager' : 'lazy'"
         decoding="async"
         class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
         :class="loaded ? 'opacity-100' : 'opacity-0'"
-        @load="loaded = true"
-        @error="failed = true"
+        @load="onLoad"
+        @error="onError"
       />
     </template>
   </div>

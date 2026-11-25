@@ -15,6 +15,12 @@ const closeButton = ref(null)
 const isOpen = computed(() => props.index >= 0 && !!props.items[props.index])
 const current = computed(() => props.items[props.index] || null)
 
+function captionOf(item) {
+  if (!item) return ''
+  if (item.caption) return item.caption
+  return item.captionKey ? t(item.captionKey, item.captionParams || {}) : ''
+}
+
 function close() {
   emit('close')
 }
@@ -65,8 +71,6 @@ onBeforeUnmount(() => {
         role="dialog"
         aria-modal="true"
         :aria-label="t('a11y.lightbox')"
-        @touchstart.passive="onTouchStart"
-        @touchend.passive="onTouchEnd"
       >
         <div class="flex justify-end p-4">
           <button
@@ -82,8 +86,13 @@ onBeforeUnmount(() => {
           </button>
         </div>
 
-        <div class="relative flex flex-1 items-center justify-center px-3 pb-4 sm:px-16">
+        <div
+          class="relative flex flex-1 items-center justify-center px-3 pb-4 sm:px-16"
+          @touchstart.passive="onTouchStart"
+          @touchend.passive="onTouchEnd"
+        >
           <button
+            v-if="props.items.length > 1"
             type="button"
             class="absolute left-2 z-10 flex min-h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-[var(--glass-bg)] text-gold-light transition hover:bg-gold/15 sm:left-5"
             :aria-label="t('gallery.lightbox.previous')"
@@ -96,14 +105,18 @@ onBeforeUnmount(() => {
 
           <CloudImage
             :public-id="current.publicId"
-            :alt="t(current.captionKey)"
+            :alt="captionOf(current)"
             :category="inferCategory(current.publicId, current.category)"
+            :variant="props.index"
+            :show-missing-label="true"
+            :widths="[640, 960, 1280, 1600]"
             aspect="16 / 9"
             sizes="90vw"
             class="max-w-5xl"
           />
 
           <button
+            v-if="props.items.length > 1"
             type="button"
             class="absolute right-2 z-10 flex min-h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-[var(--glass-bg)] text-gold-light transition hover:bg-gold/15 sm:right-5"
             :aria-label="t('gallery.lightbox.next')"
@@ -115,8 +128,40 @@ onBeforeUnmount(() => {
           </button>
         </div>
 
-        <p class="px-5 pb-1 text-center text-sm text-ivory/90">{{ t(current.captionKey) }}</p>
-        <p class="px-5 pb-5 text-center text-xs text-muted">{{ t('gallery.lightbox.swipeHint') }}</p>
+        <p class="px-5 pb-1 text-center text-sm text-ivory/90">{{ captionOf(current) }}</p>
+        <p class="px-5 pb-1 text-center text-xs font-semibold tracking-wide text-gold-light">
+          {{ t('photoViewer.counter', { n: props.index + 1, total: props.items.length }) }}
+        </p>
+        <p class="px-5 pb-3 text-center text-xs text-muted">{{ t('gallery.lightbox.swipeHint') }}</p>
+
+        <div
+          v-if="props.items.length > 1"
+          class="photo-viewer-strip mx-auto flex w-full max-w-5xl snap-x snap-mandatory gap-2 overflow-x-auto px-5 pb-5"
+          role="group"
+          :aria-label="t('photoViewer.title')"
+        >
+          <button
+            v-for="(item, index) in props.items"
+            :key="item.publicId || index"
+            type="button"
+            class="relative aspect-[4/3] w-[72px] shrink-0 snap-start overflow-hidden rounded-lg border transition sm:w-[88px]"
+            :class="index === props.index ? 'border-gold opacity-100 ring-2 ring-gold/60' : 'border-gold/20 opacity-70 hover:border-gold/50 hover:opacity-100'"
+            :aria-label="t('photoViewer.photoOf', { n: index + 1, total: props.items.length })"
+            :aria-current="index === props.index ? 'true' : undefined"
+            @click="emit('update:index', index)"
+          >
+            <CloudImage
+              :public-id="item.publicId"
+              :alt="captionOf(item)"
+              :category="inferCategory(item.publicId, item.category)"
+              :variant="index"
+              :show-missing-label="true"
+              :widths="[80, 160, 240]"
+              aspect="4 / 3"
+              sizes="96px"
+            />
+          </button>
+        </div>
       </div>
     </Transition>
   </Teleport>

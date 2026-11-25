@@ -81,6 +81,18 @@ const featured = computed(() =>
     .filter(Boolean),
 )
 const teaserImages = galleryImages.slice(0, 3)
+
+const officialName = computed(() => {
+  const text = t('meta.fullName')
+  const phrase = 'សំពះព្រះខែ'
+  const phraseIndex = text.indexOf(phrase)
+  if (phraseIndex > 0) {
+    return { before: text.slice(0, phraseIndex), after: phrase }
+  }
+  const split = text.lastIndexOf(' ')
+  if (split === -1) return { before: text, after: '' }
+  return { before: text.slice(0, split + 1), after: text.slice(split + 1) }
+})
 </script>
 
 <template>
@@ -101,10 +113,10 @@ const teaserImages = galleryImages.slice(0, 3)
         <p v-reveal class="eyebrow">{{ t('home.eyebrow') }}</p>
         <h1 v-reveal="80" class="hero-title mt-5 font-display text-5xl leading-[0.95] text-ivory sm:text-7xl lg:text-8xl">
           <span class="block">{{ t('home.titleLine1') }}</span>
-          <span class="mt-2 block text-gold-light sm:mt-4">{{ t('home.titleLine2') }}</span>
+          <span v-if="t('home.titleLine2')" class="mt-2 block text-gold-light sm:mt-4">{{ t('home.titleLine2') }}</span>
         </h1>
         <p v-reveal="160" class="hero-date mt-6 font-display text-base text-gold-light sm:text-xl">
-          {{ t('meta.fullName') }}
+          {{ officialName.before }}<span class="hero-date-tail">{{ officialName.after }}</span>
         </p>
         <p v-reveal="220" class="hero-subtitle lead mx-auto mt-6 max-w-2xl">
           {{ t('home.subtitle') }}
@@ -117,7 +129,7 @@ const teaserImages = galleryImages.slice(0, 3)
 
         <div
           v-reveal="340"
-          class="mx-auto mt-10 inline-flex min-h-12 flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded-full border border-gold/25 bg-[var(--glass-bg)] px-5 py-2 text-xs text-ivory/85 backdrop-blur sm:text-sm"
+          class="hero-status mx-auto mt-10 inline-flex min-h-12 flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded-full border border-gold/25 bg-[var(--glass-bg)] px-5 py-2 text-xs text-ivory/85 backdrop-blur sm:text-sm"
           aria-live="polite"
         >
           <template v-if="clock.mode === 'before'">

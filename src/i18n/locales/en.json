@@ -2,7 +2,19 @@
   "meta": {
     "siteName": "Bon Om Touk",
     "title": "Bon Om Touk — Cambodia Water Festival 2026",
-    "fullName": "បុណ្យអុំទូក បណ្តែតប្រទីប និងសំពះព្រះខែ អកអំបុក"
+    "fullName": "ព្រះរាជពិធីបុណ្យអុំទូក បណ្តែតប្រទីប អកអំបុក និងសំពះព្រះខែ"
+  },
+  "photoViewer": {
+    "title": "Photo gallery",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "open": "Open photo {n} of {total}",
+    "photoOf": "Photo {n} of {total}",
+    "counter": "{n} / {total}",
+    "comingSoon": "Photo coming soon",
+    "video": "Video",
+    "play": "Play video",
+    "videoSlot": "Video"
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -60,7 +72,11 @@
     "bestTime": "Best time to visit",
     "gettingThere": "How to get there",
     "perAnnouncement": "Per local announcements, please confirm",
-    "verify": "Information may change, verify with official sources"
+    "verify": "Information may change, verify with official sources",
+    "reportedVerify": "Reported; please verify with official announcements",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "copied": "Link copied"
   },
   "home": {
     "eyebrow": "23–25 November 2026 · Cambodia",
@@ -132,15 +148,49 @@
       ]
     },
     "ctaPlaces": "Find a place to watch",
-    "ctaSchedule": "See the three nights"
+    "ctaSchedule": "See the three nights",
+    "calendar": {
+      "title": "Festival days and the full moon",
+      "body": [
+        "Traditionally the royal festival spans the 14th and 15th waxing days and the 1st waning day of Kadeuk — three days.",
+        "The moon salutation and Ok Ambok take place on the full moon night, the 15th waxing day of Kadeuk (ថ្ងៃពេញបូណ៌មី). In 2026 this is 24 November."
+      ]
+    },
+    "origins": {
+      "title": "Traditionally explained origins",
+      "body": [
+        "Traditionally explained by two accounts: boat racing is linked to King Jayavarman VII’s reign in the late 12th century and the Khmer navy’s victory over Cham forces on the Tonle Sap.",
+        "Naval-battle bas-reliefs at Bayon and Banteay Chhmar are often cited as evidence for this account.",
+        "It is also traditionally explained as a thanksgiving at the end of the rainy season, when the Tonle Sap River reverses flow."
+      ],
+      "linkBayon": "Bayon bas-reliefs",
+      "linkBanteayChhmar": "Banteay Chhmar bas-reliefs"
+    },
+    "modern": {
+      "title": "In modern times",
+      "body": [
+        "The festival was suspended during the civil war period and was later revived."
+      ]
+    },
+    "sources": {
+      "title": "Sources",
+      "items": [
+        "RFA Khmer",
+        "AKP",
+        "Kampuchea Thmey",
+        "Wikipedia \"Bon Om Touk\"",
+        "Phnom Penh Post",
+        "The Star (ASEAN+)",
+        "Xinhua/Cambodianess"
+      ]
+    }
   },
   "schedule": {
     "eyebrow": "Three nights",
     "title": "Festival schedule",
     "subtitle": "A guide to the three nights of Bon Om Touk 2026, 23–25 November.",
     "verifyNote": "Information may change, verify with official sources",
-    "phnomPenhNotice": "Official Phnom Penh riverfront events may be reduced or changed this year. Please check official announcements before you go.",
-    "siemReapNote": "Siem Reap has announced three nights of fireworks; Night 3 is listed around 7:00 PM. Per local announcements, please confirm.",
+    "phnomPenhNotice": "Reported for 2026: the official Phnom Penh riverfront programme was cancelled, while the three-day public holiday remains. Please verify with official announcements.",
     "nights": {
       "n1": {
         "label": "Night 1",
@@ -193,12 +243,54 @@
           }
         ]
       }
+    },
+    "royalSpan": "Traditionally the royal festival spans 14–15 waxing and 1 waning of Kadeuk, a three-day period.",
+    "fullMoonNote": "The moon salutation and Ok Ambok take place on the full moon night, the 15th waxing day of Kadeuk (ថ្ងៃពេញបូណ៌មី). In 2026 this is 24 November.",
+    "holidayNote": "The national public holiday is 23–25 November 2026, but provinces may hold their own boat races and events on different dates. Please confirm locally.",
+    "n2": {
+      "date": "24 November 2026 · Full moon",
+      "summary": "Full moon night: moon salutation and Ok Ambok are the focus.",
+      "events": [
+        {
+          "time": "Afternoon / evening",
+          "title": "Boat racing in hosting provinces",
+          "desc": "Races are held in some provinces. Check local announcements for exact locations and times."
+        },
+        {
+          "time": "After dark",
+          "title": "Moon salutation on the full moon night",
+          "desc": "People gather by the water to salute the full moon."
+        },
+        {
+          "time": "Full moon night",
+          "title": "Ok Ambok",
+          "desc": "New-harvest rice is toasted and pounded, then mixed with coconut and banana and offered to the moon in thanks."
+        }
+      ]
+    },
+    "n1": {
+      "events": [
+        {
+          "time": "Evening",
+          "title": "Lanterns and illuminated boats",
+          "desc": "Floating lanterns and lit boats appear along the riverfront. Exact programmes vary by province."
+        }
+      ]
+    },
+    "n3": {
+      "events": [
+        {
+          "time": "Evening",
+          "title": "Final night on the river",
+          "desc": "A last evening of lights, music and shared food in many communities."
+        }
+      ]
     }
   },
   "destinations": {
     "eyebrow": "Explore Cambodia",
     "title": "Places for Bon Om Touk",
-    "subtitle": "Filter by region or search by name. Add your own place by editing the data file.",
+    "subtitle": "Filter by province or region, or search by name.",
     "searchPlaceholder": "Search places…",
     "filtersLabel": "Filter by region",
     "count": "{count} places",
@@ -213,8 +305,17 @@
     "detail": {
       "notFoundTitle": "Place not found",
       "notFoundBody": "This place is not in our guide yet.",
-      "region": "Region",
-      "mapLink": "Open in Google Maps"
+      "region": "Province",
+      "mapLink": "Open in Google Maps",
+      "reportedTitle": "Reported 2026",
+      "galleryTitle": "Place gallery",
+      "galleryCaption": "{name} — photo {n}",
+      "galleryFallback": "Themed illustrated preview",
+      "videoTitle": "Video",
+      "videoCredit": "Video from the project media collection",
+      "openYouTube": "Open on YouTube",
+      "playYouTube": "Play video on YouTube",
+      "moreInProvince": "More in {province}"
     },
     "items": {
       "pp_riverside": {
@@ -414,7 +515,157 @@
         ],
         "bestTime": "Daytime for the coast.",
         "gettingThere": "Reached by road or domestic flight from Phnom Penh."
+      },
+      "sr_bayon": {
+        "name": "Bayon",
+        "desc": "A temple in Angkor Thom near Siem Reap, known for its carved faces and naval-battle bas-reliefs."
+      },
+      "bm_banteay_chhmar": {
+        "name": "Banteay Chhmar",
+        "desc": "A temple complex in Banteay Meanchey whose bas-reliefs are often compared with those at Bayon."
+      },
+      "bm_sreisophoan": {
+        "name": "Sreisophoan Stream",
+        "desc": "A waterway in Sisophon used for community gatherings near the water."
+      },
+      "kc_wat_nokor": {
+        "name": "Wat Nokor",
+        "desc": "An old pagoda near Kampong Cham combining structures from different periods beside the Mekong."
+      },
+      "kch_floating_villages": {
+        "name": "Kampong Chhnang Floating Villages",
+        "desc": "Villages on the Tonle Sap near Kampong Chhnang, where homes follow the water level and local crafts are practiced."
+      },
+      "ksp_kirirom": {
+        "name": "Kirirom National Park",
+        "desc": "A highland park in Kampong Speu with pine trees, forested slopes and cooler air than the plains."
+      },
+      "kt_sambor_prei_kuk": {
+        "name": "Sambor Prei Kuk",
+        "desc": "An early Khmer temple complex in Kampong Thom, with shrines scattered among forest and rice fields."
+      },
+      "kandal_oudong": {
+        "name": "Oudong",
+        "desc": "A former royal capital on the hills of Kandal, with pagodas and views toward the Mekong."
+      },
+      "kk_cardamom": {
+        "name": "Cardamom Mountains",
+        "desc": "A forested mountain range in Koh Kong with high slopes and waterways away from the towns."
+      },
+      "mondulkiri_highlands": {
+        "name": "Mondulkiri Highlands",
+        "desc": "Highlands around Sen Monorom, with cool air, forest and open natural viewpoints."
+      },
+      "om_samraong": {
+        "name": "Samraong",
+        "desc": "The provincial capital of Oddar Meanchey, a useful stop in Cambodia’s far northwest."
+      },
+      "pailin_gem_town": {
+        "name": "Pailin Town",
+        "desc": "A small border town known for its gem trade and hillside views."
+      },
+      "pv_preah_vihear": {
+        "name": "Preah Vihear Temple",
+        "desc": "A hilltop temple near the border, reached from the plains of Preah Vihear province."
+      },
+      "pvv_ba_phnom": {
+        "name": "Ba Phnom",
+        "desc": "An ancient hill site in Prey Veng associated with early Khmer history."
+      },
+      "pursat_floating_villages": {
+        "name": "Pursat Floating Villages",
+        "desc": "Villages on the Tonle Sap around Pursat where daily life follows the changing water level."
+      },
+      "rk_yeak_laom": {
+        "name": "Yeak Laom Lake",
+        "desc": "A clear crater lake near Banlung, surrounded by forest."
+      },
+      "st_stung_treng": {
+        "name": "Stung Treng Riverfront",
+        "desc": "The Mekong waterfront at Stung Treng, where the river passes the town toward the Laos border."
+      },
+      "svay_svay_rieng": {
+        "name": "Svay Rieng Town",
+        "desc": "The provincial capital town of Svay Rieng, with a waterfront walk and local markets."
+      },
+      "tk_takeo_lake": {
+        "name": "Takeo Lake",
+        "desc": "A lake beside Doun Kaev town, where the province held a Bon Om Touk celebration in November 2026. AKP also reported an 18 km ring road project around the lake.",
+        "report": "Reported by the provincial tourism department: in early November 2026 the province held a two-day Bon Om Touk celebration at the lake park in Doun Kaev, with a 10 km run, concerts and exhibitions. The department reported about 1.17 million domestic visitors over the two days (325,207 on day one and 846,718 on day two) and a few hundred foreign visitors; Xinhua reported that a boat regatta returned to Takeo. Please verify with official announcements."
+      },
+      "tb_suong": {
+        "name": "Suong",
+        "desc": "The provincial capital town of Tboung Khmum in the eastern plains near the Mekong."
       }
+    },
+    "provinceLabel": "Select province",
+    "provinceAll": "All provinces and Phnom Penh",
+    "provinces": {
+      "phnomPenh": "Phnom Penh",
+      "banteayMeanchey": "Banteay Meanchey",
+      "battambang": "Battambang",
+      "kampongCham": "Kampong Cham",
+      "kampongChhnang": "Kampong Chhnang",
+      "kampongSpeu": "Kampong Speu",
+      "kampongThom": "Kampong Thom",
+      "kampot": "Kampot",
+      "kandal": "Kandal",
+      "kep": "Kep",
+      "kohKong": "Koh Kong",
+      "kratie": "Kratie",
+      "mondulkiri": "Mondulkiri",
+      "oddarMeanchey": "Oddar Meanchey",
+      "pailin": "Pailin",
+      "preahSihanouk": "Preah Sihanouk",
+      "preahVihear": "Preah Vihear",
+      "preyVeng": "Prey Veng",
+      "pursat": "Pursat",
+      "ratanakKiri": "Ratanak Kiri",
+      "siemReap": "Siem Reap",
+      "stungTreng": "Stung Treng",
+      "svayRieng": "Svay Rieng",
+      "takeo": "Takeo",
+      "tboungKhmum": "Tboung Khmum"
+    },
+    "highlights": {
+      "riverViews": "River views",
+      "boats": "Boats and activity on the water",
+      "waterfrontWalk": "A walkable waterfront",
+      "localMarkets": "Local markets and stalls",
+      "localLife": "Everyday community life",
+      "eveningLight": "Evening lights",
+      "khmerArchitecture": "Khmer architecture",
+      "carvedDetails": "Carved stone details",
+      "historicSetting": "A historic setting",
+      "wideViews": "Wide open views",
+      "natureTrails": "Nature paths",
+      "highlandAir": "Cool highland air",
+      "coastalViews": "Coastal scenery",
+      "seafood": "Local seafood",
+      "islandViews": "Views toward nearby islands"
+    },
+    "times": {
+      "morningLate": "Morning or late afternoon, when the light is softer.",
+      "sunrise": "Very early morning for sunrise.",
+      "daylight": "Daytime, in clear weather.",
+      "evening": "Early evening, before the crowds grow.",
+      "sunset": "Late afternoon and sunset.",
+      "anyDay": "Any time of day.",
+      "coolMorning": "Morning, when the air is cooler."
+    },
+    "gettingThere": {
+      "road": "Reached by road; arrange local transport on arrival.",
+      "roadLocal": "Reached by road, then by local transport from the town centre.",
+      "central": "In the town centre; walk or take a local taxi.",
+      "roadFlight": "Reached by road or by a domestic flight from Phnom Penh.",
+      "roadBoat": "Reached by road, then by boat with a local operator.",
+      "bridge": "South of the centre; cross the bridge by taxi or tuk-tuk.",
+      "shortTuk": "A short tuk-tuk or taxi ride from the centre."
+    },
+    "festivalEvents": {
+      "title": "Festival events",
+      "default": "Festival activities vary each year. Please confirm with local announcements.",
+      "banteayMeanchey": "Reported by AKP on 15 Oct 2026: Banteay Meanchey suspended its 2026 boat race because of the border situation and flooding, while lantern floating, moon salutation and Ok Ambok continued along the Sreisophoan stream. Please verify with official announcements."
     }
   },
   "traditions": {
@@ -423,7 +674,7 @@
       "ok_ambok": {
         "name": "Ok Ambok",
         "short": "Pounded flattened rice",
-        "detail": "Flattened rice is pounded and mixed with coconut and banana. It is shared with family and neighbours during the festival nights."
+        "detail": "New-harvest rice is toasted and pounded, then mixed with coconut and banana. It is offered to the full moon as thanks for the rains and the harvest."
       },
       "boat_racing": {
         "name": "Boat Racing",
@@ -437,15 +688,15 @@
       },
       "moon_salutation": {
         "name": "Moon Salutation",
-        "short": "Welcoming the full moon",
-        "detail": "People gather by the water to salute the full moon, a moment of respect and thanksgiving at the heart of the festival."
+        "short": "Honouring the moon",
+        "detail": "People gather by the water on the full moon night to salute the moon and express gratitude."
       }
     }
   },
   "gallery": {
     "eyebrow": "Photo journal",
     "title": "Gallery",
-    "subtitle": "A visual mood board for the festival. Replace the sample media IDs with your own Cloudinary assets.",
+    "subtitle": "Photos and videos will be added soon.",
     "categories": {
       "all": "All",
       "night": "Night & lanterns",
@@ -455,7 +706,7 @@
     },
     "empty": "No media in this category yet.",
     "videoTitle": "Moving pictures",
-    "videoSubtitle": "Festival clips are shown only when video public IDs have been configured.",
+    "videoSubtitle": "Photos and videos will be added soon.",
     "lightbox": {
       "close": "Close image viewer",
       "previous": "Previous image",

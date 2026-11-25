@@ -2,7 +2,19 @@
   "meta": {
     "siteName": "柬埔寨水节",
     "title": "柬埔寨水节 — 2026 年柬埔寨水节",
-    "fullName": "បុណ្យអុំទូក បណ្តែតប្រទីប និងសំពះព្រះខែ អកអំបុក"
+    "fullName": "ព្រះរាជពិធីបុណ្យអុំទូក បណ្តែតប្រទីប អកអំបុក និងសំពះព្រះខែ"
+  },
+  "photoViewer": {
+    "title": "图片库",
+    "previous": "上一张",
+    "next": "下一张",
+    "open": "打开第 {n} 张，共 {total} 张",
+    "photoOf": "第 {n} 张，共 {total} 张",
+    "counter": "{n} / {total}",
+    "comingSoon": "图片即将上线",
+    "video": "视频",
+    "play": "播放视频",
+    "videoSlot": "视频"
   },
   "a11y": {
     "skipToContent": "跳到主要内容",
@@ -60,7 +72,11 @@
     "bestTime": "最佳游览时间",
     "gettingThere": "如何到达",
     "perAnnouncement": "以当地公告为准，请确认",
-    "verify": "信息可能变动，请以官方来源核实"
+    "verify": "信息可能变动，请以官方来源核实",
+    "reportedVerify": "据报道，请以官方公告核实",
+    "share": "分享",
+    "copyLink": "复制链接",
+    "copied": "链接已复制"
   },
   "home": {
     "eyebrow": "2026 年 11 月 23–25 日 · 柬埔寨",
@@ -132,15 +148,49 @@
       ]
     },
     "ctaPlaces": "寻找观赏地点",
-    "ctaSchedule": "查看三个夜晚"
+    "ctaSchedule": "查看三个夜晚",
+    "calendar": {
+      "title": "节日日期与满月",
+      "body": [
+        "按传统，皇家节庆涵盖卡德克月十四、十五日益日至月初亏日，共三天。",
+        "拜月与阿贡安波克在满月之夜举行，即卡德克月第十五日（ថ្ងៃពេញបូណ៌មី）。2026 年为 11 月 24 日。"
+      ]
+    },
+    "origins": {
+      "title": "传统上的起源说法",
+      "body": [
+        "传统上有两种解释：赛舟与 12 世纪末阇耶跋摩七世时期高棉水军在洞里萨河战胜占城军队的传说相关。",
+        "吴哥巴戎寺和班迭奇马寺的海战浮雕常被作为这一说法的依据。",
+        "另一种传统解释认为，这是雨季结束时洞里萨河回流之际的感恩仪式。"
+      ],
+      "linkBayon": "巴戎寺浮雕",
+      "linkBanteayChhmar": "班迭奇马浮雕"
+    },
+    "modern": {
+      "title": "近现代",
+      "body": [
+        "节庆曾在内战时期中断，后来得以恢复。"
+      ]
+    },
+    "sources": {
+      "title": "资料来源",
+      "items": [
+        "RFA Khmer",
+        "AKP",
+        "Kampuchea Thmey",
+        "Wikipedia \"Bon Om Touk\"",
+        "Phnom Penh Post",
+        "The Star (ASEAN+)",
+        "Xinhua/Cambodianess"
+      ]
+    }
   },
   "schedule": {
     "eyebrow": "三个夜晚",
     "title": "节日日程",
     "subtitle": "2026 年柬埔寨水节（11 月 23–25 日）三个夜晚的指南。",
     "verifyNote": "信息可能变动，请以官方来源核实",
-    "phnomPenhNotice": "今年金边河畔的官方活动可能会缩减或调整。出行前请查看官方公告。",
-    "siemReapNote": "暹粒已宣布举办三个夜晚的烟花活动；第 3 夜安排在晚上 7:00 左右。以当地公告为准，请确认。",
+    "phnomPenhNotice": "据 2026 年报道，金边河畔官方活动已取消，但三天公共假期仍然保留。请以官方公告核实。",
     "nights": {
       "n1": {
         "label": "第 1 夜",
@@ -193,12 +243,54 @@
           }
         ]
       }
+    },
+    "royalSpan": "按传统，皇家节庆涵盖卡德克月十四、十五日益日至月初亏日，为期三天。",
+    "fullMoonNote": "拜月与阿贡安波克在满月之夜举行，即卡德克月第十五日（ថ្ងៃពេញបូណ៌មី）。2026 年为 11 月 24 日。",
+    "holidayNote": "全国法定假日为 2026 年 11 月 23–25 日，但各省可能在不同日期举办各自的赛舟和活动。请向当地确认。",
+    "n2": {
+      "date": "2026 年 11 月 24 日 · 满月",
+      "summary": "满月之夜：拜月与阿贡安波克是重点。",
+      "events": [
+        {
+          "time": "下午 / 傍晚",
+          "title": "主办省份的赛舟",
+          "desc": "部分省份举办赛舟。具体地点和时间请查看当地公告。"
+        },
+        {
+          "time": "天黑后",
+          "title": "满月之夜拜月",
+          "desc": "人们聚集在水边拜谢满月。"
+        },
+        {
+          "time": "满月之夜",
+          "title": "阿贡安波克",
+          "desc": "新收稻米烘烤舂捣后与椰子和香蕉混合，敬献月亮以表感恩。"
+        }
+      ]
+    },
+    "n1": {
+      "events": [
+        {
+          "time": "傍晚",
+          "title": "灯笼与灯船",
+          "desc": "河面上出现飘动的灯笼和点亮的船只。具体活动因省份而异。"
+        }
+      ]
+    },
+    "n3": {
+      "events": [
+        {
+          "time": "傍晚",
+          "title": "河畔最后一夜",
+          "desc": "许多社区迎来最后一晚的灯火、音乐与共享美食。"
+        }
+      ]
     }
   },
   "destinations": {
     "eyebrow": "探索柬埔寨",
     "title": "柬埔寨水节好去处",
-    "subtitle": "按地区筛选或按名称搜索。编辑数据文件即可添加你自己的地点。",
+    "subtitle": "可按省份或地区筛选，也可按名称搜索。",
     "searchPlaceholder": "搜索地点…",
     "filtersLabel": "按地区筛选",
     "count": "{count} 个地点",
@@ -213,8 +305,17 @@
     "detail": {
       "notFoundTitle": "未找到地点",
       "notFoundBody": "该地点尚未收录在我们的指南中。",
-      "region": "地区",
-      "mapLink": "在 Google 地图中打开"
+      "region": "省份",
+      "mapLink": "在 Google 地图中打开",
+      "reportedTitle": "2026 年报道",
+      "galleryTitle": "地点图库",
+      "galleryCaption": "{name} — 图片 {n}",
+      "galleryFallback": "主题插画预览",
+      "videoTitle": "视频",
+      "videoCredit": "来自项目媒体库的视频",
+      "openYouTube": "在 YouTube 上打开",
+      "playYouTube": "在 YouTube 上播放视频",
+      "moreInProvince": "{province}的更多地点"
     },
     "items": {
       "pp_riverside": {
@@ -414,7 +515,157 @@
         ],
         "bestTime": "白天游览海岸。",
         "gettingThere": "从金边经公路或国内航班抵达。"
+      },
+      "sr_bayon": {
+        "name": "巴戎寺",
+        "desc": "吴哥城内靠近暹粒的寺庙，以石雕面孔和海战浮雕闻名。"
+      },
+      "bm_banteay_chhmar": {
+        "name": "班迭奇马",
+        "desc": "班迭棉吉省的寺庙群，其浮雕常与巴戎寺浮雕相提并论。"
+      },
+      "bm_sreisophoan": {
+        "name": "斯雷索彭溪",
+        "desc": "诗梳风的一条水道，是社区临水聚会的场所。"
+      },
+      "kc_wat_nokor": {
+        "name": "诺哥寺",
+        "desc": "磅湛附近的一座古寺，不同时期的建筑在湄公河畔并存。"
+      },
+      "kch_floating_villages": {
+        "name": "磅清扬水上村庄",
+        "desc": "磅清扬附近洞里萨河上的村庄，房屋随水位起落，并有当地手工艺。"
+      },
+      "ksp_kirirom": {
+        "name": "基里隆国家公园",
+        "desc": "磅士卑高地公园，有松林、山坡和比平原更凉爽的空气。"
+      },
+      "kt_sambor_prei_kuk": {
+        "name": "桑博Prei库克",
+        "desc": "磅同早期高棉寺庙群，散布在森林与稻田之间。"
+      },
+      "kandal_oudong": {
+        "name": "乌栋",
+        "desc": "干丹省山丘上的 former 王都，有佛寺并可眺望湄公河。"
+      },
+      "kk_cardamom": {
+        "name": "豆蔻山脉",
+        "desc": "国公省森林山脉，山势陡峭，水道远离城镇。"
+      },
+      "mondulkiri_highlands": {
+        "name": "蒙多基里高地",
+        "desc": "萨孟诺伦周边高地，空气凉爽，森林与开阔自然景观并存。"
+      },
+      "om_samraong": {
+        "name": "三隆",
+        "desc": "奥多棉吉省省会，是了解柬埔寨远西北地区的便利落脚点。"
+      },
+      "pailin_gem_town": {
+        "name": "拜林镇",
+        "desc": "一座边境小镇，以宝石贸易和山坡景色闻名。"
+      },
+      "pv_preah_vihear": {
+        "name": "柏威夏寺",
+        "desc": "靠近边境的山顶寺庙，可从柏威夏省平原前往。"
+      },
+      "pvv_ba_phnom": {
+        "name": "巴普农",
+        "desc": "波罗勉省的古老山丘遗址，与高棉早期历史相关。"
+      },
+      "pursat_floating_villages": {
+        "name": "菩萨省水上村庄",
+        "desc": "菩萨省附近洞里萨湖上的村庄，日常生活随水位变化。"
+      },
+      "rk_yeak_laom": {
+        "name": "亚克洛姆湖",
+        "desc": "班隆附近森林环绕的清澈火山口湖。"
+      },
+      "st_stung_treng": {
+        "name": "上丁河畔",
+        "desc": "上丁的湄公河畔，河流穿城流向老挝边境。"
+      },
+      "svay_svay_rieng": {
+        "name": "柴桢镇",
+        "desc": "柴桢省省会，有河畔步道和当地市场。"
+      },
+      "tk_takeo_lake": {
+        "name": "茶胶湖",
+        "desc": "东阁市附近的湖泊，省内于 2026 年 11 月在此举办水节活动。AKP 还报道了环湖 18 公里道路项目。",
+        "report": "据省旅游部门报道：2026 年 11 月初，该省在东阁湖公园举办了两天的柬埔寨水节活动，包括 10 公里跑、音乐会和展览。部门报告两天约有 117 万国内游客（第一天 325,207 人，第二天 846,718 人）以及数百名外国游客；Xinhua 报道茶胶恢复了赛舟。请以官方公告核实。"
+      },
+      "tb_suong": {
+        "name": "苏翁",
+        "desc": "特本克蒙省省会，位于湄公河附近的东部平原。"
       }
+    },
+    "provinceLabel": "选择省份",
+    "provinceAll": "所有省份和金边",
+    "provinces": {
+      "phnomPenh": "金边",
+      "banteayMeanchey": "班迭棉吉",
+      "battambang": "马德望",
+      "kampongCham": "磅湛",
+      "kampongChhnang": "磅清扬",
+      "kampongSpeu": "磅士卑",
+      "kampongThom": "磅同",
+      "kampot": "贡布",
+      "kandal": "干丹",
+      "kep": "白马",
+      "kohKong": "国公",
+      "kratie": "桔井",
+      "mondulkiri": "蒙多基里",
+      "oddarMeanchey": "奥多棉吉",
+      "pailin": "拜林",
+      "preahSihanouk": "西哈努克",
+      "preahVihear": "柏威夏",
+      "preyVeng": "波罗勉",
+      "pursat": "菩萨",
+      "ratanakKiri": "腊塔纳基里",
+      "siemReap": "暹粒",
+      "stungTreng": "上丁",
+      "svayRieng": "柴桢",
+      "takeo": "茶胶",
+      "tboungKhmum": "特本克蒙"
+    },
+    "highlights": {
+      "riverViews": "河景",
+      "boats": "船只与水上活动",
+      "waterfrontWalk": "可步行的水岸",
+      "localMarkets": "当地市场与摊位",
+      "localLife": "社区日常生活",
+      "eveningLight": "夜间灯光",
+      "khmerArchitecture": "高棉建筑",
+      "carvedDetails": "石雕细节",
+      "historicSetting": "历史环境",
+      "wideViews": "开阔视野",
+      "natureTrails": "自然步道",
+      "highlandAir": "高地凉爽空气",
+      "coastalViews": "海岸风光",
+      "seafood": "当地海鲜",
+      "islandViews": "眺望附近岛屿"
+    },
+    "times": {
+      "morningLate": "清晨或傍晚，光线较柔和时。",
+      "sunrise": "清晨很早，观赏日出。",
+      "daylight": "白天，天气晴朗时。",
+      "evening": "傍晚早些时候，趁人潮尚未涌入。",
+      "sunset": "傍晚和日落时分。",
+      "anyDay": "一天中任何时候。",
+      "coolMorning": "清晨，空气较凉爽时。"
+    },
+    "gettingThere": {
+      "road": "经公路抵达，到达后安排当地交通。",
+      "roadLocal": "经公路抵达，再从镇中心换乘当地交通工具。",
+      "central": "位于镇中心，可步行或乘当地出租车。",
+      "roadFlight": "经公路或从金边乘国内航班抵达。",
+      "roadBoat": "经公路抵达，再由当地经营者安排乘船。",
+      "bridge": "位于市中心以南，乘出租车或嘟嘟车过桥前往。",
+      "shortTuk": "从市中心乘嘟嘟车或出租车片刻即到。"
+    },
+    "festivalEvents": {
+      "title": "节日活动",
+      "default": "节日活动每年有所不同。请以当地公告为准。",
+      "banteayMeanchey": "据 AKP 2026 年 10 月 15 日报道，班迭棉吉省因边境局势和洪水暂停了当年的赛舟，但放灯、拜月和阿贡安波克仍在斯雷索彭溪沿岸举行。请以官方公告核实。"
     }
   },
   "traditions": {
@@ -423,7 +674,7 @@
       "ok_ambok": {
         "name": "阿贡安波克",
         "short": "捶打的扁米",
-        "detail": "扁米经捶打后与椰子和香蕉混合。节日期间，人们会与家人和邻居分享。"
+        "detail": "新收稻米先烘烤再舂捣，与椰子和香蕉混合后敬献满月，感谢降雨与丰收。"
       },
       "boat_racing": {
         "name": "赛舟",
@@ -437,15 +688,15 @@
       },
       "moon_salutation": {
         "name": "拜月",
-        "short": "迎接满月",
-        "detail": "人们聚集在水边拜谢满月，这是节日核心的敬意与感恩时刻。"
+        "short": "礼敬月亮",
+        "detail": "满月之夜，人们在水边拜月并表达感恩。"
       }
     }
   },
   "gallery": {
     "eyebrow": "摄影手记",
     "title": "图库",
-    "subtitle": "节日的视觉氛围板。请将示例媒体 ID 替换为你自己的 Cloudinary 资源。",
+    "subtitle": "照片和视频即将添加。",
     "categories": {
       "all": "全部",
       "night": "夜晚与灯笼",
@@ -455,7 +706,7 @@
     },
     "empty": "此分类目前没有媒体内容。",
     "videoTitle": "动态影像",
-    "videoSubtitle": "只有配置了视频的公开 ID，才会显示节日视频片段。",
+    "videoSubtitle": "照片和视频即将添加。",
     "lightbox": {
       "close": "关闭图片查看器",
       "previous": "上一张图片",
