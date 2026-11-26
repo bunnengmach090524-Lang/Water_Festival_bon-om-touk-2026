@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { hasCloudinary, imageSrcSet, imageUrl } from '../../composables/useCloudinary'
+import { hasCloudinary, imageSrcSet, imageUrl, limitedImageUrl } from '../../composables/useCloudinary'
 import FallbackArt from '../scenes/FallbackArt.vue'
 import { inferCategory } from '../scenes/inferCategory'
 
@@ -16,15 +16,23 @@ const props = defineProps({
   showMissingLabel: { type: Boolean, default: false },
   fill: { type: Boolean, default: false },
   eager: { type: Boolean, default: false },
+  noUpscale: { type: Boolean, default: false },
 })
 
 const emit = defineEmits(['load', 'error'])
 const { t } = useI18n()
 const loaded = ref(false)
 const failed = ref(false)
+const naturalWidth = ref(0)
 
-const src = computed(() => imageUrl(props.publicId, props.widths[Math.floor(props.widths.length / 2)] || 800))
-const srcset = computed(() => imageSrcSet(props.publicId, props.widths))
+const src = computed(() =>
+  props.noUpscale ? limitedImageUrl(props.publicId) : imageUrl(props.publicId, props.widths[Math.floor(props.widths.length / 2)] || 800),
+)
+const srcset = computed(() => (props.noUpscale ? '' : imageSrcSet(props.publicId, props.widths)))
+const capped = computed(() => props.noUpscale && loaded.value && naturalWidth.value > 0 && naturalWidth.value < 1000)
+const cappedStyle = computed(() =>
+  capped.value ? { width: `${naturalWidth.value}px`, maxWidth: '100%', height: 'auto', maxHeight: '100%' } : undefined,
+)
 const unavailable = computed(() => !hasCloudinary || !props.publicId || failed.value)
 const fallbackCategory = computed(() => inferCategory(props.publicId, props.category))
 
@@ -33,10 +41,12 @@ watch(
   () => {
     loaded.value = false
     failed.value = false
+    naturalWidth.value = 0
   },
 )
 
-function onLoad() {
+function onLoad(event) {
+  naturalWidth.value = event.target?.naturalWidth || 0
   loaded.value = true
   emit('load', props.publicId)
 }
@@ -69,14 +79,26 @@ function onError() {
         <span class="sr-only">{{ t('media.loading') }}</span>
       </div>
       <img
+        v-if="capped"
+        :src="src"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        :style="{ filter: 'blur(24px) brightness(0.45)', transform: 'scale(1.1)' }"
+      />
+      <img
         :src="src"
         :srcset="srcset"
         :sizes="sizes"
         :alt="alt"
         :loading="eager ? 'eager' : 'lazy'"
         decoding="async"
-        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
-        :class="loaded ? 'opacity-100' : 'opacity-0'"
+        class="absolute transition-opacity duration-700"
+        :class="[
+          loaded ? 'opacity-100' : 'opacity-0',
+          capped ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain' : 'inset-0 h-full w-full object-cover',
+        ]"
+        :style="cappedStyle"
         @load="onLoad"
         @error="onError"
       />

@@ -78,6 +78,12 @@
     "copyLink": "Copier le lien",
     "copied": "Lien copié"
   },
+  "pagination": {
+    "label": "Pagination",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {current} sur {total}"
+  },
   "home": {
     "eyebrow": "23–25 novembre 2026 · Cambodge",
     "titleLine1": "Bon Om Touk",

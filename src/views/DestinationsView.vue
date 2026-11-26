@@ -3,12 +3,16 @@ import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import WaveDivider from '../components/effects/WaveDivider.vue'
 import DestinationCard from '../components/cards/DestinationCard.vue'
+import Pagination from '../components/ui/Pagination.vue'
 import { destinationRegions, destinations, provinces } from '../data/destinations'
 
 const { t } = useI18n()
 const activeRegion = ref('all')
 const activeProvince = ref('all')
 const query = ref('')
+const page = ref(1)
+const gridEl = ref(null)
+const pageSize = 9
 
 const filters = destinationRegions.map((region) => ({ id: region, label: () => t(`destinations.filters.${region}`) }))
 const provinceOptions = [
@@ -31,6 +35,16 @@ const filtered = computed(() => {
     const haystack = `${t(place.nameKey)} ${t(`destinations.provinces.${place.province}`)}`.toLocaleLowerCase()
     return regionMatches && provinceMatches && (!needle || haystack.includes(needle))
   })
+})
+const pagedDestinations = computed(() => filtered.value.slice((page.value - 1) * pageSize, page.value * pageSize))
+
+watch([activeRegion, activeProvince, query], () => {
+  page.value = 1
+})
+watch(page, () => {
+  if (typeof window === 'undefined' || !gridEl.value) return
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  gridEl.value.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
 })
 </script>
 
@@ -105,15 +119,18 @@ const filtered = computed(() => {
           </p>
         </div>
 
-        <div v-if="filtered.length" class="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div v-for="(place, index) in filtered" :key="place.id" v-reveal="(index % 3) * 80">
-            <DestinationCard
-              :destination="place"
-              :name="t(place.nameKey)"
-              :description="t(place.descKey)"
-              :region-label="t(`destinations.provinces.${place.province}`)"
-            />
+        <div v-if="filtered.length" ref="gridEl">
+          <div class="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div v-for="(place, index) in pagedDestinations" :key="place.id" v-reveal="(index % 3) * 80">
+              <DestinationCard
+                :destination="place"
+                :name="t(place.nameKey)"
+                :description="t(place.descKey)"
+                :region-label="t(`destinations.provinces.${place.province}`)"
+              />
+            </div>
           </div>
+          <Pagination v-model:page="page" :total="filtered.length" :per-page="pageSize" />
         </div>
         <p v-else class="mt-12 rounded-2xl border border-gold/20 bg-night/50 p-8 text-center text-muted">
           {{ t('destinations.empty') }}

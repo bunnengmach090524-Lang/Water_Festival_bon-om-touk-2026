@@ -9,6 +9,11 @@ export function imageUrl(publicId, width = 800) {
   return `https://res.cloudinary.com/${encodeURIComponent(cloudName)}/image/upload/f_auto,q_auto,w_${safeWidth}/${publicId}`
 }
 
+export function limitedImageUrl(publicId) {
+  if (!hasCloudinary || !publicId) return ''
+  return `https://res.cloudinary.com/${encodeURIComponent(cloudName)}/image/upload/w_1600,c_limit,q_auto:good,f_auto/${publicId}`
+}
+
 export function imageSrcSet(publicId, widths = [320, 640, 960, 1280]) {
   if (!hasCloudinary || !publicId) return ''
   return widths.map((width) => `${imageUrl(publicId, width)} ${width}w`).join(', ')

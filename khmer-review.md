@@ -34,6 +34,10 @@ Every Khmer string below was newly written or revised for this update and should
 | `gallery.subtitle` | រូបថត និងវីដេអូនឹងត្រូវបន្ថែមឆាប់ៗ។ |
 | `gallery.videoSubtitle` | រូបថត និងវីដេអូនឹងត្រូវបន្ថែមឆាប់ៗ។ |
 | `gallery.captions.gallery-05` | ព្រះខែពេញបូណ៌មីលើទន្លេ |
+| `pagination.label` | ការប្តូរទំព័រ |
+| `pagination.previous` | ថយក្រោយ |
+| `pagination.next` | បន្ទាប់ |
+| `pagination.page` | ទំព័រ {current} នៃ {total} |
 | `tips.sections.crowds.items` | "យប់ពេញបូណ៌មីជាយប់ដែលរវល់ជាងគេ គួរមកដល់លឿន ដើម្បីបានកន្លែងមើលល្អ។", "រក្សាទូរស័ព្ទ កាបូប និងកាបូបស្ពាយឱ្យជិតខ្លួន ជាពិសេសក្នុងហ្វូងមនុស្សច្រើន។", "កំណត់ចំណុចជួបជុំជាមួយមិត្តរួមដំណើរ ក្នុងករណីបែកគ្នា។" |
 | `destinations.subtitle` | ច្រោះតាមខេត្ត ឬតំបន់ ឬស្វែងរកតាមឈ្មោះ។ |
 | `destinations.provinceLabel` | ជ្រើសខេត្ត |
@@ -144,3 +148,4 @@ Special checks:
 - Ceremonial terms: ព្រះខែពេញបូណ៌មី, ថ្ងៃពេញបូណ៌មី, ១៥ កើត ខែកត្តិក, ១ រោច, អកអំបុក, សំពះព្រះខែ.
 - Provincial names and place names.
 - Reported 2026 wording and source attributions.
+- Pagination wording: ថយក្រោយ / បន្ទាប់ / ទំព័រ {current} នៃ {total} / ការប្តូរទំព័រ.

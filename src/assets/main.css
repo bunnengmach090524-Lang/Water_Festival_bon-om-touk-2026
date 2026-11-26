@@ -708,7 +708,8 @@
 
 :is(html[lang="km"], html.lang-km) .btn,
 :is(html[lang="km"], html.lang-km) .lang-option,
-:is(html[lang="km"], html.lang-km) .hero-status {
+:is(html[lang="km"], html.lang-km) .hero-status,
+:is(html[lang="km"], html.lang-km) .pagination button {
   font-family: "Noto Sans Khmer", system-ui, sans-serif !important;
   font-size: 1rem !important;
   font-weight: 600 !important;

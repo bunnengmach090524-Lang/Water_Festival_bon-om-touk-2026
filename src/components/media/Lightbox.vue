@@ -104,6 +104,7 @@ onBeforeUnmount(() => {
           </button>
 
           <CloudImage
+            no-upscale
             :public-id="current.publicId"
             :alt="captionOf(current)"
             :category="inferCategory(current.publicId, current.category)"

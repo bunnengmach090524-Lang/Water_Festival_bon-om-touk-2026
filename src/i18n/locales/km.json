@@ -78,6 +78,12 @@
     "copyLink": "ចម្លងតំណ",
     "copied": "បានចម្លងតំណហើយ"
   },
+  "pagination": {
+    "label": "ការប្តូរទំព័រ",
+    "previous": "ថយក្រោយ",
+    "next": "បន្ទាប់",
+    "page": "ទំព័រ {current} នៃ {total}"
+  },
   "home": {
     "eyebrow": "២៣–២៥ វិច្ឆិកា ២០២៦ · កម្ពុជា",
     "titleLine1": "បុណ្យអុំទូក",

@@ -110,6 +110,7 @@ onBeforeUnmount(() => clearTimeout(copiedTimer))
       <CloudImage
         fill
         eager
+        no-upscale
         :public-id="place.imagePublicId"
         :alt="t(place.nameKey)"
         :category="place.tags"

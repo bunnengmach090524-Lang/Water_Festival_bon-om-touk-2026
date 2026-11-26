@@ -5,12 +5,16 @@ import WaveDivider from '../components/effects/WaveDivider.vue'
 import GalleryGrid from '../components/media/GalleryGrid.vue'
 import Lightbox from '../components/media/Lightbox.vue'
 import CloudVideo from '../components/media/CloudVideo.vue'
+import Pagination from '../components/ui/Pagination.vue'
 import { galleryCategories, galleryImages, galleryVideos } from '../data/media'
 import { inferCategory } from '../components/scenes/inferCategory'
 
 const { t } = useI18n()
 const activeCategory = ref('all')
 const activeIndex = ref(-1)
+const page = ref(1)
+const gridEl = ref(null)
+const pageSize = 9
 
 const categories = galleryCategories.map((id) => ({ id, label: () => t(`gallery.categories.${id}`) }))
 const visibleImages = computed(() =>
@@ -18,9 +22,16 @@ const visibleImages = computed(() =>
     ? galleryImages
     : galleryImages.filter((item) => item.category === activeCategory.value),
 )
+const pageImages = computed(() => visibleImages.value.slice((page.value - 1) * pageSize, page.value * pageSize))
 
 watch(activeCategory, () => {
   activeIndex.value = -1
+  page.value = 1
+})
+watch(page, () => {
+  if (typeof window === 'undefined' || !gridEl.value) return
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  gridEl.value.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
 })
 </script>
 
@@ -57,8 +68,14 @@ watch(activeCategory, () => {
           </button>
         </div>
 
-        <div v-if="visibleImages.length" class="mt-10">
-          <GalleryGrid :items="visibleImages" @open="activeIndex = $event" />
+        <div v-if="visibleImages.length" ref="gridEl" class="mt-10">
+          <GalleryGrid
+            :items="pageImages"
+            :start-index="(page - 1) * pageSize"
+            :total="visibleImages.length"
+            @open="activeIndex = $event"
+          />
+          <Pagination v-model:page="page" :total="visibleImages.length" :per-page="pageSize" />
         </div>
         <p v-else class="mt-12 rounded-2xl border border-gold/20 bg-night/50 p-8 text-center text-muted">
           {{ t('gallery.empty') }}

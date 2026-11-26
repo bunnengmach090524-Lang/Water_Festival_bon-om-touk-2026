@@ -5,6 +5,8 @@ import { inferCategory } from '../scenes/inferCategory'
 
 defineProps({
   items: { type: Array, required: true },
+  startIndex: { type: Number, default: 0 },
+  total: { type: Number, default: 0 },
 })
 const emit = defineEmits(['open'])
 const { t } = useI18n()
@@ -17,13 +19,13 @@ function captionOf(item) {
 </script>
 
 <template>
-  <div class="columns-1 gap-5 sm:columns-2 lg:columns-3">
-    <div v-for="(item, index) in items" :key="item.id" v-reveal="(index % 3) * 80" class="mb-5 break-inside-avoid">
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div v-for="(item, index) in items" :key="item.id" v-reveal="(index % 3) * 80" class="min-w-0">
       <button
         type="button"
         class="block w-full text-left"
-        :aria-label="t('photoViewer.photoOf', { n: index + 1, total: items.length })"
-        @click="emit('open', index)"
+        :aria-label="t('photoViewer.photoOf', { n: startIndex + index + 1, total: total || items.length })"
+        @click="emit('open', startIndex + index)"
       >
         <div v-tilt class="tilt">
           <div class="image-zoom card-lift rounded-2xl">

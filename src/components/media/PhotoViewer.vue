@@ -6,7 +6,7 @@ import CloudVideo from './CloudVideo.vue'
 import YouTubeVideo from './YouTubeVideo.vue'
 import Lightbox from './Lightbox.vue'
 import FallbackArt from '../scenes/FallbackArt.vue'
-import { imageUrl } from '../../composables/useCloudinary'
+import { limitedImageUrl } from '../../composables/useCloudinary'
 import { inferCategory } from '../scenes/inferCategory'
 
 const props = defineProps({
@@ -104,7 +104,7 @@ function preloadNext() {
   cancelIdlePreload()
   if (!props.items.length || typeof window === 'undefined') return
   const upcoming = props.items[(selectedPhotoIndex.value + 1) % props.items.length]
-  const url = imageUrl(upcoming.publicId, 1280)
+  const url = limitedImageUrl(upcoming.publicId)
   if (!url) return
   const load = () => {
     const image = new Image()
@@ -148,6 +148,7 @@ onBeforeUnmount(cancelIdlePreload)
           @touchend.passive="onTouchEnd"
         >
           <CloudImage
+            no-upscale
             :public-id="currentPhoto.publicId"
             :alt="captionOf(currentPhoto)"
             :category="currentPhoto.category || props.video?.category"
