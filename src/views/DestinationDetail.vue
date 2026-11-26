@@ -136,6 +136,9 @@ onBeforeUnmount(() => clearTimeout(copiedTimer))
         <p v-reveal="150" class="lead mt-5 max-w-3xl text-ivory/90">{{ t(place.descKey) }}</p>
       </div>
     </header>
+    <p v-if="place.imageCredit" class="site-container mt-2 text-right text-xs leading-5 text-muted">
+      {{ place.imageCredit }}
+    </p>
 
     <section class="section-shell pt-10 sm:pt-12">
       <div class="site-container mx-auto max-w-6xl">

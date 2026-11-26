@@ -104,15 +104,20 @@ const getting = {
   shortTuk: 'destinations.gettingThere.shortTuk',
 }
 
+const PREFIX = ''
 const image = (slug) => `bon-om-touk/places/${slug}`
 const video = (slug) => `bon-om-touk/video/${slug}`
+const realImage = (publicId) => `${PREFIX}${publicId}`
 const defaultEvent = 'destinations.festivalEvents.default'
 
 function place(id, province, coords, imagePublicId, tags, highlightKeys, bestTimeKey, gettingThereKey, options = {}) {
   const prefix = `destinations.items.${id}`
-  const galleryCount = Math.max(0, Math.min(6, Number(options.galleryCount ?? 4)))
+  const galleryPublicIds = Array.isArray(options.galleryPublicIds) ? options.galleryPublicIds.map(realImage) : null
+  const galleryCount = galleryPublicIds
+    ? Math.min(4, galleryPublicIds.length)
+    : Math.max(0, Math.min(4, Number(options.galleryCount ?? 4)))
   const gallery = Array.from({ length: galleryCount }, (_, index) => ({
-    publicId: `bon-om-touk/places/${id}-${String(index + 1).padStart(2, '0')}`,
+    publicId: galleryPublicIds ? galleryPublicIds[index] : `bon-om-touk/places/${id}-${String(index + 1).padStart(2, '0')}`,
   }))
   return {
     id,
@@ -125,6 +130,7 @@ function place(id, province, coords, imagePublicId, tags, highlightKeys, bestTim
     gettingThereKey,
     coords,
     imagePublicId,
+    imageCredit: options.imageCredit || '',
     gallery,
     videoPublicId: options.videoPublicId || '',
     youtubeId: options.youtubeId || '',
@@ -136,27 +142,27 @@ function place(id, province, coords, imagePublicId, tags, highlightKeys, bestTim
 }
 
 export const destinations = [
-  place('pp_riverside', 'phnomPenh', { lat: 11.56, lng: 104.93 }, image('phnom-penh-riverside'), ['river', 'city', 'night'], highlight.river, time.evening, getting.central, { videoPublicId: video('phnom-penh-riverside') }),
-  place('pp_royal_palace', 'phnomPenh', { lat: 11.555, lng: 104.931 }, image('royal-palace'), ['temple', 'city'], highlight.heritage, time.morningLate, getting.shortTuk),
-  place('pp_wat_phnom', 'phnomPenh', { lat: 11.572, lng: 104.926 }, image('wat-phnom'), ['temple', 'city'], highlight.heritage, time.morningLate, getting.central),
-  place('pp_independence_monument', 'phnomPenh', { lat: 11.551, lng: 104.925 }, image('independence-monument'), ['city', 'night'], highlight.town, time.evening, getting.shortTuk),
+  place('pp_riverside', 'phnomPenh', { lat: 11.56, lng: 104.93 }, realImage('phnom-penh-riverfront'), ['river', 'city', 'night'], highlight.river, time.evening, getting.central, { videoPublicId: video('phnom-penh-riverside'), galleryPublicIds: [] }),
+  place('pp_royal_palace', 'phnomPenh', { lat: 11.555, lng: 104.931 }, realImage('royal-palace-phnom-penh'), ['temple', 'city'], highlight.heritage, time.morningLate, getting.shortTuk, { galleryPublicIds: [] }),
+  place('pp_wat_phnom', 'phnomPenh', { lat: 11.572, lng: 104.926 }, realImage('wat-phnom-01'), ['temple', 'city'], highlight.heritage, time.morningLate, getting.central, { galleryPublicIds: ['wat-phnom-02', 'wat-phnom-03'] }),
+  place('pp_independence_monument', 'phnomPenh', { lat: 11.551, lng: 104.925 }, realImage('independence-monument-phnom-penh-01'), ['city', 'night'], highlight.town, time.evening, getting.shortTuk, { galleryPublicIds: ['independence-monument-phnom-penh-02', 'independence-monument-phnom-penh-03', 'independence-monument-phnom-penh-04'] }),
   place('pp_koh_pich', 'phnomPenh', { lat: 11.525, lng: 104.934 }, image('koh-pich'), ['river', 'city', 'night'], highlight.town, time.sunset, getting.bridge),
 
-  place('sr_angkor_wat', 'siemReap', { lat: 13.4125, lng: 103.867 }, image('angkor-wat'), ['temple', 'night'], highlight.heritage, time.sunrise, getting.roadLocal),
+  place('sr_angkor_wat', 'siemReap', { lat: 13.4125, lng: 103.867 }, realImage('angkor-wat-01'), ['temple', 'night'], highlight.heritage, time.sunrise, getting.roadLocal, { galleryPublicIds: [] }),
   place('sr_pub_street', 'siemReap', { lat: 13.363, lng: 103.858 }, image('pub-street'), ['city', 'night'], highlight.town, time.evening, getting.central),
   place('sr_river', 'siemReap', { lat: 13.364, lng: 103.856 }, image('siem-reap-river'), ['river', 'city', 'night'], highlight.river, time.evening, getting.central),
   place('sr_floating_villages', 'siemReap', { lat: 13.25, lng: 103.8 }, image('tonle-sap-villages'), ['floating', 'river', 'night'], ['destinations.highlights.localLife', 'destinations.highlights.boats', 'destinations.highlights.waterfrontWalk'], time.daylight, getting.roadBoat),
   place('sr_bayon', 'siemReap', { lat: 13.4436, lng: 103.8677 }, image('bayon'), ['temple', 'history'], highlight.heritage, time.morningLate, getting.roadLocal),
 
-  place('kp_riverside', 'kampot', { lat: 10.609, lng: 104.18 }, image('kampot-riverside'), ['river', 'night'], highlight.river, time.sunset, getting.central, { videoPublicId: video('kampot-riverside') }),
+  place('kp_riverside', 'kampot', { lat: 10.609, lng: 104.18 }, realImage('kampot-river-01'), ['river', 'night'], highlight.river, time.sunset, getting.central, { videoPublicId: video('kampot-riverside'), galleryPublicIds: [] }),
   place('kp_durian_roundabout', 'kampot', { lat: 10.61, lng: 104.181 }, image('durian-roundabout'), ['city'], highlight.town, time.anyDay, getting.central),
-  place('kp_bokor', 'kampot', { lat: 10.61, lng: 104.02 }, image('bokor-mountain'), ['temple', 'night'], highlight.nature, time.coolMorning, getting.roadLocal),
+  place('kp_bokor', 'kampot', { lat: 10.61, lng: 104.02 }, realImage('bokor-mountain-01'), ['temple', 'night'], highlight.nature, time.coolMorning, getting.roadLocal, { galleryPublicIds: ['bokor-mountain-02', 'bokor-mountain-03', 'bokor-mountain-04', 'bokor-mountain-05'] }),
   place('kp_hand_bridge', 'kampot', { lat: 10.605, lng: 104.175 }, image('hand-viewing-bridge'), ['river', 'night'], highlight.river, time.sunset, getting.shortTuk),
 
-  place('more_kep', 'kep', { lat: 10.48, lng: 104.18 }, image('kep'), ['beach', 'city'], highlight.coast, time.daylight, getting.road),
-  place('more_battambang', 'battambang', { lat: 13.1, lng: 103.12 }, image('battambang'), ['river', 'temple'], highlight.town, time.morningLate, getting.roadFlight),
+  place('more_kep', 'kep', { lat: 10.48, lng: 104.18 }, realImage('kep-crab-market-01'), ['beach', 'city'], highlight.coast, time.daylight, getting.road, { galleryPublicIds: ['kep-crab-market-02', 'kep-crab-market-03'] }),
+  place('more_battambang', 'battambang', { lat: 13.1, lng: 103.12 }, realImage('battambang-bamboo-train-02'), ['river', 'temple'], highlight.town, time.morningLate, getting.roadFlight, { galleryPublicIds: ['battambang-bamboo-train-03', 'battambang-bamboo-train-01'] }),
   place('more_kampong_cham', 'kampongCham', { lat: 11.99, lng: 105.46 }, image('kampong-cham'), ['river'], highlight.river, time.sunset, getting.road),
-  place('more_kratie', 'kratie', { lat: 12.48, lng: 106.02 }, image('kratie'), ['wildlife', 'river'], highlight.river, time.morningLate, getting.road),
+  place('more_kratie', 'kratie', { lat: 12.48, lng: 106.02 }, realImage('kratie-mekong-01'), ['wildlife', 'river'], highlight.river, time.morningLate, getting.road, { galleryPublicIds: ['kratie-mekong-03', 'kratie-mekong-04', 'kratie-mekong-05'] }),
   place('more_sihanoukville', 'preahSihanouk', { lat: 10.63, lng: 103.92 }, image('sihanoukville'), ['beach', 'city'], highlight.coast, time.daylight, getting.roadFlight),
 
   place('bm_banteay_chhmar', 'banteayMeanchey', { lat: 14.339, lng: 102.984 }, image('banteay-chhmar'), ['temple', 'history'], highlight.heritage, time.morningLate, getting.roadLocal, { festivalEventKey: 'destinations.festivalEvents.banteayMeanchey' }),
